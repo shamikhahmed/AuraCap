@@ -12,14 +12,14 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icon-192.png', 'icon-512.png', 'favicon.svg'],
       manifest: {
-        name: 'AuraOS v5 — Apple Ecosystem Studio',
-        short_name: 'AuraOS',
+        name: 'AuraCap v5 — Apple Ecosystem Studio',
+        short_name: 'AuraCap',
         description: 'Offline-first PWA for organizing iPhone/iPad/Mac app setups',
         theme_color: '#050507',
         background_color: '#050507',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/AuraOS/',
+        start_url: '/AuraCap/',
         icons: [
           { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
@@ -33,5 +33,5 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') },
   },
-  base: '/AuraOS/',
+  base: '/AuraCap/',
 });

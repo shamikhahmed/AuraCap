@@ -17,11 +17,12 @@ import { DailyRoutine } from '@/pages/DailyRoutine';
 import { Profiles } from '@/pages/Profiles';
 import { VersionHistory } from '@/pages/VersionHistory';
 import { Settings } from '@/pages/Settings';
+import { ImportGuide } from '@/pages/ImportGuide';
 
 function AppRoutes() {
   const { ready, state } = useApp();
   if (!ready) {
-    return <div className="min-h-dvh flex items-center justify-center text-[var(--mu)]">Loading AuraOS…</div>;
+    return <div className="min-h-dvh flex items-center justify-center text-[var(--mu)]">Loading AuraCap…</div>;
   }
 
   return (
@@ -34,6 +35,7 @@ function AppRoutes() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="dna" element={<DigitalDna />} />
             <Route path="import" element={<ImportApps />} />
+            <Route path="import-guide" element={<ImportGuide />} />
             <Route path="apps" element={<AppLibrary />} />
             <Route path="organizer" element={<SmartOrganizer />} />
             <Route path="designer" element={<AiDesigner />} />
@@ -55,7 +57,7 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/AuraOS">
+    <BrowserRouter basename="/AuraCap">
       <AppProvider>
         <AppRoutes />
       </AppProvider>

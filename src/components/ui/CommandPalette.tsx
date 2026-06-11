@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { path: '/dashboard', label: 'Dashboard' },
   { path: '/dna', label: 'Digital DNA' },
   { path: '/import', label: 'Import Apps' },
+  { path: '/import-guide', label: 'Import Guide' },
   { path: '/apps', label: 'App Library' },
   { path: '/organizer', label: 'Smart Organizer' },
   { path: '/designer', label: 'AI Designer' },

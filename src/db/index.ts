@@ -66,7 +66,7 @@ let dbPromise: Promise<IDBPDatabase<AuraDB>> | null = null;
 
 export function getDb() {
   if (!dbPromise) {
-    dbPromise = openDB<AuraDB>('auraos-v5', 1, {
+    dbPromise = openDB<AuraDB>('auracap-v5', 1, {
       upgrade(db) {
         db.createObjectStore('state', { keyPath: 'id' });
       },
@@ -99,7 +99,7 @@ export async function factoryReset() {
 }
 
 export function exportTxt(apps: string[]): string {
-  return `AuraOS v5 — My App List\n========================\nTotal: ${apps.length} apps\n\n${apps.join('\n')}`;
+  return `AuraCap v5 — My App List\n========================\nTotal: ${apps.length} apps\n\n${apps.join('\n')}`;
 }
 
 export function exportJson(state: AuraState): string {

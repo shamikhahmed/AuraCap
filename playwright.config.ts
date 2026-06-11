@@ -9,12 +9,12 @@ export default defineConfig({
   timeout: 60_000,
   reporter: 'list',
   use: {
-    baseURL: 'http://127.0.0.1:4173/AuraOS/',
+    baseURL: 'http://127.0.0.1:4173/AuraCap/',
     trace: 'on-first-retry',
   },
   webServer: {
     command: 'npm run preview -- --host 127.0.0.1 --port 4173',
-    url: 'http://127.0.0.1:4173/AuraOS/',
+    url: 'http://127.0.0.1:4173/AuraCap/',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },

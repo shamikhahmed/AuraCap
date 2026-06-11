@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Download, FileCode, Share2, RotateCcw } from 'lucide-react';
+import { useRef, useState } from 'react';
+import { Download, FileCode, Share2, RotateCcw, Upload } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Modal } from '@/components/ui/Modal';
@@ -14,12 +14,13 @@ const ACCENTS = [
 ];
 
 export function Settings() {
-  const { state, setTheme, setAccent, exportTxtFile, exportJsonFile, shareSetup, resetAll } = useApp();
+  const { state, setTheme, setAccent, exportTxtFile, exportJsonFile, importJsonFile, shareSetup, resetAll } = useApp();
   const [resetModal, setResetModal] = useState(false);
+  const jsonInputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div>
-      <div className="mb-6"><h1 className="page-title">Settings</h1><p className="page-sub">Customize AuraOS v5</p></div>
+      <div className="mb-6"><h1 className="page-title">Settings</h1><p className="page-sub">Customize AuraCap v5</p></div>
 
       <div className="grid md:grid-cols-2 gap-3">
         <GlassCard>
@@ -42,6 +43,12 @@ export function Settings() {
           <div className="flex flex-col gap-1.5">
             <button type="button" onClick={exportTxtFile} className="btn-ghost justify-start"><Download size={14} className="text-[var(--ac)]" /> Export App List</button>
             <button type="button" onClick={exportJsonFile} className="btn-ghost justify-start"><FileCode size={14} className="text-[var(--ac3)]" /> Export Full Setup (JSON)</button>
+            <button type="button" onClick={() => jsonInputRef.current?.click()} className="btn-ghost justify-start"><Upload size={14} className="text-[var(--amber)]" /> Import JSON Backup</button>
+            <input ref={jsonInputRef} type="file" accept=".json,application/json" className="hidden" onChange={(e) => {
+              const f = e.target.files?.[0];
+              if (f) importJsonFile(f);
+              e.target.value = '';
+            }} />
             <button type="button" onClick={shareSetup} className="btn-ghost justify-start"><Share2 size={14} className="text-[var(--ac2)]" /> Share My Setup</button>
           </div>
         </GlassCard>
@@ -52,12 +59,12 @@ export function Settings() {
       </div>
 
       <GlassCard className="mt-3 text-center">
-        <p className="text-base font-extrabold font-display mb-1">AuraOS v5.0</p>
+        <p className="text-base font-extrabold font-display mb-1">AuraCap v5.0</p>
         <p className="text-[10px] text-[var(--mu)] font-mono">1000+ Apps · Smart DNA · iPhone + iPad + Mac · Multi-Profile · Version History · 100% Offline</p>
       </GlassCard>
 
       <Modal open={resetModal} onClose={() => setResetModal(false)} title="Factory reset?">
-        <p className="text-sm text-[var(--mu)] mb-4">Reset ALL AuraOS data? This cannot be undone.</p>
+        <p className="text-sm text-[var(--mu)] mb-4">Reset ALL AuraCap data? This cannot be undone.</p>
         <div className="flex gap-2">
           <button type="button" onClick={() => resetAll()} className="btn-danger flex-1">Reset everything</button>
           <button type="button" onClick={() => setResetModal(false)} className="btn-ghost flex-1">Cancel</button>

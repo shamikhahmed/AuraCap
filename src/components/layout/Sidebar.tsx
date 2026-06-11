@@ -45,7 +45,7 @@ export function Sidebar({ expanded, mobileOpen, onToggle, onMobileClose }: Sideb
           mobileOpen && 'max-md:!w-[234px] max-md:!translate-x-0',
         )}
       >
-        <button type="button" onClick={onToggle} className="logo-btn mb-1">A</button>
+        <button type="button" onClick={onToggle} className="logo-btn mb-1">C</button>
         <div className="nav-divider" />
         <NavLink to="/profiles" onClick={onMobileClose} className={cn('profile-btn', expanded && 'expanded')}>
           <span>{activeProfile.emoji}</span>

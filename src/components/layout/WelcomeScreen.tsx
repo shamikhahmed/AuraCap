@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { Modal } from '@/components/ui/Modal';
+import { ImportGuideContent } from '@/components/import/ImportGuideContent';
 
 export function WelcomeScreen() {
   const { state, enterApp, loadDemo, persist } = useApp();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [showName, setShowName] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
   const [name, setName] = useState('');
 
   useEffect(() => {
@@ -86,7 +88,7 @@ export function WelcomeScreen() {
       >
         <div className="inline-flex items-center gap-2 bg-[rgba(79,110,247,0.12)] border border-[rgba(79,110,247,0.28)] rounded-full px-3.5 py-1.5 mb-5">
           <div className="w-1.5 h-1.5 rounded-full bg-[var(--ac3)] shadow-[0_0_8px_var(--ac3)]" />
-          <span className="text-[10px] tracking-[2px] text-[var(--ac)] font-mono">AURAOS v5 — APPLE ECOSYSTEM STUDIO</span>
+          <span className="text-[10px] tracking-[2px] text-[var(--ac)] font-mono">AURACAP v5 — APPLE ECOSYSTEM STUDIO</span>
         </div>
 
         <h1 className="font-display text-[clamp(32px,5.5vw,60px)] font-extrabold tracking-[-2px] leading-[1.04] mb-2.5">
@@ -120,10 +122,19 @@ export function WelcomeScreen() {
             <Sparkles size={14} /> Try with sample wardrobe
           </button>
         </div>
-        <p className="mt-4 text-[10px] text-[var(--mu2)] tracking-[2px] font-mono">PRESS ENTER OR CLICK TO BEGIN</p>
+        <button type="button" onClick={() => setShowGuide(true)} className="mt-4 inline-flex items-center gap-1.5 text-[11px] text-[var(--ac)] hover:underline">
+          <BookOpen size={12} /> New here? Read the app import guide
+        </button>
+        <p className="mt-3 text-[10px] text-[var(--mu2)] tracking-[2px] font-mono">PRESS ENTER OR CLICK TO BEGIN</p>
       </motion.div>
 
-      <Modal open={showName} onClose={() => setShowName(false)} title="Welcome to AuraOS">
+      <Modal open={showGuide} onClose={() => setShowGuide(false)} title="How to Import Your Apps" wide>
+        <div className="max-h-[70vh] overflow-y-auto pr-1">
+          <ImportGuideContent showCta={false} compact />
+        </div>
+      </Modal>
+
+      <Modal open={showName} onClose={() => setShowName(false)} title="Welcome to AuraCap">
         <p className="text-sm text-[var(--mu)] mb-4">Optional — what should we call you?</p>
         <input
           value={name}

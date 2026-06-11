@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Extracts AuraOS data constants from the single-file HTML source.
+ * Extracts AuraCap data constants from the single-file HTML source.
  * Usage: node scripts/extract-from-html.mjs [path-to-AuraOS.html]
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
@@ -36,7 +36,7 @@ const distApps = distMatch
 
 writeFileSync(
   join(outDir, 'constants.ts'),
-  `// Auto-generated from AuraOS.html — run: node scripts/extract-from-html.mjs\n\n` +
+  `// Auto-generated from AuraOS.html (source) — run: node scripts/extract-from-html.mjs\n\n` +
   vars.map((v) => `export const ${v} = ${extract(v)} as const;\n`).join('\n') +
   `\nexport const DIST_APPS = ${JSON.stringify(distApps)} as const;\n`,
 );

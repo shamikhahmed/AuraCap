@@ -9,7 +9,7 @@ async function enterApp(page: import('@playwright/test').Page) {
   await expect(page.getByText('Control Center')).toBeVisible({ timeout: 15_000 });
 }
 
-test.describe('AuraOS PWA', () => {
+test.describe('AuraCap PWA', () => {
   test('welcome → demo → dashboard shows scores', async ({ page }) => {
     await page.goto('./');
     await expect(page.getByText('Every Device. Perfected.')).toBeVisible();
@@ -22,6 +22,16 @@ test.describe('AuraOS PWA', () => {
     await expect(scoreRing).toBeVisible();
     const scoreText = await scoreRing.textContent();
     expect(Number(scoreText)).toBeGreaterThan(0);
+  });
+
+  test('import guide tab is accessible', async ({ page }) => {
+    await page.goto('./');
+    await enterApp(page);
+
+    await page.getByRole('link', { name: 'Import Apps' }).first().click();
+    await page.getByRole('button', { name: /How to Import/i }).click();
+    await expect(page.getByText('iPhone — Shortcuts App Method')).toBeVisible();
+    await expect(page.getByText('Mac — Terminal Method')).toBeVisible();
   });
 
   test('import flow adds apps', async ({ page }) => {

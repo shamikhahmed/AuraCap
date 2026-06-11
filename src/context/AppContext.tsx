@@ -32,6 +32,7 @@ interface AppContextValue {
   deleteVersion: (id: string) => Promise<void>;
   exportTxtFile: () => void;
   exportJsonFile: () => void;
+  importJsonFile: (file: File) => void;
   shareSetup: () => void;
   resetAll: () => Promise<void>;
   setLayout: (layout: LayoutType) => Promise<void>;
@@ -201,9 +202,37 @@ export function AppProvider({ children }: { children: ReactNode }) {
       const blob = new Blob([exportJson(state)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url; a.download = 'auraos-v5-setup.json'; a.click();
+      a.href = url; a.download = 'auracap-v5-setup.json'; a.click();
       URL.revokeObjectURL(url);
       toast('Setup exported as JSON!');
+    },
+    importJsonFile: (file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(String(reader.result ?? '')) as Partial<AuraState>;
+          if (!parsed || typeof parsed !== 'object') throw new Error('Invalid JSON');
+          const apps = Array.isArray(parsed.apps) ? parsed.apps.filter((a): a is string => typeof a === 'string') : state.apps;
+          persist({
+            apps,
+            layout: parsed.layout ?? state.layout,
+            device: parsed.device ?? state.device,
+            model: parsed.model ?? state.model,
+            theme: parsed.theme ?? state.theme,
+            profiles: parsed.profiles?.length ? parsed.profiles : state.profiles,
+            activeProfile: parsed.activeProfile ?? state.activeProfile,
+            versions: parsed.versions ?? state.versions,
+            widgetStack: parsed.widgetStack ?? state.widgetStack,
+            routine: parsed.routine ?? state.routine,
+            lockscreen: parsed.lockscreen ?? state.lockscreen,
+            wallpaperId: parsed.wallpaperId ?? state.wallpaperId,
+          });
+          toast(`Imported backup — ${apps.length} apps restored`);
+        } catch {
+          toast('Invalid JSON backup file');
+        }
+      };
+      reader.readAsText(file);
     },
     shareSetup: () => {
       const encoded = btoa(JSON.stringify({ apps: state.apps.slice(0, 50), device: state.device, layout: state.layout }));
