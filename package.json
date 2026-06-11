@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "extract-data": "node scripts/extract-from-html.mjs",
+    "generate-icons": "node scripts/generate-icons.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {

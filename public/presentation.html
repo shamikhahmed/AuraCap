@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuraCap — Presentation</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#4f6ef7;--purple:#7b5ea7;
+  --bg:#050507;--bg2:#0d0d12;--text:#e8e6f0;--muted:#8b8aa0;
+  --border:rgba(79,110,247,0.15);--glass:rgba(255,255,255,0.04);
+}
+html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',system-ui,sans-serif;
+  overflow:hidden;user-select:none}
+#orb-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4}
+#progress{position:fixed;top:0;left:0;height:3px;z-index:200;width:10%;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  box-shadow:0 0 12px rgba(79,110,247,0.5);transition:width .5s}
+#deck{position:fixed;inset:0;z-index:10}
+.slide{position:absolute;inset:0;opacity:0;transform:translateX(100%);
+  transition:opacity .5s,transform .5s;pointer-events:none;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:56px 40px 80px;overflow:hidden;text-align:center}
+.slide.active{opacity:1;transform:translateX(0);pointer-events:auto}
+.slide.active .a1{animation:fadeUp .6s .1s both}
+.slide.active .a2{animation:fadeUp .6s .2s both}
+.slide.active .a3{animation:fadeUp .6s .3s both}
+.slide.active .a4{animation:fadeUp .6s .4s both}
+.slide.active .a5{animation:fadeUp .6s .5s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+#counter{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:200;
+  font-size:13px;color:var(--muted);background:rgba(5,5,7,0.85);padding:6px 14px;
+  border-radius:20px;border:1px solid var(--border)}
+#arrow-left,#arrow-right{position:fixed;bottom:20px;z-index:200;width:44px;height:44px;
+  border-radius:50%;border:1px solid var(--border);background:rgba(5,5,7,0.85);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+#arrow-left{left:20px}#arrow-right{right:20px}
+#arrow-left:hover,#arrow-right:hover{border-color:var(--blue);color:var(--blue)}
+#fullscreen-btn{position:fixed;top:14px;right:14px;z-index:200;width:36px;height:36px;
+  border-radius:10px;border:1px solid var(--border);background:rgba(5,5,7,0.85);
+  cursor:pointer;color:var(--muted)}
+.overline{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:14px}
+.headline{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+.grad{background:linear-gradient(135deg,var(--blue),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{font-size:clamp(.95rem,2vw,1.15rem);color:var(--muted);max-width:560px;line-height:1.55;margin-bottom:16px}
+.phone{width:min(100%,300px);border-radius:28px;overflow:hidden;
+  border:3px solid rgba(79,110,247,0.25);box-shadow:0 24px 60px rgba(79,110,247,0.12);
+  background:#0d0d12;text-align:left;color:var(--text);position:relative}
+.phone-bar{height:28px;background:linear-gradient(90deg,#12121a,#0d0d12);
+  display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--blue)}
+.phone-body{padding:14px;position:relative;min-height:300px}
+.big-num{font-size:4rem;font-weight:800;color:var(--blue);text-align:center;line-height:1}
+.app-chip{display:inline-block;padding:5px 10px;border-radius:10px;font-size:10px;font-weight:700;background:rgba(79,110,247,.12);color:var(--blue);margin:3px;border:1px solid rgba(79,110,247,.2)}
+.dna-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+.dna-pill{padding:8px 14px;border-radius:99px;font-size:11px;font-weight:700;background:rgba(123,94,167,.15);color:var(--purple);border:1px solid rgba(123,94,167,.25)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:680px;width:100%}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:720px;width:100%}
+.card{background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:18px;text-align:left}
+.card h3{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--blue)}
+.card p{font-size:12px;color:var(--muted);line-height:1.45}
+.pain{display:flex;flex-direction:column;gap:10px;max-width:580px;width:100%}
+.pain-item{display:flex;gap:12px;padding:14px;background:var(--glass);
+  border:1px solid var(--border);border-radius:14px;text-align:left;font-size:13px;color:var(--muted)}
+.pain-item span{font-size:20px;flex-shrink:0}
+.stat-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.stat{background:rgba(79,110,247,0.08);border:1px solid var(--border);border-radius:14px;
+  padding:18px 22px;min-width:100px}
+.stat .n{font-size:1.8rem;font-weight:900;color:var(--blue)}
+.stat .l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.split{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:900px;width:100%}
+.link-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:14px;
+  font-size:15px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+.link-blue{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;
+  box-shadow:0 8px 28px rgba(79,110,247,0.35)}
+.glow-ring{position:absolute;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,110,247,0.08) 0%,transparent 70%);pointer-events:none}
+.s1-title{font-size:clamp(3rem,7vw,5rem);font-weight:900;letter-spacing:-.04em;
+  background:linear-gradient(135deg,var(--blue),var(--purple),var(--blue));
+  background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}.split{flex-direction:column}}
+</style>
+</head>
+<body>
+<canvas id="orb-canvas"></canvas>
+<div id="progress"></div>
+<button id="fullscreen-btn" title="Fullscreen" onclick="document.documentElement.requestFullscreen?.()">⛶</button>
+<div id="counter">1 / 10</div>
+<button id="arrow-left" onclick="prev()">←</button>
+<button id="arrow-right" onclick="next()">→</button>
+<div id="deck">
+
+<div class="slide active" id="s1" style="background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(79,110,247,0.1) 0%,transparent 70%)">
+  <div class="glow-ring"></div>
+  <div class="overline a1">2026 · Apple Ecosystem Studio</div>
+  <div class="s1-title a2">AuraCap ◎</div>
+  <div class="sub a3">Every device perfected — offline, private, 16 modules</div>
+  <div class="sub a4" style="font-size:13px">Dashboard · DNA · Import · Designer · Wallpapers · Widgets</div>
+  <div class="a5" style="font-size:13px;color:rgba(79,110,247,0.6);margin-top:20px">Press → to begin</div>
+</div>
+
+<div class="slide" id="s2">
+  <div class="overline a1">Why We Built This</div>
+  <div class="headline a2">The <span class="grad">Problem</span></div>
+  <div class="pain a3">
+    <div class="pain-item"><span>📱</span><div><strong style="color:#fff">Scattered ecosystem</strong><br>200 apps across devices — no unified DNA view.</div></div>
+    <div class="pain-item"><span>📋</span><div><strong style="color:#fff">Import hell</strong><br>Getting your real app list into a planner is manual.</div></div>
+    <div class="pain-item"><span>🖼️</span><div><strong style="color:#fff">Design fragmentation</strong><br>Wallpapers, widgets, lockscreens designed separately.</div></div>
+    <div class="pain-item"><span>☁️</span><div><strong style="color:#fff">Cloud planners</strong><br>Third-party tools want your app list on their servers.</div></div>
+  </div>
+</div>
+
+<div class="slide" id="s3">
+  <div class="overline a1">Our Answer</div>
+  <div class="headline a2">The <span class="grad">Solution</span></div>
+  <div class="sub a3">A blue-purple studio that treats your Apple ecosystem like a product — not a folder.</div>
+  <div class="stat-row a4">
+    <div class="stat"><div class="n">16</div><div class="l">Modules</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Devices</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Offline</div></div>
+    <div class="stat"><div class="n">PWA</div><div class="l">Install</div></div>
+  </div>
+</div>
+
+<div class="slide" id="s4">
+  <div class="overline a1">Dashboard</div>
+  <div class="headline a2"><span class="grad">Control Center</span></div>
+  <div class="split a3">
+    <div class="phone">
+      <div class="phone-bar">◎ Dashboard</div>
+      <div class="phone-body">
+        <div class="big-num a4">87</div>
+        <div style="text-align:center;font-size:11px;font-weight:700;color:var(--muted)">Aura Score</div>
+        <div style="text-align:center;margin-top:12px"><span class="app-chip">Notion</span><span class="app-chip">Slack</span><span class="app-chip">Arc</span></div>
+        <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:10px">iPhone · iPad · Mac</div>
+      </div>
+    </div>
+    <div style="text-align:left;max-width:280px">
+      <div class="card a4" style="margin-bottom:10px"><h3>Aura Score</h3><p>Holistic ecosystem health from your real app wardrobe.</p></div>
+      <div class="card a5"><h3>Device previews</h3><p>iPhone, iPad, Mac layouts side by side.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s5">
+  <div class="overline a1">Digital DNA</div>
+  <div class="headline a2">Know your <span class="grad">app personality</span></div>
+  <div class="dna-row a3">
+    <span class="dna-pill">Productivity 34%</span>
+    <span class="dna-pill">Social 22%</span>
+    <span class="dna-pill">Finance 12%</span>
+    <span class="dna-pill">Creative 18%</span>
+  </div>
+  <div class="sub a4">Rules-based Smart Assistant — no external LLM, honest marketing</div>
+</div>
+
+<div class="slide" id="s6">
+  <div class="overline a1">Import</div>
+  <div class="headline a2">Your apps. <span class="grad">Locally.</span></div>
+  <div class="grid2 a3">
+    <div class="card"><h3>📲 iOS Shortcuts</h3><p>Get All Apps → Get Name → Combine → Copy</p></div>
+    <div class="card"><h3>💻 Mac Terminal</h3><p>ls /Applications — paste into Import</p></div>
+    <div class="card"><h3>📄 Paste .txt</h3><p>Drop any plain-text app list</p></div>
+    <div class="card"><h3>📚 App Library</h3><p>Browse 1000+ apps manually</p></div>
+  </div>
+</div>
+
+<div class="slide" id="s7">
+  <div class="overline a1">Design Studio</div>
+  <div class="headline a2">Wallpapers & <span class="grad">Widgets</span></div>
+  <div class="grid3 a3">
+    <div class="card"><h3>42+ Wallpapers</h3><p>Curated collection with categories</p></div>
+    <div class="card"><h3>Lockscreen Builder</h3><p>Compose lock screens visually</p></div>
+    <div class="card"><h3>Widget Lab</h3><p>Experiment with widget layouts</p></div>
+  </div>
+  <div class="sub a4" style="margin-top:14px">AI Designer · Smart Organizer · 12 Shortcuts · Digital Cleanse</div>
+</div>
+
+<div class="slide" id="s8">
+  <div class="overline a1">More modules</div>
+  <div class="headline a2">Complete <span class="grad">ecosystem OS</span></div>
+  <div class="grid2 a3">
+    <div class="card"><h3>Daily Routine</h3><p>Morning and evening app flows</p></div>
+    <div class="card"><h3>Profiles</h3><p>Work, personal, travel setups</p></div>
+    <div class="card"><h3>Version History</h3><p>Track layout changes over time</p></div>
+    <div class="card"><h3>⌘K Palette</h3><p>Command palette for power users</p></div>
+  </div>
+</div>
+
+<div class="slide" id="s9">
+  <div class="overline a1">Privacy</div>
+  <div class="headline a2">Device <span class="grad">Sovereignty</span></div>
+  <div class="grid2 a3">
+    <div class="card"><h3>📴 Offline PWA</h3><p>Works after first load — no mandatory sync.</p></div>
+    <div class="card"><h3>🔐 IndexedDB</h3><p>App lists and layouts stay on your device.</p></div>
+    <div class="card"><h3>🤖 Smart Assistant</h3><p>Rules-based — not cloud AI.</p></div>
+    <div class="card"><h3>📋 JSON backup</h3><p>Export/import full state locally.</p></div>
+  </div>
+</div>
+
+<div class="slide" id="s10">
+  <div class="overline a1">Get Started</div>
+  <div class="headline a2">Your ecosystem <span class="grad">awaits</span></div>
+  <div class="sub a3">Demo mode with sample wardrobe · import guide built in · install to home screen</div>
+  <div class="a4" style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a class="link-btn link-blue" href="https://shamikhahmed.github.io/AuraCap/" target="_blank" rel="noopener">◎ Open AuraCap</a>
+    <a class="link-btn" style="background:rgba(255,255,255,.06);border:1px solid var(--border);color:#fff" href="pitch.html">Pitch deck</a>
+    <a class="link-btn" style="background:rgba(255,255,255,.06);border:1px solid var(--border);color:#fff" href="landing.html">Landing</a>
+  </div>
+  <div class="sub a5" style="margin-top:28px;font-size:12px">© 2026 Shamikh Ahmed · Cap portfolio</div>
+</div>
+
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+let idx=0;
+const total=slides.length;
+const progress=document.getElementById('progress');
+const counter=document.getElementById('counter');
+function show(i){
+  idx=Math.max(0,Math.min(total-1,i));
+  slides.forEach((s,j)=>s.classList.toggle('active',j===idx));
+  progress.style.width=((idx+1)/total*100)+'%';
+  counter.textContent=(idx+1)+' / '+total;
+}
+function next(){show(idx+1)}
+function prev(){show(idx-1)}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')next();
+  if(e.key==='ArrowLeft'||e.key==='PageUp')prev();
+});
+let tx=0;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>50){if(dx>0)next();else prev()}},{passive:true});
+const c=document.getElementById('orb-canvas'),ctx=c.getContext('2d');
+function resize(){c.width=innerWidth;c.height=innerHeight}
+resize();addEventListener('resize',resize);
+(function draw(){
+  ctx.clearRect(0,0,c.width,c.height);
+  const cx=c.width/2,cy=c.height/2,r=Math.min(c.width,c.height)*0.35;
+  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle='rgba(79,110,247,0.08)';ctx.lineWidth=2;ctx.stroke();
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>

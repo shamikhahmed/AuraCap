@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AuraCap — Pitch Deck</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#4f6ef7;--purple:#7b5ea7;--cyan:#6ee7f7;
+  --muted:rgba(232,230,240,.55);--dim:rgba(232,230,240,.25);font-size:16px}
+html{scroll-behavior:smooth}
+body{font-family:Inter,-apple-system,sans-serif;background:#050507;color:#e8e6f0;overflow-x:hidden}
+.slide{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:72px 40px;position:relative;text-align:center;overflow:hidden}
+@media(max-width:600px){.slide{padding:64px 22px}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .8s,transform .8s}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .8s,transform .8s}
+.reveal-right.visible{opacity:1;transform:none}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.35s}.delay-4{transition-delay:.5s}
+#nav-dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:8px}
+.nav-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s}
+.nav-dot.active{background:var(--blue);transform:scale(1.4)}
+#export-btn{position:fixed;top:16px;right:16px;z-index:100;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;padding:8px 16px;border-radius:99px;font-size:12px;cursor:pointer;font-family:inherit}
+h1{font-size:clamp(3rem,12vw,7rem);font-weight:900;letter-spacing:-.05em;line-height:1}
+h2{font-size:clamp(1.6rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1rem}
+.sub{color:var(--muted);font-size:clamp(1rem,2.2vw,1.2rem);max-width:580px;line-height:1.7;margin:0 auto 2rem}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.badge{background:rgba(79,110,247,.1);border:1px solid rgba(79,110,247,.3);border-radius:99px;padding:10px 18px;font-size:.85rem;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;width:100%;margin-top:2rem;text-align:left}
+@media(max-width:600px){.cards{grid-template-columns:1fr}}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(79,110,247,.15);border-radius:18px;padding:20px;transition:border-color .3s,transform .3s}
+.card:hover{border-color:rgba(79,110,247,.4);transform:translateY(-4px)}
+.card h3{font-size:1rem;margin-bottom:.4rem;color:var(--blue)}
+.card p{font-size:.85rem;color:var(--muted);line-height:1.55}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:2rem}
+.btn{padding:16px 28px;border-radius:99px;font-weight:700;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+.btn-p{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;box-shadow:0 8px 28px rgba(79,110,247,0.35)}
+.btn-s{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:#fff}
+.section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:2rem}
+.phone{width:min(100%,280px);border-radius:24px;overflow:hidden;border:2px solid rgba(79,110,247,.3);
+  box-shadow:0 20px 50px rgba(79,110,247,0.15);background:#0d0d12;text-align:left;color:#e8e6f0;margin:0 auto}
+.phone-h{padding:10px;background:linear-gradient(90deg,#12121a,#0d0d12);font-size:11px;font-weight:800;color:var(--blue);text-align:center}
+.phone-b{padding:14px;position:relative;min-height:260px}
+.big-num{font-size:3.5rem;font-weight:800;color:var(--blue);text-align:center;line-height:1}
+.app-chip{display:inline-block;padding:6px 10px;border-radius:10px;font-size:9px;font-weight:700;background:rgba(79,110,247,.12);color:var(--blue);margin:3px;border:1px solid rgba(79,110,247,.2)}
+.score-ring{width:80px;height:80px;border-radius:50%;border:4px solid var(--blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--blue);margin:10px auto}
+.steps{display:flex;flex-wrap:wrap;gap:0;justify-content:center;max-width:800px}
+.step{flex:1;min-width:180px;max-width:220px;padding:24px 16px;text-align:center}
+.step-num{font-size:3rem;font-weight:900;color:var(--blue);opacity:.3;line-height:1}
+.step h3{font-size:1rem;font-weight:700;margin:.5rem 0}
+.step p{font-size:.85rem;color:var(--muted);line-height:1.5}
+.persona-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:720px;width:100%}
+@media(max-width:600px){.persona-grid{grid-template-columns:1fr}}
+#s1{background:#050507}
+#s1-grad{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(79,110,247,.15) 0%,transparent 70%)}
+.s1-text{font-size:clamp(3.5rem,12vw,8rem);font-weight:900;letter-spacing:-.05em;
+  background:linear-gradient(135deg,#fff 30%,var(--blue) 70%,var(--purple) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.trust{max-width:560px;margin:2rem auto 0;padding:20px 24px;border-radius:20px;
+  background:rgba(79,110,247,.06);border:1px solid rgba(79,110,247,.2);font-weight:600;line-height:1.6}
+@media print{#nav-dots,#export-btn{display:none!important}.slide{page-break-after:always;min-height:100vh}.reveal,.reveal-left,.reveal-right{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<div id="nav-dots"></div>
+<button id="export-btn" onclick="window.print()">⬇ Export PDF</button>
+
+<section class="slide" id="s1">
+  <div id="s1-grad"></div>
+  <div style="position:relative;z-index:2">
+    <div class="reveal" style="font-size:clamp(4rem,10vw,6rem)">◎</div>
+    <h1 class="s1-text reveal delay-1">AuraCap</h1>
+    <p class="sub reveal delay-2">Apple Ecosystem Studio — every device perfected</p>
+    <p class="reveal delay-3" style="color:var(--dim);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase">Scroll to explore ↓</p>
+  </div>
+</section>
+
+<section class="slide" id="s2">
+  <div style="max-width:800px;width:100%">
+    <h2 class="reveal">Apple setups are <span style="color:var(--blue)">chaotic.</span></h2>
+    <p class="sub reveal delay-1">200 apps across iPhone, iPad, Mac — no single view of your digital wardrobe.</p>
+    <div class="cards">
+      <div class="card reveal-left delay-1"><h3>📱 Scattered apps</h3><p>No DNA view of productivity vs distraction patterns.</p></div>
+      <div class="card reveal-right delay-2"><h3>🖼️ Wallpaper fatigue</h3><p>Lock screens and widgets designed separately, never unified.</p></div>
+      <div class="card reveal-left delay-3"><h3>📋 Import pain</h3><p>Getting your real app list into a planner is manual hell.</p></div>
+      <div class="card reveal-right delay-4"><h3>☁️ Cloud planners</h3><p>Third-party tools want your app list on their servers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="s3">
+  <div style="max-width:700px;width:100%">
+    <h2 class="reveal section-title" id="s3-cycler">Screenshots aren't strategy.</h2>
+    <p class="sub reveal delay-2" style="color:var(--blue);font-weight:700">Power users deserve an ecosystem OS — not another mood board.</p>
+  </div>
+</section>
+
+<section class="slide" id="s4">
+  <div style="max-width:720px;width:100%">
+    <div class="reveal" style="font-size:clamp(1.2rem,3vw,1.8rem);font-weight:700;line-height:1.5;margin-bottom:.75rem">What if your apps had <span style="color:var(--blue)">Digital DNA</span>?</div>
+    <div class="reveal delay-2" style="font-size:clamp(1.2rem,3vw,1.8rem);font-weight:700;line-height:1.5;margin-bottom:.75rem">What if iPhone, iPad, and Mac lived in <span style="color:var(--purple)">one studio</span>?</div>
+    <div class="reveal delay-3" style="font-size:clamp(1.2rem,3vw,1.8rem);font-weight:700;line-height:1.5">What if everything stayed <span style="color:var(--cyan)">on your device</span>?</div>
+  </div>
+</section>
+
+<section class="slide" id="s5">
+  <div style="max-width:800px;width:100%">
+    <div class="reveal" style="font-size:4rem;margin-bottom:.5rem">◎</div>
+    <h1 class="reveal delay-1" style="font-size:clamp(3rem,10vw,6rem)">AuraCap</h1>
+    <p class="sub reveal delay-2">16 modules · Offline-first · Smart Assistant · Zero servers</p>
+    <div class="badges reveal delay-3">
+      <span class="badge">✨ PWA</span><span class="badge">🔒 Private</span><span class="badge">📴 Offline</span><span class="badge">⌘K Palette</span>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="s6">
+  <div style="max-width:900px;width:100%">
+    <h2 class="reveal section-title">Three steps to clarity.</h2>
+    <div class="steps">
+      <div class="step reveal-left delay-1"><div class="step-num">01</div><div style="font-size:1.8rem">📲</div><h3>Import</h3><p>Shortcuts · Terminal · paste · App Library</p></div>
+      <div class="step reveal delay-2"><div class="step-num">02</div><div style="font-size:1.8rem">🧬</div><h3>Analyze</h3><p>Digital DNA · Aura Score · smart folders</p></div>
+      <div class="step reveal-right delay-3"><div class="step-num">03</div><div style="font-size:1.8rem">🎨</div><h3>Design</h3><p>Wallpapers · widgets · lockscreen · routines</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="s7">
+  <div style="max-width:900px;width:100%">
+    <h2 class="reveal section-title">Control Center at a glance.</h2>
+    <div class="phone reveal delay-1" style="margin-bottom:1.5rem">
+      <div class="phone-h">◎ Dashboard</div>
+      <div class="phone-b">
+        <div class="score-ring">87</div>
+        <div style="text-align:center;font-size:10px;font-weight:700;color:var(--muted)">Aura Score</div>
+        <div style="margin-top:12px;text-align:center"><span class="app-chip">Notion</span><span class="app-chip">Slack</span><span class="app-chip">Arc</span><span class="app-chip">+42</span></div>
+        <div style="font-size:9px;color:var(--muted);text-align:center;margin-top:10px">iPhone · iPad · Mac previews</div>
+      </div>
+    </div>
+    <p class="sub reveal delay-2">Aura Score · device previews · command palette · demo wardrobe</p>
+  </div>
+</section>
+
+<section class="slide" id="s8">
+  <div style="max-width:900px;width:100%">
+    <h2 class="reveal section-title">16 modules. One studio.</h2>
+    <div class="cards">
+      <div class="card reveal delay-1"><h3>🧬 Digital DNA</h3><p>Rules-based app personality analysis — productivity, social, finance.</p></div>
+      <div class="card reveal delay-2"><h3>📂 Smart Organizer</h3><p>Auto-folders from your real app list — no cloud sync.</p></div>
+      <div class="card reveal delay-3"><h3>🎨 AI Designer</h3><p>Smart Assistant layout recommendations — honest, local logic.</p></div>
+      <div class="card reveal delay-4"><h3>🖼️ Wallpapers + Widgets</h3><p>42+ wallpapers, lockscreen builder, widget lab, 12 shortcuts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="s9">
+  <div style="max-width:800px;width:100%">
+    <h2 class="reveal section-title">Import that actually works.</h2>
+    <div class="badges reveal delay-1">
+      <span class="badge">iOS Shortcuts</span><span class="badge">Mac Terminal</span><span class="badge">Paste .txt</span><span class="badge">App Library 1000+</span>
+    </div>
+    <div class="trust reveal delay-2">Full import guide built in — iPhone Shortcuts method, Mac ls /Applications, demo mode for instant try.</div>
+  </div>
+</section>
+
+<section class="slide" id="s10">
+  <div style="max-width:800px;width:100%">
+    <h2 class="reveal section-title">Built for Apple power users.</h2>
+    <div class="persona-grid">
+      <div class="card reveal-left delay-1"><h3>📱 Multi-device owners</h3><p>iPhone + iPad + Mac — unified ecosystem view.</p></div>
+      <div class="card reveal-right delay-2"><h3>🎨 Customization fans</h3><p>Wallpapers, widgets, lockscreens — designed together.</p></div>
+      <div class="card reveal-left delay-3"><h3>🔒 Privacy-first</h3><p>App list never leaves your device.</p></div>
+      <div class="card reveal-right delay-4"><h3>⚡ Productivity nerds</h3><p>Digital Cleanse, Daily Routine, Profiles.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="s11">
+  <div style="max-width:700px;width:100%">
+    <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));
+      display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;margin:0 auto 1.5rem;
+      box-shadow:0 0 40px rgba(79,110,247,.3)" class="reveal">SA</div>
+    <h2 class="reveal delay-1">Shamikh Ahmed</h2>
+    <p class="sub reveal delay-2" style="font-style:italic;border-left:3px solid var(--blue);padding-left:16px;text-align:left">
+      "I built AuraCap because Apple users deserve an ecosystem studio that respects their app list — not another cloud planner."
+    </p>
+  </div>
+</section>
+
+<section class="slide" id="s12">
+  <div style="max-width:800px;width:100%;position:relative">
+    <div style="position:absolute;inset:-72px -40px;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(79,110,247,.12) 0%,transparent 70%);pointer-events:none"></div>
+    <h1 class="reveal" style="font-size:clamp(2.5rem,8vw,5rem);position:relative">Your ecosystem awaits ◎</h1>
+    <p class="sub reveal delay-1" style="position:relative">Private. Offline. Yours.</p>
+    <div class="btn-row reveal delay-2" style="position:relative">
+      <a class="btn btn-p" href="https://shamikhahmed.github.io/AuraCap/" target="_blank" rel="noopener">◎ Open AuraCap</a>
+      <a class="btn btn-s" href="presentation.html">📊 Presentation</a>
+      <a class="btn btn-s" href="landing.html">🌐 Landing</a>
+      <a class="btn btn-s" href="privacy.html">🔒 Privacy</a>
+    </div>
+    <p class="reveal delay-3" style="margin-top:2.5rem;font-size:.75rem;color:var(--dim);position:relative">© 2026 Shamikh Ahmed · shamikhahmed.github.io/AuraCap</p>
+  </div>
+</section>
+
+<script>
+const slides=document.querySelectorAll('.slide'),navDots=document.getElementById('nav-dots');
+let currentSlide=0;
+slides.forEach((_,i)=>{const d=document.createElement('button');d.className='nav-dot'+(i===0?' active':'');d.onclick=()=>slides[i].scrollIntoView({behavior:'smooth'});navDots.appendChild(d)});
+function updateDots(){let idx=0;slides.forEach((s,i)=>{if(Math.abs(s.getBoundingClientRect().top)<innerHeight/2)idx=i});currentSlide=idx;navDots.querySelectorAll('.nav-dot').forEach((d,i)=>d.classList.toggle('active',i===idx))}
+addEventListener('scroll',updateDots,{passive:true});
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();if(currentSlide<slides.length-1)slides[currentSlide+1].scrollIntoView({behavior:'smooth'})}
+  if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();if(currentSlide>0)slides[currentSlide-1].scrollIntoView({behavior:'smooth'})}
+});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.15});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
+const cyclerTexts=['Screenshots aren\'t strategy.','App lists shouldn\'t live in the cloud.','Widgets deserve a studio.','Power users need an ecosystem OS.'];
+let ci=0,cyclerOn=false;
+const secObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.target.id==='s3'&&!cyclerOn){cyclerOn=true;setInterval(()=>{const el=document.getElementById('s3-cycler');if(!el)return;el.style.opacity='0';setTimeout(()=>{ci=(ci+1)%cyclerTexts.length;el.textContent=cyclerTexts[ci];el.style.opacity='1'},400)},2500)}}),{threshold:.3});
+slides.forEach(s=>secObs.observe(s));
+setTimeout(()=>document.querySelectorAll('#s1 .reveal').forEach(el=>el.classList.add('visible')),100);
+</script>
+</body>
+</html>

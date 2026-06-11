@@ -4,6 +4,8 @@ Offline-first PWA for organizing iPhone, iPad, and Mac app setups. Ported from t
 
 **Live demo:** [https://shamikhahmed.github.io/AuraCap/](https://shamikhahmed.github.io/AuraCap/)
 
+**Marketing:** [Landing](https://shamikhahmed.github.io/AuraCap/landing.html) · [Pitch](https://shamikhahmed.github.io/AuraCap/pitch.html) · [Presentation](https://shamikhahmed.github.io/AuraCap/presentation.html) · [Privacy](https://shamikhahmed.github.io/AuraCap/privacy.html)
+
 ## Features
 
 - **16 modules**: Dashboard, Digital DNA, Import, App Library, Smart Organizer, AI Designer, Wallpapers (42+), Lockscreen Builder, Widget Lab, Shortcuts (12), Digital Cleanse, Daily Routine, Profiles, Version History, Settings
@@ -37,6 +39,7 @@ npm install
 npm run dev        # http://localhost:5173/AuraCap/
 npm run build
 npm run preview    # production preview
+npm run generate-icons
 npm run test:e2e   # Playwright tests
 ```
 
