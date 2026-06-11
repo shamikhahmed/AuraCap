@@ -1,0 +1,6 @@
+// Auto-generated
+import type { Widget } from '@/types';
+
+export const WGTS: Widget[] = [
+{n:'Calendar',e:'📅',d:'Large - Today view'},{n:'Focus Timer',e:'⏱',d:'Medium - Pomodoro'},{n:'Weather',e:'🌤',d:'Small - Current city'},{n:'Battery',e:'🔋',d:'Small - Percentage'},{n:'Steps',e:'👟',d:'Small - Daily steps'},{n:'Activity Rings',e:'🏃',d:'Medium - Exercise'},{n:'Now Playing',e:'🎵',d:'Medium - Music player'},{n:'Stocks',e:'📈',d:'Large - Portfolio'},{n:'Notes',e:'📝',d:'Large - Sticky note'},{n:'Photos',e:'🖼',d:'Large - Memory widget'},{n:'Reminders',e:'✅',d:'Medium - Today list'},{n:'Maps',e:'🗺',d:'Medium - Nearby places'},{n:'Shortcuts',e:'⚡',d:'Small - Quick action'},{n:'Sleep',e:'💤',d:'Small - Last night'},{n:'Water',e:'💧',d:'Small - Hydration'},{n:'Daily Quote',e:'✨',d:'Large - Inspiration'},{n:'Prayer Times',e:'🕌',d:'Medium - Salah schedule'},{n:'Crypto Ticker',e:'₿',d:'Medium - Live prices'},{n:'Heart Rate',e:'❤',d:'Small - BPM'},{n:'Screen Time',e:'📱',d:'Medium - Today usage'},{n:'Countdown',e:'📅',d:'Small - Event timer'},{n:'Habit Tracker',e:'✅',d:'Medium - Streaks'},{n:'Air Quality',e:'🌬',d:'Small - AQI index'},{n:'Sunrise/Sunset',e:'🌅',d:'Small - Times today'},{n:'TradingView',e:'📊',d:'Large - Chart widget'},{n:'Quran Verse',e:'📖',d:'Medium - Daily ayah'},
+];
