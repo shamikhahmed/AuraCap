@@ -1,6 +1,7 @@
 import { LS_PRESETS, LSBGS } from '@/data';
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { exportLockscreenPng } from '@/lib/pngExport';
 
 const WIDGET_PAIRS = [
   ['🏃', 'Activity', '🌤', 'Weather'],
@@ -68,6 +69,20 @@ export function Lockscreen() {
             </div>
           </div>
           <button type="button" onClick={() => toast('Lockscreen saved! ✨')} className="btn-primary btn-sm">Save Design</button>
+          <button
+            type="button"
+            onClick={async () => {
+              try {
+                await exportLockscreenPng(ls);
+                toast('Lockscreen PNG downloaded!');
+              } catch {
+                toast('Export failed — try again');
+              }
+            }}
+            className="btn-ghost btn-sm"
+          >
+            Download PNG
+          </button>
         </div>
 
         <div className="flex flex-col gap-3">

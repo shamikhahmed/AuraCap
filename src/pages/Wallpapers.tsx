@@ -4,6 +4,7 @@ import { Heart } from 'lucide-react';
 import { WPS } from '@/data';
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { exportWallpaperPng } from '@/lib/pngExport';
 import type { Wallpaper } from '@/types';
 
 const WP_CATS = ['all', 'oled', 'cyber', 'minimal', 'luxury', 'nature', 'soft', 'retro', 'islamic', 'crypto', 'photo'] as const;
@@ -41,10 +42,24 @@ export function Wallpapers() {
           <p className="section-label mb-1">SELECTED</p>
           <p className="text-base font-bold font-display">{selected.n}</p>
           <p className="text-[11px] text-[var(--mu)]">{selected.t}</p>
-          <div className="flex gap-2 mt-2.5">
+          <div className="flex gap-2 mt-2.5 flex-wrap">
             <button type="button" onClick={() => toast('Wallpaper set! ✨')} className="btn-primary btn-sm">Apply</button>
             <button type="button" onClick={() => toast('Saved ♥')} className="btn-ghost btn-sm"><Heart size={12} /> Save</button>
             <button type="button" onClick={() => { navigate('/lockscreen'); toast('Set as lockscreen background'); }} className="btn-ghost btn-sm">Lockscreen</button>
+            <button
+              type="button"
+              onClick={async () => {
+                try {
+                  await exportWallpaperPng(selected.bg, selected.e, selected.n);
+                  toast('Wallpaper PNG downloaded!');
+                } catch {
+                  toast('Export failed — try again');
+                }
+              }}
+              className="btn-ghost btn-sm"
+            >
+              Download PNG
+            </button>
           </div>
         </div>
       </GlassCard>

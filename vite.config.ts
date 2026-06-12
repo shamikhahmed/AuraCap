@@ -13,7 +13,7 @@ export default defineConfig({
       includeAssets: ['icon-192.png', 'icon-512.png', 'favicon.svg'],
       manifest: {
         name: 'AuraCap v5 — Apple Ecosystem Studio',
-        short_name: 'AuraCap',
+        short_name: 'AuraCap v5',
         description: 'Offline-first PWA for organizing iPhone/iPad/Mac app setups',
         theme_color: '#050507',
         background_color: '#050507',

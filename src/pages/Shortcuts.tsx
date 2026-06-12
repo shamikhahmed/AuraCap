@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import { Copy, Download } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
+import { copyShortcutsGuide, downloadShortcutsGuide } from '@/lib/pngExport';
 
 const SHORTCUTS = [
   { emoji: '📋', title: 'List All My Apps', desc: 'Copies every installed app name to clipboard in one tap — iPhone & iPad.', steps: 'Get All Apps → Get Name\nCombine (New Lines) → Copy', cta: 'Setup in Import', to: '/import' },
@@ -21,7 +23,31 @@ export function Shortcuts() {
 
   return (
     <div>
-      <div className="mb-6"><h1 className="page-title">iOS Shortcuts Guide</h1><p className="page-sub">12 free automations — no third-party apps, built into iOS/iPadOS/macOS</p></div>
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div>
+          <h1 className="page-title">iOS Shortcuts Guide</h1>
+          <p className="page-sub">12 free automations — no third-party apps, built into iOS/iPadOS/macOS</p>
+        </div>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            className="btn-ghost btn-sm"
+            onClick={async () => {
+              const ok = await copyShortcutsGuide();
+              toast(ok ? 'Install guide copied!' : 'Copy failed — use Download instead');
+            }}
+          >
+            <Copy size={12} /> Copy guide
+          </button>
+          <button
+            type="button"
+            className="btn-teal btn-sm"
+            onClick={() => { downloadShortcutsGuide(); toast('Guide downloaded'); }}
+          >
+            <Download size={12} /> Download .txt
+          </button>
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
         {SHORTCUTS.map((s) => (
           <div key={s.title} className="shortcut-card">
