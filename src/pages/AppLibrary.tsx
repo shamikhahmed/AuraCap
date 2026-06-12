@@ -73,7 +73,7 @@ export function AppLibrary() {
       <GlassCard className="mb-2.5">
         <div className="max-h-[210px] overflow-y-auto flex flex-wrap gap-0.5">
           {pool.length ? pool.map((a) => (
-            <AppChip key={a.n} label={`${a.e} ${a.n}`} active={state.apps.includes(a.n)} onClick={() => toggleApp(a.n)} />
+            <AppChip key={a.n} label={a.n} emoji={a.e} appName={a.n} active={state.apps.includes(a.n)} onClick={() => toggleApp(a.n)} />
           )) : <span className="text-xs text-[var(--mu)] p-2">No apps found.</span>}
         </div>
       </GlassCard>
@@ -83,7 +83,7 @@ export function AppLibrary() {
         <div className="flex flex-wrap gap-0.5 min-h-[38px]">
           {state.apps.length ? state.apps.map((nm) => {
             const a = APPS.find((x) => x.n === nm) ?? { e: '📱', n: nm };
-            return <AppChip key={nm} label={`${a.e} ${nm}`} active onRemove={() => removeApp(nm)} />;
+            return <AppChip key={nm} label={nm} emoji={a.e} appName={nm} active onRemove={() => removeApp(nm)} />;
           }) : <span className="text-xs text-[var(--mu)]">Select apps above…</span>}
         </div>
       </GlassCard>

@@ -1,15 +1,18 @@
 import { cn } from '@/lib/utils';
+import { AppIcon } from '@/components/ui/AppIcon';
 
 interface AppChipProps {
   label: string;
   emoji?: string;
+  appName?: string;
   active?: boolean;
   onClick?: () => void;
   onRemove?: () => void;
   className?: string;
 }
 
-export function AppChip({ label, emoji, active, onClick, onRemove, className }: AppChipProps) {
+export function AppChip({ label, emoji, appName, active, onClick, onRemove, className }: AppChipProps) {
+  const displayName = appName ?? label.replace(/^.\s/, '');
   return (
     <button
       type="button"
@@ -22,7 +25,7 @@ export function AppChip({ label, emoji, active, onClick, onRemove, className }: 
         className,
       )}
     >
-      {emoji && <span>{emoji}</span>}
+      {emoji && <AppIcon name={displayName} emoji={emoji} size={14} />}
       {label}
       {onRemove && (
         <span

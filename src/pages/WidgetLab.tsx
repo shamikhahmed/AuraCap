@@ -1,7 +1,15 @@
 import { WGTS, WIDGET_PRESETS } from '@/data';
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { IPadPreview } from '@/components/device/IPadPreview';
+import { IPAD_MODELS } from '@/engines/designer';
 import type { DeviceType, Widget } from '@/types';
+
+const IPAD_WIDGET_DIMS: Record<DeviceType, { width: number; height: number; cols: string; note: string }> = {
+  iphone: { width: 172, height: 374, cols: '2 columns', note: 'Small · Medium widgets' },
+  ipad: { width: 280, height: 210, cols: '4–6 columns', note: 'Large · Extra Large · Sidebar widgets' },
+  mac: { width: 320, height: 200, cols: 'Desktop grid', note: 'Menu bar + Notification Center widgets' },
+};
 
 const PRESET_META = [
   { id: 'minimal', emoji: '⬛', label: 'Minimalist', desc: 'Clock + Weather only' },
@@ -85,22 +93,37 @@ export function WidgetLab() {
           </GlassCard>
         </div>
         <div className="sticky top-[70px] flex flex-col items-center gap-2">
-          <p className="section-label">PREVIEW</p>
-          <div className="lockscreen-mock w-[172px] h-[374px] rounded-[36px]">
-            <div className="ls-di" />
-            <div className="absolute inset-0 bg-black pt-10 px-2 pb-2 flex flex-col gap-1.5">
-              {stack.length ? stack.map((w, i) => (
-                <div key={w.n} className={`rounded-2xl border flex items-center justify-center flex-col gap-0.5 ${i === 0 ? 'h-[108px]' : 'h-16'}`} style={{ background: `rgba(79,110,247,${0.14 - i * 0.02})`, borderColor: `rgba(79,110,247,${0.18 - i * 0.02})` }}>
-                  <span className="text-xl">{w.e}</span><span className="text-[9px] text-white/50">{w.n}</span>
-                </div>
-              )) : (
-                <>
-                  <div className="h-[108px] rounded-2xl bg-[rgba(79,110,247,0.14)] border border-[rgba(79,110,247,0.18)] flex items-center justify-center flex-col"><span className="text-xl">📅</span><span className="text-[9px] text-white/50">Calendar</span></div>
-                  <div className="grid grid-cols-2 gap-1.5"><div className="h-16 rounded-xl bg-[rgba(29,233,182,0.1)] flex items-center justify-center flex-col"><span>🌤</span><span className="text-[8px] text-white/40">Weather</span></div><div className="h-16 rounded-xl bg-[rgba(245,158,11,0.1)] flex items-center justify-center flex-col"><span>⏱</span><span className="text-[8px] text-white/40">Focus</span></div></div>
-                </>
-              )}
+          <p className="section-label">PREVIEW · {state.widgetDevice.toUpperCase()}</p>
+          {state.widgetDevice === 'ipad' ? (
+            <>
+              <IPadPreview model={state.model} />
+              <GlassCard className="w-full max-w-[280px] text-center">
+                <p className="text-[10px] text-[var(--mu)] leading-relaxed">
+                  {IPAD_MODELS.find((m) => m.value === state.model)?.label ?? state.model}
+                  <br />
+                  {IPAD_WIDGET_DIMS.ipad.cols} · {IPAD_WIDGET_DIMS.ipad.note}
+                  <br />
+                  Preview frame: {IPAD_WIDGET_DIMS.ipad.width}×{IPAD_WIDGET_DIMS.ipad.height}px
+                </p>
+              </GlassCard>
+            </>
+          ) : (
+            <div className="lockscreen-mock w-[172px] h-[374px] rounded-[36px]">
+              <div className="ls-di" />
+              <div className="absolute inset-0 bg-black pt-10 px-2 pb-2 flex flex-col gap-1.5">
+                {stack.length ? stack.map((w, i) => (
+                  <div key={w.n} className={`rounded-2xl border flex items-center justify-center flex-col gap-0.5 ${i === 0 ? 'h-[108px]' : 'h-16'}`} style={{ background: `rgba(79,110,247,${0.14 - i * 0.02})`, borderColor: `rgba(79,110,247,${0.18 - i * 0.02})` }}>
+                    <span className="text-xl">{w.e}</span><span className="text-[9px] text-white/50">{w.n}</span>
+                  </div>
+                )) : (
+                  <>
+                    <div className="h-[108px] rounded-2xl bg-[rgba(79,110,247,0.14)] border border-[rgba(79,110,247,0.18)] flex items-center justify-center flex-col"><span className="text-xl">📅</span><span className="text-[9px] text-white/50">Calendar</span></div>
+                    <div className="grid grid-cols-2 gap-1.5"><div className="h-16 rounded-xl bg-[rgba(29,233,182,0.1)] flex items-center justify-center flex-col"><span>🌤</span><span className="text-[8px] text-white/40">Weather</span></div><div className="h-16 rounded-xl bg-[rgba(245,158,11,0.1)] flex items-center justify-center flex-col"><span>⏱</span><span className="text-[8px] text-white/40">Focus</span></div></div>
+                  </>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
