@@ -34,6 +34,15 @@ test.describe('AuraCap PWA', () => {
     await expect(page.getByText('Mac — Terminal Method')).toBeVisible();
   });
 
+  test('organizer page has Mac Dock guide download', async ({ page }) => {
+    await page.goto('./');
+    await enterApp(page);
+
+    await page.getByRole('link', { name: 'Smart Organizer' }).first().click();
+    await expect(page.getByRole('heading', { name: 'Smart Organizer' })).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByRole('button', { name: /Mac Dock Guide/i })).toBeVisible();
+  });
+
   test('import flow adds apps', async ({ page }) => {
     await page.goto('./');
     await enterApp(page);
