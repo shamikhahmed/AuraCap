@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { Download, FileCode, Share2, RotateCcw, Upload } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Download, FileCode, Share2, RotateCcw, Upload, Bell, Sparkles } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Modal } from '@/components/ui/Modal';
@@ -13,10 +13,69 @@ const ACCENTS = [
   ['#22d3ee', '#6366f1'],
 ];
 
+const CLEANSE_KEY = 'auracap_next_cleanse_date';
+const CLEANSE_NOTIF_KEY = 'auracap_cleanse_notif_enabled';
+
+function loadCleanseDate(): string {
+  return localStorage.getItem(CLEANSE_KEY) || '';
+}
+
+function loadCleanseNotif(): boolean {
+  return localStorage.getItem(CLEANSE_NOTIF_KEY) === '1';
+}
+
+function daysUntil(dateStr: string): number | null {
+  if (!dateStr) return null;
+  const target = new Date(dateStr + 'T09:00:00');
+  const now = new Date();
+  return Math.ceil((target.getTime() - now.getTime()) / 86400000);
+}
+
 export function Settings() {
-  const { state, setTheme, setAccent, exportTxtFile, exportJsonFile, importJsonFile, shareSetup, resetAll } = useApp();
+  const { state, setTheme, setAccent, exportTxtFile, exportJsonFile, importJsonFile, shareSetup, resetAll, toast } = useApp();
   const [resetModal, setResetModal] = useState(false);
+  const [cleanseDate, setCleanseDate] = useState(loadCleanseDate);
+  const [cleanseNotif, setCleanseNotif] = useState(loadCleanseNotif);
+  const notifiedRef = useRef(false);
   const jsonInputRef = useRef<HTMLInputElement>(null);
+
+  const cleanseDays = daysUntil(cleanseDate);
+  const cleanseDue = cleanseDays !== null && cleanseDays <= 0;
+  const cleanseSoon = cleanseDays !== null && cleanseDays > 0 && cleanseDays <= 3;
+
+  useEffect(() => {
+    if (!cleanseNotif || !cleanseDate || !cleanseDue || notifiedRef.current) return;
+    if (!('Notification' in window)) return;
+    const fire = () => {
+      if (Notification.permission === 'granted') {
+        new Notification('AuraCap — Digital Cleanse due', {
+          body: 'Time for your scheduled app audit. Open Digital Cleanse to review distractions.',
+          tag: 'auracap-cleanse',
+        });
+        notifiedRef.current = true;
+      }
+    };
+    if (Notification.permission === 'granted') fire();
+    else if (Notification.permission !== 'denied') {
+      Notification.requestPermission().then((p) => { if (p === 'granted') fire(); });
+    }
+  }, [cleanseNotif, cleanseDate, cleanseDue]);
+
+  const saveCleanse = (date: string, notif: boolean) => {
+    setCleanseDate(date);
+    setCleanseNotif(notif);
+    if (date) localStorage.setItem(CLEANSE_KEY, date);
+    else localStorage.removeItem(CLEANSE_KEY);
+    localStorage.setItem(CLEANSE_NOTIF_KEY, notif ? '1' : '0');
+    notifiedRef.current = false;
+    toast(date ? 'Cleanse reminder saved' : 'Cleanse reminder cleared');
+  };
+
+  const scheduleInDays = (n: number) => {
+    const d = new Date();
+    d.setDate(d.getDate() + n);
+    saveCleanse(d.toISOString().slice(0, 10), cleanseNotif);
+  };
 
   return (
     <div>
@@ -37,6 +96,35 @@ export function Settings() {
               <button key={c1} type="button" onClick={() => setAccent(c1, c2)} className="w-7 h-7 rounded-full border-2 border-white/20" style={{ background: `linear-gradient(135deg,${c1},${c2})` }} />
             ))}
           </div>
+        </GlassCard>
+        <GlassCard className="md:col-span-2">
+          <p className="section-label mb-3 flex items-center gap-2"><Sparkles size={14} className="text-[var(--ac2)]" /> DIGITAL CLEANSE REMINDER</p>
+          <p className="text-xs text-[var(--mu)] mb-3">Schedule your next app audit. AuraCap can notify you when it&apos;s due (browser notifications).</p>
+          <div className="flex flex-wrap gap-2 mb-3">
+            <input
+              type="date"
+              value={cleanseDate}
+              min={new Date().toISOString().slice(0, 10)}
+              onChange={(e) => saveCleanse(e.target.value, cleanseNotif)}
+              className="input-field flex-1 min-w-[140px]"
+            />
+            <button type="button" onClick={() => scheduleInDays(7)} className="btn-ghost btn-sm">+7 days</button>
+            <button type="button" onClick={() => scheduleInDays(30)} className="btn-ghost btn-sm">+30 days</button>
+          </div>
+          <label className="flex items-center gap-2 text-xs cursor-pointer mb-2">
+            <input
+              type="checkbox"
+              checked={cleanseNotif}
+              onChange={(e) => saveCleanse(cleanseDate, e.target.checked)}
+              className="accent-[var(--ac)]"
+            />
+            <Bell size={12} /> Notify when cleanse is due
+          </label>
+          {cleanseDate && (
+            <p className={`text-xs font-semibold ${cleanseDue ? 'text-[var(--red)]' : cleanseSoon ? 'text-[var(--amber)]' : 'text-[var(--ac3)]'}`}>
+              {cleanseDue ? 'Due today — open Digital Cleanse' : cleanseSoon ? `Due in ${cleanseDays} day${cleanseDays === 1 ? '' : 's'}` : cleanseDays !== null ? `Scheduled · ${cleanseDays} days away` : ''}
+            </p>
+          )}
         </GlassCard>
         <GlassCard>
           <p className="section-label mb-3">EXPORT & SYNC</p>
@@ -59,7 +147,7 @@ export function Settings() {
       </div>
 
       <GlassCard className="mt-3 text-center">
-        <p className="text-base font-extrabold font-display mb-1">AuraCap v5.0</p>
+        <p className="text-base font-extrabold font-display mb-1">AuraCap v5.0.2</p>
         <p className="text-[10px] text-[var(--mu)] font-mono">1000+ Apps · Smart DNA · iPhone + iPad + Mac · Multi-Profile · Version History · 100% Offline</p>
       </GlassCard>
 

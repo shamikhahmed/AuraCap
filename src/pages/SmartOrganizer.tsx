@@ -1,9 +1,9 @@
 import { useMemo, useState } from 'react';
-import { RotateCw } from 'lucide-react';
+import { RotateCw, Download } from 'lucide-react';
 import { APPS } from '@/data';
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { buildSmartFolders, DISTRACTION_LIST } from '@/engines/organizer';
+import { buildSmartFolders, DISTRACTION_LIST, downloadMacDockGuide } from '@/engines/organizer';
 
 export function SmartOrganizer() {
   const { state, scores, dna, toast } = useApp();
@@ -30,7 +30,10 @@ export function SmartOrganizer() {
     <div>
       <div className="flex items-start justify-between mb-6">
         <div><h1 className="page-title">Smart Organizer</h1><p className="page-sub">Smart folder builder from your actual imported apps</p></div>
-        <button type="button" onClick={build} className="btn-primary btn-sm"><RotateCw size={14} /> Auto-Build</button>
+        <div className="flex gap-2">
+          <button type="button" onClick={() => { downloadMacDockGuide(folders, state.apps); toast('Mac Dock guide downloaded'); }} className="btn-ghost btn-sm"><Download size={14} /> Mac Dock Guide</button>
+          <button type="button" onClick={build} className="btn-primary btn-sm"><RotateCw size={14} /> Auto-Build</button>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-3.5 mb-3.5">
