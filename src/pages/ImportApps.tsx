@@ -6,6 +6,7 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { AppChip } from '@/components/ui/AppChip';
 import { Modal } from '@/components/ui/Modal';
 import { ImportGuideContent } from '@/components/import/ImportGuideContent';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { SAMPLE_LIST } from '@/data';
 import type { DeviceType } from '@/types';
 
@@ -178,7 +179,15 @@ export function ImportApps() {
               </div>
             </div>
             <div className="flex flex-wrap gap-0.5 max-h-[180px] overflow-y-auto">
-              {state.apps.length ? state.apps.map((nm) => <AppChip key={nm} label={nm} active onRemove={() => removeApp(nm)} />) : <span className="text-xs text-[var(--mu)]">No apps imported yet.</span>}
+              {state.apps.length ? state.apps.map((nm) => <AppChip key={nm} label={nm} active onRemove={() => removeApp(nm)} />) : (
+                <EmptyState
+                  emoji="📲"
+                  title="No apps imported yet"
+                  description="Paste your app list above, load the sample list, or open the import guide for step-by-step help."
+                  ctaLabel="Load sample list"
+                  onCta={loadSample}
+                />
+              )}
             </div>
           </GlassCard>
 

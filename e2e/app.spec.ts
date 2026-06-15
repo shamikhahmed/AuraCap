@@ -57,4 +57,18 @@ test.describe('AuraCap PWA', () => {
     await expect(page.getByRole('button', { name: /Instagram/ })).toBeVisible();
     await expect(page.getByText('4', { exact: true }).first()).toBeVisible();
   });
+
+  test('profiles page merges snapshots tab and history redirect', async ({ page }) => {
+    await page.goto('./');
+    await enterApp(page);
+
+    await page.getByRole('link', { name: /Profiles & Snapshots/i }).first().click();
+    await expect(page.getByRole('heading', { name: 'Multi-Profile System' })).toBeVisible({ timeout: 10_000 });
+    await page.getByRole('button', { name: 'Snapshots' }).click();
+    await expect(page.getByRole('heading', { name: 'Layout Snapshots' })).toBeVisible();
+
+    await page.goto('./history');
+    await expect(page).toHaveURL(/tab=snapshots/);
+    await expect(page.getByRole('heading', { name: 'Layout Snapshots' })).toBeVisible({ timeout: 10_000 });
+  });
 });

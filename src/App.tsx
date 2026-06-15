@@ -19,7 +19,6 @@ const Shortcuts = lazy(() => import('@/pages/Shortcuts').then((m) => ({ default:
 const DigitalCleanse = lazy(() => import('@/pages/DigitalCleanse').then((m) => ({ default: m.DigitalCleanse })));
 const DailyRoutine = lazy(() => import('@/pages/DailyRoutine').then((m) => ({ default: m.DailyRoutine })));
 const Profiles = lazy(() => import('@/pages/Profiles').then((m) => ({ default: m.Profiles })));
-const VersionHistory = lazy(() => import('@/pages/VersionHistory').then((m) => ({ default: m.VersionHistory })));
 const Settings = lazy(() => import('@/pages/Settings').then((m) => ({ default: m.Settings })));
 const ImportGuide = lazy(() => import('@/pages/ImportGuide').then((m) => ({ default: m.ImportGuide })));
 
@@ -51,7 +50,7 @@ function AppRoutes() {
               <Route path="cleanse" element={<DigitalCleanse />} />
               <Route path="routine" element={<DailyRoutine />} />
               <Route path="profiles" element={<Profiles />} />
-              <Route path="history" element={<VersionHistory />} />
+              <Route path="history" element={<Navigate to="/profiles?tab=snapshots" replace />} />
               <Route path="settings" element={<Settings />} />
             </Route>
           </Routes>

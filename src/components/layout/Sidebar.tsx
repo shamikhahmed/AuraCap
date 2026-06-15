@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import {
   Gauge, Dna, FileInput, LayoutGrid, Layers, Wand2, Image, Lock,
-  Grid3x3, Zap, Brush, Moon, Users, History, Settings, Menu, X,
+  Grid3x3, Zap, Brush, Moon, Users, Settings, Menu, X,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useApp } from '@/context/AppContext';
@@ -19,8 +19,7 @@ const NAV = [
   { to: '/shortcuts', icon: Zap, label: 'Shortcuts' },
   { to: '/cleanse', icon: Brush, label: 'Cleanse' },
   { to: '/routine', icon: Moon, label: 'Daily Routine' },
-  { to: '/profiles', icon: Users, label: 'Profiles' },
-  { to: '/history', icon: History, label: 'Version History' },
+  { to: '/profiles', icon: Users, label: 'Profiles & Snapshots' },
   { to: '/settings', icon: Settings, label: 'Settings' },
 ];
 

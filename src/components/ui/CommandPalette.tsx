@@ -18,8 +18,8 @@ const NAV_ITEMS = [
   { path: '/shortcuts', label: 'Shortcuts' },
   { path: '/cleanse', label: 'Digital Cleanse' },
   { path: '/routine', label: 'Daily Routine' },
-  { path: '/profiles', label: 'Profiles' },
-  { path: '/history', label: 'Version History' },
+  { path: '/profiles', label: 'Profiles & Snapshots' },
+  { path: '/profiles?tab=snapshots', label: 'Layout Snapshots' },
   { path: '/settings', label: 'Settings' },
 ];
 

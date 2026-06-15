@@ -4,6 +4,8 @@ import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Modal } from '@/components/ui/Modal';
 
+const APP_VERSION = '5.0.4';
+
 const ACCENTS = [
   ['#4f6ef7', '#7b5ea7'],
   ['#1de9b6', '#0097a7'],
@@ -147,7 +149,7 @@ export function Settings() {
       </div>
 
       <GlassCard className="mt-3 text-center">
-        <p className="text-base font-extrabold font-display mb-1">AuraCap v5.0.2</p>
+        <p className="text-base font-extrabold font-display mb-1">AuraCap v{APP_VERSION}</p>
         <p className="text-[10px] text-[var(--mu)] font-mono">1000+ Apps · Smart DNA · iPhone + iPad + Mac · Multi-Profile · Version History · 100% Offline</p>
       </GlassCard>
 
