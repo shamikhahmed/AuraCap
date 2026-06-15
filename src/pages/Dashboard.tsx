@@ -70,6 +70,23 @@ export function Dashboard() {
         </GlassCard>
       </div>
 
+      {!state.apps.length && (
+        <GlassCard className="mb-4 border border-[var(--ac)]/20 bg-[var(--ac)]/5">
+          <div className="flex items-start gap-4">
+            <span className="text-4xl">🪄</span>
+            <div className="flex-1 min-w-0">
+              <p className="font-bold text-sm mb-1">Start by importing your apps</p>
+              <p className="text-xs leading-relaxed mb-3" style={{ color: 'var(--mu)' }}>
+                AuraCap analyses your entire home screen — finds distractions, redundancies, and hidden patterns. Takes 30 seconds.
+              </p>
+              <Link to="/import" className="inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-xl" style={{ background: 'var(--ac)', color: '#fff' }}>
+                Import my apps →
+              </Link>
+            </div>
+          </div>
+        </GlassCard>
+      )}
+
       <p className="section-label mb-2.5">QUICK ACCESS</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
         {QUICK.map(({ to, icon: Icon, label, color }) => (
