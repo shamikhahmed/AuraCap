@@ -1,5 +1,8 @@
 # Changelog — AuraCap
 
+## 5.0.5 (2026-06-15)
+- Restore pre–Capricorn identity home-screen icons; Workbox cache bump.
+
 ## 5.0.4 (2026-06-15)
 - Merge **Profiles** and **Version History** into one page with Profiles | Snapshots sub-tabs; `/history` redirects to snapshots tab.
 - Import page empty state with **Load sample list** CTA; Settings version synced to 5.0.4.
