@@ -106,9 +106,9 @@ export function Profiles() {
             <EmptyState
               emoji="📸"
               title="No snapshots yet"
-              description="Build a layout on Dashboard, then save a named snapshot to switch between setups instantly."
-              ctaLabel="Go to Dashboard"
-              ctaTo="/dashboard"
+              description="Generate a layout in AI Designer, then save a named snapshot to switch between setups instantly."
+              ctaLabel="Open AI Designer"
+              ctaTo="/designer"
             />
           )}
 

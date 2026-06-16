@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { RotateCw, Download } from 'lucide-react';
-import { APPS } from '@/data';
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { EmptyState } from '@/components/ui/EmptyState';
 import { buildSmartFolders, DISTRACTION_LIST, downloadMacDockGuide } from '@/engines/organizer';
 
 export function SmartOrganizer() {
@@ -24,7 +25,19 @@ export function SmartOrganizer() {
     }, 35);
   };
 
-  const distApps = DISTRACTION_LIST.filter((d) => !state.apps.length || state.apps.includes(d.n)).filter((d) => !hidden.includes(d.n));
+  const distApps = DISTRACTION_LIST.filter((d) => state.apps.length && state.apps.includes(d.n)).filter((d) => !hidden.includes(d.n));
+
+  if (!state.apps.length) {
+    return (
+      <EmptyState
+        emoji="📱"
+        title="Import apps first"
+        description="Smart Organizer builds folders from your actual app list — import apps to see personalized folders and distraction analysis."
+        ctaLabel="Import apps"
+        ctaTo="/import"
+      />
+    );
+  }
 
   return (
     <div>
