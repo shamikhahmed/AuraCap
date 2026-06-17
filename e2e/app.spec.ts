@@ -36,7 +36,8 @@ test.describe('AuraCap PWA', () => {
 
   test('organizer page has Mac Dock guide download', async ({ page }) => {
     await page.goto('./');
-    await enterApp(page);
+    await page.getByRole('button', { name: /Try with sample wardrobe/i }).click();
+    await expect(page.getByText('Aura Score')).toBeVisible({ timeout: 15_000 });
 
     await page.getByRole('link', { name: 'Smart Organizer' }).first().click();
     await expect(page.getByRole('heading', { name: 'Smart Organizer' })).toBeVisible({ timeout: 10_000 });
