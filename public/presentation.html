@@ -82,8 +82,15 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
   background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}.split{flex-direction:column}}
 </style>
+
+  <link rel="stylesheet" href="css/capricorn-core.css">
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/capricorn-scene.js"></script>
+  <script src="js/capricorn-deck.js"></script>
 </head>
 <body>
+<div class="cap-scroll-progress" aria-hidden="true"></div>
 <canvas id="orb-canvas"></canvas>
 <div id="progress"></div>
 <button id="fullscreen-btn" title="Fullscreen" onclick="document.documentElement.requestFullscreen?.()">⛶</button>
@@ -214,36 +221,6 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
 
 </div>
 
-<script>
-const slides=[...document.querySelectorAll('.slide')];
-let idx=0;
-const total=slides.length;
-const progress=document.getElementById('progress');
-const counter=document.getElementById('counter');
-function show(i){
-  idx=Math.max(0,Math.min(total-1,i));
-  slides.forEach((s,j)=>s.classList.toggle('active',j===idx));
-  progress.style.width=((idx+1)/total*100)+'%';
-  counter.textContent=(idx+1)+' / '+total;
-}
-function next(){show(idx+1)}
-function prev(){show(idx-1)}
-document.addEventListener('keydown',e=>{
-  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')next();
-  if(e.key==='ArrowLeft'||e.key==='PageUp')prev();
-});
-let tx=0;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
-document.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>50){if(dx>0)next();else prev()}},{passive:true});
-const c=document.getElementById('orb-canvas'),ctx=c.getContext('2d');
-function resize(){c.width=innerWidth;c.height=innerHeight}
-resize();addEventListener('resize',resize);
-(function draw(){
-  ctx.clearRect(0,0,c.width,c.height);
-  const cx=c.width/2,cy=c.height/2,r=Math.min(c.width,c.height)*0.35;
-  ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);
-  ctx.strokeStyle='rgba(79,110,247,0.08)';ctx.lineWidth=2;ctx.stroke();
-  requestAnimationFrame(draw);
-})();
-</script>
+
 </body>
 </html>

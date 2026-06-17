@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Outlet } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
 import { MobileTabBar } from './MobileTabBar';
@@ -8,6 +7,7 @@ import { DemoBanner } from './DemoBanner';
 import { CommandPalette } from '@/components/ui/CommandPalette';
 import { ToastContainer } from '@/components/ui/Toast';
 import { AmbientBackground } from '@/components/premium/AmbientBackground';
+import { CapRouteTransition } from '@/components/premium/CapRouteTransition';
 
 const CLEANSE_KEY = 'auracap_next_cleanse_date';
 const CLEANSE_NOTIF_KEY = 'auracap_cleanse_notif_enabled';
@@ -19,7 +19,6 @@ function daysUntil(dateStr: string): number | null {
 }
 
 export function AppShell() {
-  const location = useLocation();
   const [expanded, setExpanded] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const cleanseNotifiedRef = useRef(false);
@@ -58,14 +57,9 @@ export function AppShell() {
         <Topbar onMenuToggle={() => setMobileOpen((o) => !o)} menuOpen={mobileOpen} />
         <div className="px-4 md:px-7 pb-24 md:pb-20 pt-7">
           <DemoBanner />
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.32, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
+          <CapRouteTransition>
             <Outlet />
-          </motion.div>
+          </CapRouteTransition>
         </div>
       </div>
       <MobileTabBar />
