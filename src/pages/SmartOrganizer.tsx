@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { RotateCw, Download } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
+import { APPS } from '@/data/apps';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { buildSmartFolders, DISTRACTION_LIST, downloadMacDockGuide } from '@/engines/organizer';

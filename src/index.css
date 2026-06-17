@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./premium.css";
 
 @theme {
   --font-sans: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
@@ -35,6 +36,24 @@
   --gbd: rgba(255, 255, 255, 0.09);
   --inp: rgba(255, 255, 255, 0.05);
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--s1);
+  --color-surface: var(--s2);
+  --color-surface-elevated: var(--s3);
+  --color-border-subtle: var(--bd);
+  --color-text-primary: var(--tx);
+  --color-text-secondary: var(--mu);
+  --color-text-tertiary: var(--mu2);
+  --color-accent: var(--ac);
+  --color-accent-dim: color-mix(in srgb, var(--ac) 82%, white);
+  --color-accent-muted: color-mix(in srgb, var(--ac) 14%, transparent);
+  --glass-bg: var(--glass);
+  --glass-bg-subtle: var(--card);
+  --glass-border: var(--gbd);
+  --glass-shadow-sm: var(--shadow);
+  --glass-shadow: var(--shadow);
+  --tab-bar-bg: var(--glass);
+  --radius-xl: 24px;
 }
 
 [data-theme="light"] {
@@ -60,6 +79,24 @@
   --gbd: rgba(0, 0, 0, 0.1);
   --inp: rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--s1);
+  --color-surface: var(--s2);
+  --color-surface-elevated: var(--s3);
+  --color-border-subtle: var(--bd);
+  --color-text-primary: var(--tx);
+  --color-text-secondary: var(--mu);
+  --color-text-tertiary: var(--mu2);
+  --color-accent: var(--ac);
+  --color-accent-dim: color-mix(in srgb, var(--ac) 82%, black);
+  --color-accent-muted: color-mix(in srgb, var(--ac) 10%, transparent);
+  --glass-bg: var(--glass);
+  --glass-bg-subtle: var(--card);
+  --glass-border: var(--gbd);
+  --glass-shadow-sm: var(--shadow);
+  --glass-shadow: var(--shadow);
+  --tab-bar-bg: var(--glass);
+  --radius-xl: 24px;
 }
 
 * { -webkit-tap-highlight-color: transparent; }
