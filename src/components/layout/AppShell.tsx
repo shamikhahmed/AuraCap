@@ -47,6 +47,7 @@ export function AppShell() {
   return (
     <div className="min-h-dvh relative">
       <AmbientBackground />
+      <div className="cap-scroll-progress" aria-hidden="true" />
       <Sidebar
         expanded={expanded}
         mobileOpen={mobileOpen}
