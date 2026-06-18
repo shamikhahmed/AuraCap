@@ -53,6 +53,7 @@ function AppRoutes() {
               <Route path="history" element={<Navigate to="/profiles?tab=snapshots" replace />} />
               <Route path="settings" element={<Settings />} />
             </Route>
+            <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </Suspense>
       )}
