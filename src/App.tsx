@@ -61,8 +61,9 @@ function AppRoutes() {
 }
 
 export default function App() {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
   return (
-    <BrowserRouter basename="/AuraCap">
+    <BrowserRouter basename={basename}>
       <AppProvider>
         <AppRoutes />
       </AppProvider>

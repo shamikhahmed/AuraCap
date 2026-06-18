@@ -14,11 +14,14 @@ export function WelcomeScreen() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Enter' && !showName) handleLaunch();
+      if (e.key === 'Enter' && !showName) {
+        if (!state.onboardingDone) setShowName(true);
+        else enterApp();
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  });
+  }, [showName, state.onboardingDone, enterApp]);
 
   useEffect(() => {
     const cv = canvasRef.current;
