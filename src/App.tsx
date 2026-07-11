@@ -33,7 +33,7 @@ const PAGE_TITLES: Record<string, string> = {
 function TitleSync() {
   const { pathname } = useLocation();
   useEffect(() => {
-    const label = PAGE_TITLES[pathname] ?? pathname.split('/').filter(Boolean).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ') || 'Dashboard';
+    const label = PAGE_TITLES[pathname] ?? (pathname.split('/').filter(Boolean).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ') || 'Dashboard');
     document.title = label + ' — AuraCap';
   }, [pathname]);
   return null;
