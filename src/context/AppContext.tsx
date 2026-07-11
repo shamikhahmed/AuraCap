@@ -53,20 +53,21 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [toastId, setToastId] = useState(0);
 
-  useEffect(() => {
-    loadState().then((s) => {
-      setStateRaw(s);
-      setReady(true);
-      applyThemeVars(s);
-    });
-  }, []);
-
   const applyThemeVars = (s: AuraState) => {
     document.documentElement.setAttribute('data-theme', s.theme);
     document.documentElement.style.setProperty('--ac', s.accent1);
     document.documentElement.style.setProperty('--ac2', s.accent2);
     document.body.classList.toggle('light', s.theme === 'light');
   };
+
+  useEffect(() => {
+    loadState().then((s) => {
+      setStateRaw(s);
+      setReady(true);
+      applyThemeVars(s);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const persist = useCallback(async (patch: Partial<AuraState>) => {
     setStateRaw((prev) => {

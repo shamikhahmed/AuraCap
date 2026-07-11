@@ -1,7 +1,7 @@
 {
   "name": "auracap",
   "private": true,
-  "version": "5.0.6",
+  "version": "5.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "extract-data": "node scripts/extract-from-html.mjs",
     "generate-icons": "node scripts/generate-icons.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "npm run build && playwright test",
+    "gallery": "npm run build && CAPTURE_GALLERY=1 playwright test e2e/gallery.spec.ts",
+    "gallery:view": "python3 -m http.server 8772",
+    "verify": "npm run lint && npm run test:e2e"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

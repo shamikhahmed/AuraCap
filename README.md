@@ -51,6 +51,23 @@ To refresh app/wallpaper data from the source HTML:
 npm run extract-data -- /path/to/AuraOS.html
 ```
 
+## Screen gallery
+
+Every screen, mobile + desktop, auto-captured with Playwright:
+
+```bash
+npm run gallery        # regenerate docs/screenshots/gallery/
+npm run gallery:view   # then open http://127.0.0.1:8772/screen-gallery.html
+```
+
+Regenerate on each release so [screen-gallery.html](./screen-gallery.html) stays current.
+
+## Verify
+
+```bash
+npm run verify   # lint + build + Playwright e2e — CI runs this before every deploy
+```
+
 ## Deploy
 
 GitHub Pages workflow deploys from `main` to `https://shamikhahmed.github.io/AuraCap/`.

@@ -1,0 +1,199 @@
+{
+  "app": "AuraCap",
+  "version": "5.2.0",
+  "generated": "2026-07-11T16:32:25.083Z",
+  "shots": [
+    {
+      "file": "desktop-00-welcome.png",
+      "label": "Welcome",
+      "route": "/",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-01-dashboard.png",
+      "label": "Dashboard",
+      "route": "/dashboard",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-02-dna.png",
+      "label": "Digital DNA",
+      "route": "/dna",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-03-import.png",
+      "label": "Import Apps",
+      "route": "/import",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-04-import-guide.png",
+      "label": "Import Guide",
+      "route": "/import-guide",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-05-apps.png",
+      "label": "App Library",
+      "route": "/apps",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-06-organizer.png",
+      "label": "Smart Organizer",
+      "route": "/organizer",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-07-designer.png",
+      "label": "AI Designer",
+      "route": "/designer",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-08-wallpaper.png",
+      "label": "Wallpapers",
+      "route": "/wallpaper",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-09-lockscreen.png",
+      "label": "Lock Screen",
+      "route": "/lockscreen",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-10-widgets.png",
+      "label": "Widget Lab",
+      "route": "/widgets",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-11-shortcuts.png",
+      "label": "Shortcuts",
+      "route": "/shortcuts",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-12-cleanse.png",
+      "label": "Digital Cleanse",
+      "route": "/cleanse",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-13-routine.png",
+      "label": "Daily Routine",
+      "route": "/routine",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-14-profiles.png",
+      "label": "Profiles",
+      "route": "/profiles",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desktop-15-settings.png",
+      "label": "Settings",
+      "route": "/settings",
+      "viewport": "desktop"
+    },
+    {
+      "file": "mobile-00-welcome.png",
+      "label": "Welcome",
+      "route": "/",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-01-dashboard.png",
+      "label": "Dashboard",
+      "route": "/dashboard",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-02-dna.png",
+      "label": "Digital DNA",
+      "route": "/dna",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-03-import.png",
+      "label": "Import Apps",
+      "route": "/import",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-04-import-guide.png",
+      "label": "Import Guide",
+      "route": "/import-guide",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-05-apps.png",
+      "label": "App Library",
+      "route": "/apps",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-06-organizer.png",
+      "label": "Smart Organizer",
+      "route": "/organizer",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-07-designer.png",
+      "label": "AI Designer",
+      "route": "/designer",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-08-wallpaper.png",
+      "label": "Wallpapers",
+      "route": "/wallpaper",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-09-lockscreen.png",
+      "label": "Lock Screen",
+      "route": "/lockscreen",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-10-widgets.png",
+      "label": "Widget Lab",
+      "route": "/widgets",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-11-shortcuts.png",
+      "label": "Shortcuts",
+      "route": "/shortcuts",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-12-cleanse.png",
+      "label": "Digital Cleanse",
+      "route": "/cleanse",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-13-routine.png",
+      "label": "Daily Routine",
+      "route": "/routine",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-14-profiles.png",
+      "label": "Profiles",
+      "route": "/profiles",
+      "viewport": "mobile"
+    },
+    {
+      "file": "mobile-15-settings.png",
+      "label": "Settings",
+      "route": "/settings",
+      "viewport": "mobile"
+    }
+  ]
+}

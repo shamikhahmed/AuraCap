@@ -18,5 +18,9 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    rules: {
+      // DX-only rule; providers legitimately export hooks/constants alongside components
+      'react-refresh/only-export-components': 'warn',
+    },
   },
 ])

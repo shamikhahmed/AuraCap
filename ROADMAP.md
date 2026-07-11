@@ -2,17 +2,17 @@
 
 > Updated 2026-07-11. Fleet order & standard: `capricorn-tooling/shared/CAP-STANDARD.md`.
 
-## Now — v5.1.0
+## Now — v5.2.0
 Current shipped state. See `CHANGELOG.md` for how we got here.
 
 ## Cap Standard gaps
 | Cap Standard item | Status |
 |---|---|
 | Docs pack | ✅ |
-| Screen gallery | ❌ |
+| Screen gallery | ✅ |
 | Version discipline | ✅ |
-| QA / e2e | 🟡 |
-| CI gate | 🟡 |
+| QA / e2e | ✅ |
+| CI gate | ✅ |
 | PWA polish | ✅ |
 | Demo mode | ✅ |
 
