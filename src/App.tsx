@@ -1,5 +1,5 @@
-import { Suspense, lazy } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Suspense, lazy, useEffect } from 'react';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { AppProvider, useApp } from '@/context/AppContext';
 import { AppShell } from '@/components/layout/AppShell';
 import { WelcomeScreen } from '@/components/layout/WelcomeScreen';
@@ -22,14 +22,40 @@ const Profiles = lazy(() => import('@/pages/Profiles').then((m) => ({ default: m
 const Settings = lazy(() => import('@/pages/Settings').then((m) => ({ default: m.Settings })));
 const ImportGuide = lazy(() => import('@/pages/ImportGuide').then((m) => ({ default: m.ImportGuide })));
 
+const PAGE_TITLES: Record<string, string> = {
+  '/dashboard': 'Dashboard', '/dna': 'Digital DNA', '/import': 'Import Apps',
+  '/import-guide': 'Import Guide', '/apps': 'App Library', '/organizer': 'Smart Organizer',
+  '/designer': 'AI Designer', '/wallpaper': 'Wallpapers', '/lockscreen': 'Lock Screen',
+  '/widgets': 'Widget Lab', '/shortcuts': 'Shortcuts', '/cleanse': 'Digital Cleanse',
+  '/routine': 'Daily Routine', '/profiles': 'Profiles', '/settings': 'Settings',
+};
+
+function TitleSync() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const label = PAGE_TITLES[pathname] ?? pathname.split('/').filter(Boolean).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ') || 'Dashboard';
+    document.title = label + ' — AuraCap';
+  }, [pathname]);
+  return null;
+}
+
 function AppRoutes() {
-  const { ready, state } = useApp();
+  const { ready, state, loadDemo } = useApp();
+
+  useEffect(() => {
+    if (!ready) return;
+    if (new URLSearchParams(location.search).get('demo') === '1' && !state.entered) {
+      loadDemo();
+    }
+  }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps
+
   if (!ready) {
     return <div className="min-h-dvh flex items-center justify-center text-[var(--mu)]">Loading AuraCap…</div>;
   }
 
   return (
     <>
+      <TitleSync />
       <WelcomeScreen />
       {state.entered && (
         <Suspense fallback={<div className="min-h-dvh flex items-center justify-center text-[var(--mu)]">Loading AuraCap…</div>}>
