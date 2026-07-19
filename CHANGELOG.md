@@ -1,3 +1,8 @@
+## [5.2.2] — 2026-07-19
+
+- Capricorn QR asset in SW allowlist (`assets/qr-auracap.png`)
+- SW `auracap-v522`
+
 # Changelog — AuraCap
 
 ## 5.2.1 (2026-07-19)
