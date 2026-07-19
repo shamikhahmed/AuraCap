@@ -1,5 +1,7 @@
 # AuraCap v5 — Apple Ecosystem Studio
 
+**Version:** 5.2.2
+
 Offline-first PWA for organizing iPhone, iPad, and Mac app setups. Ported from the single-file HTML app into a production React + TypeScript architecture.
 
 **Live demo:** [https://shamikhahmed.github.io/AuraCap/](https://shamikhahmed.github.io/AuraCap/)
