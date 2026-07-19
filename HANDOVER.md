@@ -7,7 +7,7 @@
 Apple ecosystem studio PWA — app setups, digital DNA, layouts, wallpapers, widgets.
 
 ## Facts
-**Version:** 5.2.2
+**Version:** 5.3.0
 **Live:** https://shamikhahmed.github.io/AuraCap/
 **Repo:** https://github.com/shamikhahmed/AuraCap
 **Stack:** React 19 + TypeScript + Vite. GSAP/Three.js motion layer (app fast mode skips it). vite-plugin-pwa.

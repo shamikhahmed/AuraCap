@@ -2,9 +2,9 @@
 @import "./premium.css";
 
 @theme {
-  --font-sans: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  --font-display: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "SF Mono", "Fira Code", "Courier New", monospace;
+  --font-sans: "IBM Plex Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "IBM Plex Sans", -apple-system, "SF Pro Display", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", "Fira Code", "Courier New", monospace;
 }
 
 :root {
@@ -14,26 +14,26 @@
 }
 
 [data-theme="dark"] {
-  --bg: #050507;
-  --s1: #0d0d12;
-  --s2: #13131a;
-  --s3: #1a1a24;
-  --bd: rgba(255, 255, 255, 0.07);
-  --bd2: rgba(255, 255, 255, 0.13);
-  --tx: #f0f0f5;
-  --mu: rgba(240, 240, 245, 0.44);
-  --mu2: rgba(240, 240, 245, 0.22);
-  --ac: #4f6ef7;
-  --ac2: #7b5ea7;
-  --ac3: #1de9b6;
+  --bg: #08090d;
+  --s1: #0e1018;
+  --s2: #141822;
+  --s3: #1c2230;
+  --bd: rgba(80, 200, 180, 0.1);
+  --bd2: rgba(80, 200, 180, 0.18);
+  --tx: #eef2f6;
+  --mu: rgba(238, 242, 246, 0.48);
+  --mu2: rgba(238, 242, 246, 0.28);
+  --ac: #2dd4bf;
+  --ac2: #5b8def;
+  --ac3: #94a3b8;
   --red: #ef4444;
   --amber: #f59e0b;
   --green: #22c55e;
   --pink: #ec4899;
   --card: rgba(255, 255, 255, 0.04);
   --cardhov: rgba(255, 255, 255, 0.08);
-  --glass: rgba(13, 13, 18, 0.88);
-  --gbd: rgba(255, 255, 255, 0.09);
+  --glass: rgba(14, 16, 24, 0.9);
+  --gbd: rgba(80, 200, 180, 0.12);
   --inp: rgba(255, 255, 255, 0.05);
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
   --color-bg: var(--bg);
@@ -53,22 +53,22 @@
   --glass-shadow-sm: var(--shadow);
   --glass-shadow: var(--shadow);
   --tab-bar-bg: var(--glass);
-  --radius-xl: 24px;
+  --radius-xl: 16px;
 }
 
 [data-theme="light"] {
-  --bg: #f5f5f7;
-  --s1: #fff;
-  --s2: #f0f0f2;
-  --s3: #e8e8ec;
-  --bd: rgba(0, 0, 0, 0.08);
-  --bd2: rgba(0, 0, 0, 0.14);
-  --tx: #1a1a2e;
-  --mu: rgba(26, 26, 46, 0.48);
-  --mu2: rgba(26, 26, 46, 0.28);
-  --ac: #3b5ce4;
-  --ac2: #6b4d9a;
-  --ac3: #0db896;
+  --bg: #f0f2f5;
+  --s1: #ffffff;
+  --s2: #e8ecf0;
+  --s3: #dce2e8;
+  --bd: rgba(20, 40, 50, 0.1);
+  --bd2: rgba(20, 40, 50, 0.16);
+  --tx: #0f1419;
+  --mu: rgba(15, 20, 25, 0.5);
+  --mu2: rgba(15, 20, 25, 0.3);
+  --ac: #0d9488;
+  --ac2: #3b5bdb;
+  --ac3: #64748b;
   --red: #dc2626;
   --amber: #d97706;
   --green: #16a34a;
@@ -76,7 +76,7 @@
   --card: rgba(0, 0, 0, 0.03);
   --cardhov: rgba(0, 0, 0, 0.06);
   --glass: rgba(255, 255, 255, 0.94);
-  --gbd: rgba(0, 0, 0, 0.1);
+  --gbd: rgba(20, 40, 50, 0.1);
   --inp: rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   --color-bg: var(--bg);
@@ -380,11 +380,11 @@ nav.expanded .nav-divider { width: 196px; }
 .welcome-btn {
   margin-top: 8px; padding: 14px 48px;
   background: linear-gradient(135deg, var(--ac), var(--ac2));
-  border: none; border-radius: 50px; cursor: pointer; font-weight: 700; font-size: 15px; color: #fff;
-  box-shadow: 0 4px 28px rgba(79, 110, 247, 0.4); transition: all 0.3s;
+  border: none; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 15px; color: #fff;
+  box-shadow: 0 4px 28px color-mix(in srgb, var(--ac) 35%, transparent); transition: all 0.3s;
   display: inline-flex; align-items: center; gap: 8px;
 }
-.welcome-btn:hover { transform: scale(1.06); box-shadow: 0 8px 40px rgba(79, 110, 247, 0.58); }
+.welcome-btn:hover { transform: scale(1.03); box-shadow: 0 8px 36px color-mix(in srgb, var(--ac) 45%, transparent); }
 
 .ai-dot {
   width: 5px; height: 5px; border-radius: 50%; background: var(--ac);

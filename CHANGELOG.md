@@ -1,3 +1,10 @@
+## [5.3.0] — 2026-07-20
+
+### Beauty — DNA card / ID badge
+- Welcome: DNA credential card (no particle canvas)
+- Teal helix accent; IBM Plex; light+dark remint
+- SW `auracap-v530`
+
 ## [5.2.2] — 2026-07-19
 
 - Capricorn QR asset in SW allowlist (`assets/qr-auracap.png`)
