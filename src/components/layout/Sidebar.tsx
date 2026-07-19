@@ -12,7 +12,7 @@ const NAV = [
   { to: '/import', icon: FileInput, label: 'Import Apps' },
   { to: '/apps', icon: LayoutGrid, label: 'App Library' },
   { to: '/organizer', icon: Layers, label: 'Smart Organizer' },
-  { to: '/designer', icon: Wand2, label: 'AI Designer' },
+  { to: '/designer', icon: Wand2, label: 'Smart Assistant' },
   { to: '/wallpaper', icon: Image, label: 'Wallpapers' },
   { to: '/lockscreen', icon: Lock, label: 'Lockscreen' },
   { to: '/widgets', icon: Grid3x3, label: 'Widget Lab' },

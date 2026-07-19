@@ -22,7 +22,7 @@ AuraCap solves a specific, recurring pain for Apple power users: screen setup pa
 | Profiles (1) | ✅ | ✅ | ✅ |
 | Smart Organizer (unlimited) | ❌ | ✅ | ✅ |
 | Wallpapers (full library) | ❌ | ✅ | ✅ |
-| AI Designer | ❌ | ✅ | ✅ |
+| Smart Assistant | ❌ | ✅ | ✅ |
 | Widget Lab | ❌ | ✅ | ✅ |
 | Multiple profiles + snapshots | ❌ | ✅ | ✅ |
 | iCloud sync (opt-in) | ❌ | ❌ | ✅ Roadmap |
@@ -36,7 +36,7 @@ AuraCap solves a specific, recurring pain for Apple power users: screen setup pa
 - Demo mode: always `isPro() = true`
 - `openProUpgrade()` global triggers pricing sheet
 - CSS scaffold already in `src/premium.css` (`.paywall-sheet`, `.paywall-plan`, `.paywall-plan--selected`)
-- Gate candidates: AI Designer, Widget Lab, 3+ profiles, unlimited organizer groups
+- Gate candidates: Smart Assistant, Widget Lab, 3+ profiles, unlimited organizer groups
 
 ## Fix applied 2026-06-28
 - `?demo=1` URL param now auto-triggers `loadDemo()` in `App.tsx` `AppRoutes` — no longer requires clicking button

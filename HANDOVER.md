@@ -1,13 +1,13 @@
 # AuraCap — Handover
 
 > Read this + `ROADMAP.md` + `~/Capricorn-Brain/01 Projects/AuraCap.md` before working here.
-> Last updated: 2026-07-11 · Fleet-wide standard: `capricorn-tooling/shared/CAP-STANDARD.md`
+> Last updated: 2026-07-19 · Fleet-wide standard: `capricorn-tooling/shared/CAP-STANDARD.md`
 
 ## What this is
 Apple ecosystem studio PWA — app setups, digital DNA, layouts, wallpapers, widgets.
 
 ## Facts
-**Version:** 5.1.0
+**Version:** 5.2.1
 **Live:** https://shamikhahmed.github.io/AuraCap/
 **Repo:** https://github.com/shamikhahmed/AuraCap
 **Stack:** React 19 + TypeScript + Vite. GSAP/Three.js motion layer (app fast mode skips it). vite-plugin-pwa.
@@ -17,24 +17,23 @@ Apple ecosystem studio PWA — app setups, digital DNA, layouts, wallpapers, wid
 ```bash
 npm install
 npm run dev
-npm run build
-npm run test:e2e   # if present — verify before relying on it
+npm run verify   # lint + build + Playwright e2e
 ```
 
 ## Architecture
-- `src/pages/` — Dashboard, DNA, Import, App Library, Organizer, Designer, Wallpaper, Lock Screen, Widget Lab, Shortcuts, Cleanse, Routine, Profiles, Settings
+- `src/pages/` — Dashboard, DNA, Import, App Library, Organizer, Smart Assistant (designer), Wallpaper, Lock Screen, Widget Lab, Shortcuts, Cleanse, Routine, Profiles, Settings
 - `src/App.tsx` — routes, TitleSync (per-route document.title), demo mode entry via `?demo=1`
-- `public/` — marketing pages (landing/pitch/presentation), capricorn-core.css design system, cap-demo-mode.js, cap-desktop-nav.js
-- `.github/workflows/deploy.yml` — Pages deploy
+- `public/` — marketing pages (landing/pitch/presentation), Capricorn OS brand icons, cap-demo-mode.js, cap-desktop-nav.js
+- `.github/workflows/deploy.yml` — Pages deploy gated on verify
 
-## Cap Standard status (2026-07-11)
+## Cap Standard status (2026-07-19)
 | Cap Standard item | Status |
 |---|---|
 | Docs pack | ✅ |
-| Screen gallery | ❌ |
+| Screen gallery | ✅ |
 | Version discipline | ✅ |
-| QA / e2e | 🟡 |
-| CI gate | 🟡 |
+| QA / e2e | ✅ |
+| CI gate | ✅ |
 | PWA polish | ✅ |
 | Demo mode | ✅ |
 

@@ -100,7 +100,7 @@ export function AppLibrary() {
       </GlassCard>
 
       <GlassCard>
-        <p className="section-label mb-2">AI LAYOUT BLUEPRINT</p>
+        <p className="section-label mb-2">LAYOUT BLUEPRINT</p>
         <p className="text-xs text-[var(--mu)] leading-relaxed font-mono">{analysis || 'Select apps and click Analyze for your personalized layout.'}</p>
       </GlassCard>
 

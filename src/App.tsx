@@ -25,7 +25,7 @@ const ImportGuide = lazy(() => import('@/pages/ImportGuide').then((m) => ({ defa
 const PAGE_TITLES: Record<string, string> = {
   '/dashboard': 'Dashboard', '/dna': 'Digital DNA', '/import': 'Import Apps',
   '/import-guide': 'Import Guide', '/apps': 'App Library', '/organizer': 'Smart Organizer',
-  '/designer': 'AI Designer', '/wallpaper': 'Wallpapers', '/lockscreen': 'Lock Screen',
+  '/designer': 'Smart Assistant', '/wallpaper': 'Wallpapers', '/lockscreen': 'Lock Screen',
   '/widgets': 'Widget Lab', '/shortcuts': 'Shortcuts', '/cleanse': 'Digital Cleanse',
   '/routine': 'Daily Routine', '/profiles': 'Profiles', '/settings': 'Settings',
 };

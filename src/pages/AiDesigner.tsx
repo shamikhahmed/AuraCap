@@ -31,7 +31,7 @@ export function AiDesigner() {
   return (
     <div>
       <div className="flex items-start justify-between mb-6">
-        <div><h1 className="page-title">AI Homescreen Designer</h1><p className="page-sub">Device-specific layouts — each platform has its own grid, dock & rules</p></div>
+        <div><h1 className="page-title">Homescreen Designer</h1><p className="page-sub">Device-specific layouts — each platform has its own grid, dock & rules</p></div>
         <span className="badge-live"><Wand2 size={9} /> Smart Assistant</span>
       </div>
 
@@ -64,7 +64,7 @@ export function AiDesigner() {
             <button type="button" onClick={genDesign} className="btn-primary w-full mt-3"><Wand2 size={14} /> Generate Layout</button>
           </GlassCard>
           <GlassCard>
-            <div className="flex justify-between mb-2"><p className="section-label">AI LAYOUT RECOMMENDATION</p>{thinking && <div className="flex gap-1">{[0, 1, 2].map((i) => <span key={i} className="ai-dot" style={{ animationDelay: `${i * 0.22}s` }} />)}</div>}</div>
+            <div className="flex justify-between mb-2"><p className="section-label">SMART ASSISTANT RECOMMENDATION</p>{thinking && <div className="flex gap-1">{[0, 1, 2].map((i) => <span key={i} className="ai-dot" style={{ animationDelay: `${i * 0.22}s` }} />)}</div>}</div>
             <p className="text-xs font-mono leading-loose text-[var(--ac3)]">{rec || 'Configure above and click Generate…'}</p>
           </GlassCard>
           <GlassCard>

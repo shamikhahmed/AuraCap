@@ -8,7 +8,7 @@ Offline-first PWA for organizing iPhone, iPad, and Mac app setups. Ported from t
 
 ## Features
 
-- **16 modules**: Dashboard, Digital DNA, Import, App Library, Smart Organizer, AI Designer, Wallpapers (42+), Lockscreen Builder, Widget Lab, Shortcuts (12), Digital Cleanse, Daily Routine, Profiles, Version History, Settings
+- **16 modules**: Dashboard, Digital DNA, Import, App Library, Smart Organizer, Smart Assistant, Wallpapers (42+), Lockscreen Builder, Widget Lab, Shortcuts (12), Digital Cleanse, Daily Routine, Profiles, Version History, Settings
 - **Smart Assistant**: rules-based DNA analysis, chat, and layout recommendations (no external API)
 - **IndexedDB** persistence via `idb`
 - **Demo mode** with sample app wardrobe

@@ -11,7 +11,7 @@ const NAV_ITEMS = [
   { path: '/import-guide', label: 'Import Guide' },
   { path: '/apps', label: 'App Library' },
   { path: '/organizer', label: 'Smart Organizer' },
-  { path: '/designer', label: 'AI Designer' },
+  { path: '/designer', label: 'Smart Assistant' },
   { path: '/wallpaper', label: 'Wallpapers' },
   { path: '/lockscreen', label: 'Lockscreen Builder' },
   { path: '/widgets', label: 'Widget Lab' },

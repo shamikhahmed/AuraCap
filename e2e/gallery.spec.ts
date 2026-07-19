@@ -11,7 +11,7 @@ const SCREENS = [
   { route: './import-guide', slug: 'import-guide', label: 'Import Guide' },
   { route: './apps', slug: 'apps', label: 'App Library' },
   { route: './organizer', slug: 'organizer', label: 'Smart Organizer' },
-  { route: './designer', slug: 'designer', label: 'AI Designer' },
+  { route: './designer', slug: 'designer', label: 'Smart Assistant' },
   { route: './wallpaper', slug: 'wallpaper', label: 'Wallpapers' },
   { route: './lockscreen', slug: 'lockscreen', label: 'Lock Screen' },
   { route: './widgets', slug: 'widgets', label: 'Widget Lab' },

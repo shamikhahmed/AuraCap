@@ -1,5 +1,10 @@
 # Changelog — AuraCap
 
+## 5.2.1 (2026-07-19)
+- Cap Family Mega-Wave: Capricorn OS brand lock — `mark.svg`, favicon, apple-touch-icon-180, and separate any/maskable PWA icons in manifest + `index.html`.
+- Honest marketing: rename remaining **AI Designer** UI/docs strings to **Smart Assistant** (rules-based; no LLM).
+- Version / SW cache bump (`auracap-v521`).
+
 ## 5.2.0 (2026-07-11)
 - Cap Standard rollout: 32-shot screen gallery (16 screens x mobile/desktop, `npm run gallery`) + browsable `screen-gallery.html`.
 - CI now gates Pages deploys on `npm run verify` (lint + build + Playwright e2e).

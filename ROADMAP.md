@@ -1,9 +1,9 @@
 # AuraCap — Roadmap
 
-> Updated 2026-07-11. Fleet order & standard: `capricorn-tooling/shared/CAP-STANDARD.md`.
+> Updated 2026-07-19. Fleet order & standard: `capricorn-tooling/shared/CAP-STANDARD.md`.
 
-## Now — v5.2.0
-Current shipped state. See `CHANGELOG.md` for how we got here.
+## Now — v5.2.1
+Cap Family Mega-Wave brand lock + Smart Assistant naming. See `CHANGELOG.md`.
 
 ## Cap Standard gaps
 | Cap Standard item | Status |

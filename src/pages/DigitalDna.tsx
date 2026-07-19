@@ -97,13 +97,13 @@ export function DigitalDna() {
           ) : <p className="text-xs text-[var(--ac3)]">No major distractions!</p>}
         </GlassCard>
         <GlassCard>
-          <p className="section-label mb-2">AI RECOMMENDATIONS</p>
+          <p className="section-label mb-2">SMART RECOMMENDATIONS</p>
           {dna?.recommendations.map((r) => <p key={r} className="text-xs text-[var(--mu)] mb-1">• {r}</p>)}
         </GlassCard>
       </div>
 
       <GlassCard>
-        <p className="section-label mb-3">SMART AI CHAT — Ask about your apps</p>
+        <p className="section-label mb-3">SMART ASSISTANT — Ask about your apps</p>
         <div className="min-h-[70px] max-h-[200px] overflow-y-auto mb-2.5 flex flex-col gap-2">
           {chat.map((m, i) => (
             <div key={i} className={`text-xs leading-relaxed px-3 py-2 rounded-[11px] max-w-[92%] ${m.role === 'user' ? 'self-end bg-[rgba(79,110,247,0.18)] border border-[rgba(79,110,247,0.3)]' : 'self-start bg-[var(--card)] border border-[var(--bd)]'}`}>{m.text}</div>

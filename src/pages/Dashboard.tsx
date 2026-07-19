@@ -9,7 +9,7 @@ import { getInsight } from '@/engines/scores';
 const QUICK = [
   { to: '/import', icon: FileInput, label: 'Import Apps', color: 'var(--ac)' },
   { to: '/dna', icon: Dna, label: 'Digital DNA', color: 'var(--ac2)' },
-  { to: '/designer', icon: Wand2, label: 'AI Designer', color: 'var(--ac3)' },
+  { to: '/designer', icon: Wand2, label: 'Smart Assistant', color: 'var(--ac3)' },
   { to: '/profiles', icon: Users, label: 'Profiles', color: 'var(--amber)' },
   { to: '/organizer', icon: Layers, label: 'Organizer', color: 'var(--pink)' },
   { to: '/wallpaper', icon: Image, label: 'Wallpapers', color: '#a855f7' },
@@ -65,7 +65,7 @@ export function Dashboard() {
               <AppChip key={l.name} label={`${l.emoji} ${l.name}`} active />
             )) : <span className="text-xs text-[var(--mu)]">Import apps to detect…</span>}
           </div>
-          <p className="section-label mb-1.5">AI INSIGHT</p>
+          <p className="section-label mb-1.5">SMART INSIGHT</p>
           <p className="text-xs leading-relaxed" style={{ color: state.apps.length ? 'var(--tx)' : 'var(--mu)' }}>{insight}</p>
         </GlassCard>
       </div>
