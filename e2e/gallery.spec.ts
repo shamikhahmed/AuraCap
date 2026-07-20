@@ -51,7 +51,7 @@ async function captureAll(page: Page, viewport: keyof typeof VIEWPORTS) {
 
   // Welcome screen first — demo entry navigates past it
   await page.goto('./');
-  await expect(page.getByText('Every Device. Perfected.')).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByText('Your Apple DNA.')).toBeVisible({ timeout: 15_000 });
   const welcomeFile = `${viewport}-00-welcome.png`;
   await page.screenshot({ path: join(GALLERY_DIR, welcomeFile), fullPage: true });
   shots.push({ file: welcomeFile, label: 'Welcome', route: '/', viewport });
