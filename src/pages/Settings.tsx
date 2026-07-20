@@ -7,7 +7,7 @@ import { Modal } from '@/components/ui/Modal';
 const APP_VERSION = '5.3.2';
 
 const ACCENTS = [
-  ['#4f6ef7', '#7b5ea7'],
+  ['#0071E3', '#409CFF'],
   ['#1de9b6', '#0097a7'],
   ['#f59e0b', '#ef4444'],
   ['#a855f7', '#6366f1'],
