@@ -229,6 +229,14 @@ body {
 .dna-bar { height: 7px; border-radius: 7px; background: var(--bd); overflow: hidden; margin-top: 4px; }
 .dna-fill { height: 100%; border-radius: 7px; transition: width 1.6s ease-out; }
 
+.dna-id-badge {
+  border-left: 3px solid var(--ac) !important;
+  border-radius: 4px 16px 16px 4px !important;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--ac) 8%, transparent), transparent 42%),
+    var(--card);
+}
+
 .sbar { height: 4px; border-radius: 4px; background: var(--bd); overflow: hidden; }
 .sfil { height: 100%; border-radius: 4px; transition: width 1.4s ease-out; }
 

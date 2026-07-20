@@ -1,3 +1,8 @@
+## [5.3.1] — 2026-07-20
+
+### Polish
+- Digital DNA profile tile as ID badge (mono labels, no emoji avatar); SW `auracap-v531`
+
 ## [5.3.0] — 2026-07-20
 
 ### Beauty — DNA card / ID badge
