@@ -1,3 +1,6 @@
+## 5.3.3 — 2026-07-20
+- Home remint: Control Center 3-pane (device constellation / DNA scores / organizer tools). System-blue score rings; no purple. SW `auracap-v533`.
+
 ## [5.3.1] — 2026-07-20
 
 ### Polish

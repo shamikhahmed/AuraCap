@@ -4,7 +4,7 @@ import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Modal } from '@/components/ui/Modal';
 
-const APP_VERSION = '5.3.2';
+const APP_VERSION = '5.3.3';
 
 const ACCENTS = [
   ['#0071E3', '#409CFF'],

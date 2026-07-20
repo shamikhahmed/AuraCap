@@ -460,3 +460,59 @@ nav.expanded .nav-divider { width: 196px; }
 }
 
 .welcome-device-node span { color: var(--mu); font-family: var(--fm); text-transform: uppercase; letter-spacing: 0.12em; }
+
+/* Home Control Center — constellation · DNA · tools */
+.dash-home-layout {
+  display: block;
+}
+.dash-rail-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ac);
+}
+.dash-tool-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--bd);
+  background: color-mix(in srgb, var(--glass) 80%, transparent);
+  backdrop-filter: blur(12px);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tx);
+  transition: border-color 0.15s ease;
+}
+.dash-tool-row:hover {
+  border-color: var(--ac);
+}
+.dash-mobile-dna .dash-rail--constellation {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid var(--gbd);
+  background: color-mix(in srgb, var(--glass) 70%, transparent);
+  backdrop-filter: blur(20px);
+}
+
+@media (min-width: 1024px) {
+  .dash-home-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 200px;
+    gap: 18px;
+    align-items: start;
+  }
+  .dash-rail {
+    position: sticky;
+    top: 12px;
+    padding: 14px 12px;
+    border-radius: 16px;
+    border: 1px solid var(--gbd);
+    background: color-mix(in srgb, var(--glass) 75%, transparent);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow);
+  }
+}
