@@ -1,11 +1,13 @@
 # AuraCap — Tier 1 App Report
 
-**Released:** 2026-09-15 · **v5.4.0** / SW `auracap-v540` · branch `finish/auracap` → `main`
+**Released:** 2026-09-15 · **v5.4.0** / SW `auracap-v540` · merge `7bc6c12` · tag `v5.4.0`
 
 | Field | Value |
 |-------|--------|
 | Status | Tier 1 (P0/P1 complete) |
 | Live | https://shamikhahmed.github.io/AuraCap/ |
+| CI | https://github.com/shamikhahmed/AuraCap/actions/runs/34895782570 — success (test → build → deploy) |
+| Live SW | `curl …/sw.js` → **auracap-v540** (proven 2026-09-14) |
 | Score (baseline → after) | 49 → ~88 (P0/P1 closed; residual P2 polish deferred) |
 
 ## P0 / P1 register
@@ -39,4 +41,7 @@ G-2, G-8, G-9 (no new third-party), P-AUR-1, P-AUR-2, §4.1 description, §4.2 A
 - Physical iOS/Android VoiceOver/TalkBack: ⛔ BLOCKED-EXTERNAL (no device in loop); Playwright + WebKit-capable Chromium used
 
 ## Release log
-See git tag `v5.4.0` and GitHub Actions deploy run on `main`.
+- Branch `finish/auracap` → merge commit `7bc6c12` on `main`
+- Tag `v5.4.0`
+- Workflow: https://github.com/shamikhahmed/AuraCap/actions/runs/34895782570 (test ✅ build ✅ deploy ✅)
+- Live smoke: HTTP 200 · SW cache **auracap-v540**
