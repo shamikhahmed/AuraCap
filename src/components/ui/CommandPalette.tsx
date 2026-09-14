@@ -5,8 +5,8 @@ import { APPS } from '@/data';
 import { useApp } from '@/context/AppContext';
 
 const NAV_ITEMS = [
-  { path: '/dashboard', label: 'Dashboard' },
-  { path: '/dna', label: 'Digital DNA' },
+  { path: '/dashboard', label: 'Overview' },
+  { path: '/dna', label: 'Setup report' },
   { path: '/import', label: 'Import Apps' },
   { path: '/import-guide', label: 'Import Guide' },
   { path: '/apps', label: 'App Library' },

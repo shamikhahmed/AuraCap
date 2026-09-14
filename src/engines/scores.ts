@@ -35,5 +35,5 @@ export function getInsight(apps: string[]): string {
   if (crypto > 5) return `Crypto-heavy setup (${crypto} apps). Consider a dedicated Crypto folder.`;
   if (games > 15) return `You have ${games} games — gaming is a big part of your digital life.`;
   if (social > 8) return `${social} social apps. Your phone is your social hub.`;
-  return `${apps.length} apps imported. Run Digital DNA for full analysis.`;
+  return `${apps.length} apps imported. Open Setup report for the full analysis.`;
 }

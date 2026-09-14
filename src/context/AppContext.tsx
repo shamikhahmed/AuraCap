@@ -65,8 +65,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setStateRaw(s);
       setReady(true);
       applyThemeVars(s);
+      try {
+        const w = window as Window & { __APP_READY__?: boolean; APP_VERSION?: string };
+        w.__APP_READY__ = true;
+        w.APP_VERSION = '5.4.0';
+      } catch { /* ignore */ }
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Theme vars applied once on load; persist() reapplies when theme/accent change.
   }, []);
 
   const persist = useCallback(async (patch: Partial<AuraState>) => {

@@ -17,7 +17,7 @@ export function DigitalDna() {
   const runAnalysis = () => {
     if (!state.apps.length) { toast('Import your apps first!'); return; }
     setAnalyzed(true);
-    toast('Digital DNA analyzed');
+    toast('Setup report updated');
   };
 
   const sendChat = (q?: string) => {
@@ -47,19 +47,19 @@ export function DigitalDna() {
       <div className="grid md:grid-cols-2 gap-3.5 mb-3.5">
         <GlassCard className="dna-id-badge">
           <div className="flex items-start justify-between gap-3 mb-3">
-            <p className="section-label !mb-0 font-mono tracking-[0.14em]">DIGITAL ID</p>
-            <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[var(--mu)] border border-[var(--bd)] rounded px-1.5 py-0.5">DNA CARD</span>
+            <p className="section-label !mb-0">Profile</p>
+            <span className="text-[12px] font-medium text-[var(--mu)] border border-[var(--bd)] rounded px-1.5 py-0.5">Setup card</span>
           </div>
-          <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-[var(--mu)] mb-1">TYPE · {profileCode}</p>
+          <p className="text-[12px] font-medium text-[var(--mu)] mb-1">{profileCode}</p>
           <h2 className="text-xl font-extrabold font-display mb-1">{dna?.profile.name}</h2>
-          <p className="text-xs text-[var(--mu)] leading-relaxed">{dna?.profile.desc}</p>
+          <p className="text-sm text-[var(--mu)] leading-relaxed">{dna?.profile.desc}</p>
           <div className="mt-3 pt-3 border-t border-[var(--bd)] flex items-center justify-between gap-2">
-            <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[var(--mu)]">Apps indexed</span>
-            <span className="font-mono text-[11px] text-[var(--tx)]">{state.apps.length}</span>
+            <span className="text-[12px] font-medium text-[var(--mu)]">Apps indexed</span>
+            <span className="text-sm tabular-nums text-[var(--tx)]">{state.apps.length}</span>
           </div>
         </GlassCard>
         <GlassCard>
-          <p className="section-label mb-3 font-mono tracking-[0.12em]">CATEGORY BREAKDOWN</p>
+          <p className="section-label mb-3">Category breakdown</p>
           {sortedCats.map(([cat, count]) => (
             <div key={cat} className="chart-bar">
               <span className="w-20 text-[10px] text-[var(--mu)] text-right shrink-0">{getCategoryLabel(cat)}</span>
@@ -72,7 +72,7 @@ export function DigitalDna() {
 
       <div className="grid md:grid-cols-2 gap-3.5 mb-3.5">
         <GlassCard>
-          <p className="section-label mb-3 font-mono tracking-[0.12em]">DIMENSION SCORES</p>
+          <p className="section-label mb-3">Dimension scores</p>
           {DNA_DIMS.map((d) => {
             const v = dna?.dimensions[d.id]?.pct ?? 0;
             return (
@@ -84,34 +84,39 @@ export function DigitalDna() {
           })}
         </GlassCard>
         <GlassCard>
-          <p className="section-label mb-3 font-mono tracking-[0.12em]">ECOSYSTEM PROFILES</p>
+          <p className="section-label mb-3">Regions</p>
           {dna?.locations.map((l) => (
-            <div key={l.name} className="stat-row mb-2"><span className="font-mono text-[10px] tracking-wider text-[var(--ac)] w-8 shrink-0">{l.name.slice(0, 2).toUpperCase()}</span><div><div className="text-xs font-semibold">{l.name}</div><div className="text-[10px] text-[var(--mu)]">{l.count} matching apps</div></div></div>
+            <div key={l.name} className="stat-row mb-2">
+              <div>
+                <div className="text-sm font-semibold">Region: {l.name}</div>
+                <div className="text-[12px] text-[var(--mu)]">{l.count} matching apps</div>
+              </div>
+            </div>
           ))}
         </GlassCard>
       </div>
 
       <div className="grid md:grid-cols-3 gap-3.5 mb-3.5">
         <GlassCard>
-          <p className="section-label mb-2 font-mono tracking-[0.12em]">REDUNDANCIES</p>
+          <p className="section-label mb-2">Redundancies</p>
           {dna?.redundancies.length ? dna.redundancies.slice(0, 4).map((r) => (
             <div key={r.label} className="red-card mb-2"><p className="text-[11px] text-[var(--amber)] font-semibold mb-1">{r.label} ({r.found.length})</p><p className="text-[11px] text-[var(--mu)]">{r.found.join(', ')}</p></div>
           )) : <p className="text-xs text-[var(--ac3)]">No redundancies!</p>}
         </GlassCard>
         <GlassCard>
-          <p className="section-label mb-2 font-mono tracking-[0.12em]">TOP DISTRACTIONS</p>
+          <p className="section-label mb-2">Top distractions</p>
           {dna?.distractions.length ? (
             <div className="flex flex-wrap gap-1">{dna.distractions.map((a) => <AppChip key={a} label={a} className="!text-[var(--red)] !border-[rgba(239,68,68,0.3)]" />)}</div>
           ) : <p className="text-xs text-[var(--ac3)]">No major distractions!</p>}
         </GlassCard>
         <GlassCard>
-          <p className="section-label mb-2 font-mono tracking-[0.12em]">SMART RECOMMENDATIONS</p>
+          <p className="section-label mb-2">Recommendations</p>
           {dna?.recommendations.map((r) => <p key={r} className="text-xs text-[var(--mu)] mb-1">• {r}</p>)}
         </GlassCard>
       </div>
 
       <GlassCard>
-        <p className="section-label mb-3 font-mono tracking-[0.12em]">SMART ASSISTANT — Ask about your apps</p>
+        <p className="section-label mb-3">Ask about your apps</p>
         <div className="min-h-[70px] max-h-[200px] overflow-y-auto mb-2.5 flex flex-col gap-2">
           {chat.map((m, i) => (
             <div key={i} className={`text-xs leading-relaxed px-3 py-2 rounded-[11px] max-w-[92%] ${m.role === 'user' ? 'self-end bg-[rgba(79,110,247,0.18)] border border-[rgba(79,110,247,0.3)]' : 'self-start bg-[var(--card)] border border-[var(--bd)]'}`}>{m.text}</div>
@@ -134,7 +139,7 @@ export function DigitalDna() {
 function PageHeader({ onAnalyze }: { onAnalyze: () => void }) {
   return (
     <div className="flex items-start justify-between mb-6">
-      <div><h1 className="page-title">Digital DNA</h1><p className="page-sub">Smart Assistant analysis — no API, no internet required</p></div>
+      <div><h1 className="page-title">Setup report</h1><p className="page-sub">On-device summary of your apps — no upload</p></div>
       <button type="button" onClick={onAnalyze} className="btn-primary btn-sm"><Dna size={14} /> Analyze</button>
     </div>
   );

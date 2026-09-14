@@ -23,7 +23,7 @@ const Settings = lazy(() => import('@/pages/Settings').then((m) => ({ default: m
 const ImportGuide = lazy(() => import('@/pages/ImportGuide').then((m) => ({ default: m.ImportGuide })));
 
 const PAGE_TITLES: Record<string, string> = {
-  '/dashboard': 'Dashboard', '/dna': 'Digital DNA', '/import': 'Import Apps',
+  '/dashboard': 'Overview', '/dna': 'Setup report', '/import': 'Import Apps',
   '/import-guide': 'Import Guide', '/apps': 'App Library', '/organizer': 'Smart Organizer',
   '/designer': 'Smart Assistant', '/wallpaper': 'Wallpapers', '/lockscreen': 'Lock Screen',
   '/widgets': 'Widget Lab', '/shortcuts': 'Shortcuts', '/cleanse': 'Digital Cleanse',

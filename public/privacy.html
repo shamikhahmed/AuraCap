@@ -2,68 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#4f6ef7">
-<title>Privacy Policy — AuraCap</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0071e3">
+<title>AuraCap Privacy</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:#050507;color:#e8e6f0;line-height:1.65;padding:24px;max-width:720px;margin:0 auto}
-a{color:#4f6ef7}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:#08090d;color:#eef2f6;line-height:1.65;padding:24px;max-width:720px;margin:0 auto}
+a{color:#409cff}
 nav{margin-bottom:28px;font-size:14px}
-nav a{margin-right:12px;color:#8b8aa0}
+nav a{margin-right:12px;color:rgba(238,242,246,.55)}
 h1{font-size:1.75rem;margin:24px 0 12px;letter-spacing:-.02em}
-h2{font-size:1.15rem;margin:20px 0 8px;color:#7b5ea7}
-p,li{font-size:15px;color:#8b8aa0;margin-bottom:10px}
+h2{font-size:1.15rem;margin:20px 0 8px;color:#eef2f6}
+p,li{font-size:15px;color:rgba(238,242,246,.65);margin-bottom:10px}
 ul{margin:8px 0 16px 20px}
-footer{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:#8b8aa0}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(238,242,246,.65)}
+th{color:#eef2f6;font-weight:600}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(238,242,246,.45)}
 </style>
-
-  <link rel="stylesheet" href="../css/capricorn-core.css">
 </head>
 <body>
-<div class="cap-scroll-progress" aria-hidden="true"></div>
 <nav>
-  <a href="landing.html">← AuraCap</a>
-  <a href="index.html">App</a>
-  <a href="presentation.html">Presentation</a>
-  <a href="pitch.html">Pitch</a>
+  <a href="./">← AuraCap</a>
+  <a href="https://shamikhahmed.github.io/support.html">Support</a>
 </nav>
 <article>
-<h1>AuraCap — Privacy Policy</h1>
-<p><strong>Last updated:</strong> June 11, 2026</p>
-<p>AuraCap is an offline-first Progressive Web App for organizing Apple ecosystem app setups. <strong>Your app lists, layouts, and preferences stay on your device</strong> unless you explicitly export them.</p>
-<h2>What we collect</h2>
+<h1>AuraCap Privacy</h1>
+<p><strong>Effective 15 September 2026</strong> · Published by Capricorn Systems, Karachi, Pakistan</p>
+
+<h2>Summary</h2>
+<p>AuraCap works on your device. We don't have accounts, analytics, ads or tracking, and we don't sell data.</p>
+
+<h2>What stays on your device</h2>
 <ul>
-<li><strong>Nothing by default.</strong> No accounts, analytics SDKs, or third-party trackers ship in this app.</li>
-<li>Smart Assistant features (DNA analysis, chat, layout recommendations) run entirely on-device with rules-based logic — no external LLM or API calls.</li>
+  <li>Imported app lists and categories</li>
+  <li>Profiles, layouts, wallpapers and lock screen choices</li>
+  <li>Setup report / score results and preferences (theme, accent, reminders)</li>
+  <li>Optional JSON backups you create yourself</li>
 </ul>
-<h2>Storage</h2>
-<ul>
-<li>App state is stored in <strong>IndexedDB</strong> and <strong>localStorage</strong> in your browser.</li>
-<li>Uninstalling or clearing site data removes your imported apps and custom layouts.</li>
-</ul>
-<h2>Network</h2>
-<ul>
-<li>GitHub Pages serves static files only — no server-side access to your data.</li>
-<li>AuraCap does not upload your app list anywhere.</li>
-</ul>
-<h2>Imports & exports</h2>
-<ul>
-<li>App lists you paste or import are processed locally on your device.</li>
-<li>JSON backups are generated locally — you choose where to save or share them.</li>
-</ul>
+
+<h2>What leaves your device</h2>
+<table>
+  <thead><tr><th>Service</th><th>What is sent</th><th>Why</th><th>When</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing</td><td>—</td><td>—</td><td>AuraCap makes no network calls for your data. Static app files load from GitHub Pages.</td></tr>
+  </tbody>
+</table>
+
+<h2>Your controls</h2>
+<p>Export your data: Settings → Export &amp; Sync. Erase all data: Settings → Danger zone → Factory reset.</p>
+
+<h2>Children</h2>
+<p>AuraCap is intended for a general audience aged 13 and over.</p>
+
+<h2>Changes</h2>
+<p>We'll update this page and its effective date if anything changes.</p>
+
 <h2>Contact</h2>
-<p>Built by Shamikh Ahmed — issues via the <a href="https://github.com/shamikhahmed/AuraCap">AuraCap GitHub repository</a>.</p>
+<p><a href="https://shamikhahmed.github.io/support.html">https://shamikhahmed.github.io/support.html</a></p>
 </article>
-<footer>© 2026 Shamikh Ahmed · <a href="https://github.com/shamikhahmed/AuraCap">GitHub</a></footer>
-
-  <canvas id="cap-scene" class="cap-scene-canvas cap-scene-canvas--subtle" aria-hidden="true"></canvas>
-
-  <script src="../js/vendor/gsap.min.js"></script>
-  <script src="../js/vendor/ScrollTrigger.min.js"></script>
-  <script src="../js/capricorn-scene.js"></script>
-  <script src="../js/capricorn-motion.js"></script>
-  <script src="../js/capricorn-cinematic.js"></script>
-  <script>document.addEventListener('DOMContentLoaded',function(){if(window.CapCinematic)CapCinematic.init({canvas:'#cap-scene'});});</script>
+<footer>© Capricorn Systems · AuraCap</footer>
 </body>
 </html>

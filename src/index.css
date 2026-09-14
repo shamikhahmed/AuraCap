@@ -141,8 +141,15 @@ body {
 .glass-topbar { border-bottom: 1px solid var(--bd); }
 
 .page-title { font-family: var(--fd); font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
-.page-sub { font-size: 12px; color: var(--mu); margin-top: 4px; }
-.section-label { font-size: 10px; color: var(--mu); letter-spacing: 1px; }
+.page-sub { font-size: 14px; color: var(--mu); margin-top: 4px; line-height: 1.4; }
+.section-label {
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mu);
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
 
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
@@ -459,16 +466,67 @@ nav.expanded .nav-divider { width: 196px; }
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-.welcome-device-node span { color: var(--mu); font-family: var(--fm); text-transform: uppercase; letter-spacing: 0.12em; }
+.welcome-device-node span {
+  color: var(--mu);
+  font-family: var(--fb);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
 
-/* Home Control Center — constellation · DNA · tools */
+/* Skip link — hidden until keyboard focus (AUR-P0-01) */
+.cap-skip-link {
+  position: absolute;
+  top: calc(8px + env(safe-area-inset-top, 0px));
+  left: 8px;
+  z-index: 10000;
+  padding: 10px 18px;
+  background: var(--ac, #0071e3);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 999px;
+  transform: translateY(-250%);
+  transition: transform 0.15s ease;
+}
+.cap-skip-link:focus,
+.cap-skip-link:focus-visible {
+  transform: none;
+  outline: 2px solid var(--ac2, #409cff);
+  outline-offset: 2px;
+}
+
+/* Content clear of floating tab bar (AUR-P0-01) */
+.app-scroll-pad {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px) + 16px);
+}
+@media (min-width: 700px) {
+  .app-scroll-pad {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Route enter — CSS only, reduced-motion safe (AUR-P1-03) */
+.cap-route-enter {
+  animation: cap-route-fade 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes cap-route-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cap-route-enter { animation: none; }
+}
+
+/* Home Overview — constellation · score · tools */
 .dash-home-layout {
   display: block;
 }
 .dash-rail-link {
   display: inline-block;
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--ac);
 }
@@ -481,7 +539,7 @@ nav.expanded .nav-divider { width: 196px; }
   border: 1px solid var(--bd);
   background: color-mix(in srgb, var(--glass) 80%, transparent);
   backdrop-filter: blur(12px);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--tx);
   transition: border-color 0.15s ease;
@@ -497,7 +555,12 @@ nav.expanded .nav-divider { width: 196px; }
   backdrop-filter: blur(20px);
 }
 
-@media (min-width: 1024px) {
+.dash-hide-below-700 { display: none; }
+.dash-show-below-700 { display: block; }
+
+@media (min-width: 700px) {
+  .dash-hide-below-700 { display: block; }
+  .dash-show-below-700 { display: none; }
   .dash-home-layout {
     display: grid;
     grid-template-columns: 220px minmax(0, 1fr) 200px;

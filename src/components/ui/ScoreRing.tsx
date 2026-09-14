@@ -43,8 +43,8 @@ export function ScoreRing({ value, label, gradientId, colors, size = 86 }: Score
           </defs>
         </svg>
         <div className="absolute text-center">
-          <div className="text-[19px] font-extrabold font-display">{display}</div>
-          <div className="text-[8px] text-[var(--mu)]">{label}</div>
+          <div className="text-[22px] font-extrabold font-display tabular-nums">{display}</div>
+          {label ? <div className="text-[11px] font-medium text-[var(--mu)]">{label}</div> : null}
         </div>
       </div>
     </div>

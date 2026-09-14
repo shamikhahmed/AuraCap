@@ -11,7 +11,7 @@ const DEVICES = [
   { id: 'mac', label: 'Mac', Icon: Laptop, x: 50, y: 8 },
 ] as const;
 
-/** Frosted DNA card + device constellation — system blue, no particle canvas */
+/** Welcome — frosted setup card + device constellation (no WebGL) */
 export function WelcomeScreen() {
   const { state, enterApp, loadDemo, persist } = useApp();
   const [showName, setShowName] = useState(false);
@@ -78,61 +78,47 @@ export function WelcomeScreen() {
           <div className="welcome-dna-card absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[62%] aspect-[1.6/1] rounded-xl overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--ac)]" />
             <div className="relative h-full p-4 flex flex-col justify-between">
-              <div className="flex justify-between items-start gap-2">
-                <div>
-                  <p className="text-[8px] tracking-[0.22em] uppercase text-[var(--mu)] font-mono">Digital DNA</p>
-                  <p className="text-base font-semibold tracking-tight mt-0.5" style={{ fontFamily: 'var(--fd)' }}>
-                    AuraCap
-                  </p>
-                </div>
-                <div
-                  className="w-10 h-10 rounded-full border-2 border-dashed border-[var(--ac)] flex items-center justify-center text-[8px] font-bold tracking-wider text-[var(--ac)] shrink-0"
-                  style={{ transform: 'rotate(-8deg)' }}
-                >
-                  ID
-                </div>
+              <div>
+                <p className="text-[12px] font-semibold text-[var(--mu)]">Setup report</p>
+                <p className="text-base font-semibold tracking-tight mt-0.5" style={{ fontFamily: 'var(--fd)' }}>
+                  AuraCap
+                </p>
               </div>
-              <div className="font-mono text-[9px] text-[var(--mu)] tracking-widest">OFFLINE · PRIVATE</div>
-              <div className="h-5 w-[55%] rounded-sm bg-[color-mix(in_srgb,var(--tx)_10%,transparent)]" />
+              <div className="text-[12px] text-[var(--mu)]">Private on this device</div>
             </div>
           </div>
         </div>
 
         <div className="text-center">
-          <p className="text-[10px] tracking-[0.2em] uppercase text-[var(--ac)] font-mono mb-3">
-            Ecosystem credential
-          </p>
           <h1
             className="text-[clamp(28px,6vw,40px)] font-bold tracking-tight leading-[1.08] mb-3"
             style={{ fontFamily: 'var(--fd)' }}
           >
-            Your Apple DNA.
-            <br />
-            <span className="text-[var(--ac)]">One badge.</span>
+            AuraCap
           </h1>
           <p className="text-[var(--mu)] text-sm leading-relaxed max-w-sm mx-auto mb-6">
-            Device layouts, profiles, wallpapers — private on this device.
+            Organize your iPhone, iPad and Mac setup.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <button type="button" onClick={handleLaunch} className="welcome-btn">
-              Open badge <ArrowRight size={16} />
+              Open AuraCap <ArrowRight size={16} />
             </button>
             <button type="button" onClick={() => loadDemo()} className="btn-ghost flex items-center gap-2">
-              <Sparkles size={14} /> Sample wardrobe
+              <Sparkles size={14} /> Try sample data
             </button>
           </div>
           <button
             type="button"
             onClick={() => setShowGuide(true)}
-            className="mt-4 inline-flex items-center gap-1.5 text-[11px] text-[var(--ac)] hover:underline"
+            className="mt-4 inline-flex items-center gap-1.5 text-[13px] text-[var(--ac)] hover:underline"
           >
             <BookOpen size={12} /> Import guide
           </button>
         </div>
       </motion.div>
 
-      <Modal open={showGuide} onClose={() => setShowGuide(false)} title="How to Import Your Apps" wide>
+      <Modal open={showGuide} onClose={() => setShowGuide(false)} title="How to import your apps" wide>
         <div className="max-h-[70vh] overflow-y-auto pr-1">
           <ImportGuideContent showCta={false} compact />
         </div>

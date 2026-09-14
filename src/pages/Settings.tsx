@@ -4,7 +4,7 @@ import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Modal } from '@/components/ui/Modal';
 
-const APP_VERSION = '5.3.3';
+const APP_VERSION = '5.4.0';
 
 const ACCENTS = [
   ['#0071E3', '#409CFF'],
@@ -81,7 +81,7 @@ export function Settings() {
 
   return (
     <div>
-      <div className="mb-6"><h1 className="page-title">Settings</h1><p className="page-sub">Customize AuraCap v5</p></div>
+      <div className="mb-6"><h1 className="page-title">Settings</h1><p className="page-sub">Theme, export and about</p></div>
 
       <div className="grid md:grid-cols-2 gap-3">
         <GlassCard>
@@ -149,8 +149,18 @@ export function Settings() {
       </div>
 
       <GlassCard className="mt-3 text-center">
-        <p className="text-base font-extrabold font-display mb-1">AuraCap v{APP_VERSION}</p>
-        <p className="text-[10px] text-[var(--mu)] font-mono">1000+ Apps · Smart DNA · iPhone + iPad + Mac · Multi-Profile · Version History · 100% Offline</p>
+        <p className="text-base font-extrabold font-display mb-1">AuraCap</p>
+        <p className="text-[13px] text-[var(--mu)] mb-2">Version {APP_VERSION}</p>
+        <p className="text-[13px] text-[var(--mu)] leading-relaxed max-w-md mx-auto mb-3">
+          Organize your iPhone, iPad and Mac setup. Stored only on this device.
+        </p>
+        <p className="text-[12px] text-[var(--mu)] leading-relaxed max-w-md mx-auto mb-3">
+          Apple, iPhone, iPad and Mac are trademarks of Apple Inc. AuraCap isn&apos;t affiliated with Apple.
+        </p>
+        <div className="flex justify-center gap-3 text-[13px]">
+          <a href="privacy.html" className="text-[var(--ac)] hover:underline">Privacy</a>
+          <a href="https://shamikhahmed.github.io/support.html" className="text-[var(--ac)] hover:underline">Support</a>
+        </div>
       </GlassCard>
 
       <Modal open={resetModal} onClose={() => setResetModal(false)} title="Factory reset?">

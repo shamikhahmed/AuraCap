@@ -1,3 +1,19 @@
+## 5.4.0 — 2026-09-15
+
+Tier 1 finish (Cap Fleet Finish Program):
+
+- **AUR-P0-01** Hide desktop rail below 700px; skip link focus-only; content padding above tab bar
+- **AUR-P0-02** Sample-data banner copy; Overview + Setup report naming; device name normalization; remove LIVE badge
+- **AUR-P1-01** Single-row header with overflow menu; theme only in Settings
+- **AUR-P1-02** One Aura Score with Focus / Clarity / Organization breakdown (P-AUR-1)
+- **AUR-P1-03** Remove three.js + GSAP; CSS route transitions (P-AUR-2)
+- **AUR-P1-04** Monospace UI labels → body tokens
+- **AUR-P1-05** Quick access max 4 (Import, Wallpapers, Profiles, Organizer)
+- **AUR-P1-06** Honest import copy (“Paste or type your apps”)
+- **AUR-P1-07** Apple trademark disclaimer (§4.2)
+- **AUR-P1-08** Remove Pro/paywall scaffolding (G-2)
+- SW cache `auracap-v540`
+
 ## 5.3.3 — 2026-07-20
 - Home remint: Control Center 3-pane (device constellation / DNA scores / organizer tools). System-blue score rings; no purple. SW `auracap-v533`.
 

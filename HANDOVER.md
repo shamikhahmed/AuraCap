@@ -1,50 +1,30 @@
 # AuraCap — Handover
 
 > Read this + `ROADMAP.md` + `~/Capricorn-Brain/01 Projects/AuraCap.md` before working here.
-> Last updated: 2026-07-19 · Fleet-wide standard: `capricorn-tooling/shared/CAP-STANDARD.md`
+> Last updated: 2026-09-15 · Fleet: Cap Fleet Finish Program Tier 1
 
 ## What this is
-Apple ecosystem studio PWA — app setups, digital DNA, layouts, wallpapers, widgets.
+Organize your iPhone, iPad and Mac setup — offline PWA.
 
 ## Facts
-**Version:** 5.3.0
+**Version:** 5.4.0 · SW `auracap-v540`
 **Live:** https://shamikhahmed.github.io/AuraCap/
 **Repo:** https://github.com/shamikhahmed/AuraCap
-**Stack:** React 19 + TypeScript + Vite. GSAP/Three.js motion layer (app fast mode skips it). vite-plugin-pwa.
-**Data:** Browser local storage / IndexedDB via app context. No backend, no accounts.
+**Stack:** React 19 + TypeScript + Vite + framer-motion. three.js and GSAP removed (AUR-P1-03). vite-plugin-pwa.
+**Data:** IndexedDB via `idb`. No backend, no accounts.
 
 ## Run & verify
 ```bash
 npm install
 npm run dev
-npm run verify   # lint + build + Playwright e2e
+npm run verify   # lint + deviceName unit + build + Playwright e2e
 ```
 
 ## Architecture
-- `src/pages/` — Dashboard, DNA, Import, App Library, Organizer, Smart Assistant (designer), Wallpaper, Lock Screen, Widget Lab, Shortcuts, Cleanse, Routine, Profiles, Settings
-- `src/App.tsx` — routes, TitleSync (per-route document.title), demo mode entry via `?demo=1`
-- `public/` — marketing pages (landing/pitch/presentation), Capricorn OS brand icons, cap-demo-mode.js, cap-desktop-nav.js
-- `.github/workflows/deploy.yml` — Pages deploy gated on verify
+- `src/pages/` — Overview (Dashboard), Setup report (DNA), Import, App Library, Organizer, Smart Assistant, Wallpaper, Lock Screen, Widget Lab, Shortcuts, Cleanse, Routine, Profiles, Settings
+- `src/App.tsx` — routes, TitleSync, demo via `?demo=1`
+- `public/` — marketing pages, privacy.html
+- `.github/workflows/deploy.yml` — Pages deploy gated on verify (`needs: test`)
 
-## Cap Standard status (2026-07-19)
-| Cap Standard item | Status |
-|---|---|
-| Docs pack | ✅ |
-| Screen gallery | ✅ |
-| Version discipline | ✅ |
-| QA / e2e | ✅ |
-| CI gate | ✅ |
-| PWA polish | ✅ |
-| Demo mode | ✅ |
-
-Gaps are tracked as tasks in `ROADMAP.md`.
-
-## Gotchas — read before coding
-- TitleSync `??`/`||` precedence bug fixed 2026-07-11 — don't regress when touching fallback title logic.
-- GSAP 'app fast mode' intentionally skips WebGL/GSAP on app shell — don't re-enable without checking performance decisions in git history.
-- Marketing decks in public/ are synced copies — hub site has its own; keep copy consistent.
-
-## Where decisions live
-- Dated decisions: Capricorn-Brain project note (path above)
-- Release history: `CHANGELOG.md`
-- Fleet-level events: `Cap-Apps/docs/CHANGELOG.md` (master)
+## Cap Standard
+Docs · gallery · version discipline · e2e · CI gate · PWA · demo mode — Tier 1 release 5.4.0.

@@ -82,7 +82,7 @@ export function ImportGuideContent({ showCta = true, compact = false }: ImportGu
             <div>
               <p className="font-bold text-sm mb-1">Why import your apps?</p>
               <p className="text-xs text-[var(--mu)] leading-relaxed">
-                AuraCap analyzes your real app list to build Digital DNA, smart folders, device layouts, and personalized recommendations.
+                AuraCap analyzes your real app list for a setup report, smart folders, device layouts, and recommendations.
                 The more complete your list, the better your setup.
               </p>
             </div>

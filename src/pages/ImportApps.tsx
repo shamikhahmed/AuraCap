@@ -52,8 +52,8 @@ export function ImportApps() {
     <div>
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
         <div>
-          <h1 className="page-title">Import Your Apps</h1>
-          <p className="page-sub">Device-specific import — iPhone, iPad & Mac each handled differently</p>
+          <h1 className="page-title">Import your apps</h1>
+          <p className="page-sub">Paste or type your apps — iPhone, iPad or Mac</p>
         </div>
         <Link to="/import-guide" className="btn-ghost btn-sm shrink-0 self-start">
           <BookOpen size={14} /> Full Import Guide
@@ -124,7 +124,7 @@ export function ImportApps() {
                 className="textarea-field min-h-[120px] border-0"
               />
             </div>
-            <p className="text-[10px] text-[var(--mu)] mt-2">Paste or drop a .txt file</p>
+            <p className="text-[13px] text-[var(--mu)] mt-2">Paste or type your apps — one name per line. You can also drop a .txt file.</p>
             <div className="flex gap-2 mt-2.5 flex-wrap">
               <button type="button" onClick={() => handleImport(device)} className="btn-primary flex-1">Import & Analyze</button>
               {device === 'iphone' && <button type="button" onClick={loadSample} className="btn-ghost btn-sm">Load Sample</button>}
@@ -164,7 +164,7 @@ export function ImportApps() {
               </div>
               <p className="text-xs text-[var(--ac3)] mb-2">Imported from {result.source}</p>
               <div className="flex gap-2">
-                <button type="button" onClick={() => navigate('/dna')} className="btn-primary btn-sm">Analyze DNA</button>
+                <button type="button" onClick={() => navigate('/dna')} className="btn-primary btn-sm">Open setup report</button>
                 <button type="button" onClick={() => navigate('/organizer')} className="btn-ghost btn-sm">Build Folders</button>
               </div>
             </GlassCard>
