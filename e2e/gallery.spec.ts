@@ -5,8 +5,8 @@ import { join } from 'node:path';
 const GALLERY_DIR = join(process.cwd(), 'docs', 'screenshots', 'gallery');
 
 const SCREENS = [
-  { route: './dashboard', slug: 'dashboard', label: 'Dashboard' },
-  { route: './dna', slug: 'dna', label: 'Digital DNA' },
+  { route: './dashboard', slug: 'dashboard', label: 'Overview' },
+  { route: './dna', slug: 'dna', label: 'Setup report' },
   { route: './import', slug: 'import', label: 'Import Apps' },
   { route: './import-guide', slug: 'import-guide', label: 'Import Guide' },
   { route: './apps', slug: 'apps', label: 'App Library' },
@@ -51,7 +51,7 @@ async function captureAll(page: Page, viewport: keyof typeof VIEWPORTS) {
 
   // Welcome screen first — demo entry navigates past it
   await page.goto('./');
-  await expect(page.getByText('Your Apple DNA.')).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByRole('heading', { name: 'AuraCap' })).toBeVisible({ timeout: 15_000 });
   const welcomeFile = `${viewport}-00-welcome.png`;
   await page.screenshot({ path: join(GALLERY_DIR, welcomeFile), fullPage: true });
   shots.push({ file: welcomeFile, label: 'Welcome', route: '/', viewport });

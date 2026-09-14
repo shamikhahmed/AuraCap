@@ -31,7 +31,7 @@ export function AppShell() {
     const fire = () => {
       if (Notification.permission === 'granted') {
         new Notification('AuraCap — Digital Cleanse due', {
-          body: 'Time for your scheduled app audit. Open Digital Cleanse to review distractions.',
+          body: 'Time for your scheduled app audit. Open Cleanse to review distractions.',
           tag: 'auracap-cleanse',
         });
         cleanseNotifiedRef.current = true;
@@ -53,9 +53,13 @@ export function AppShell() {
         onToggle={() => setExpanded((e) => !e)}
         onMobileClose={() => setMobileOpen(false)}
       />
-      <div className={`main-content transition-all duration-300 ${expanded ? 'ml-[234px]' : 'ml-[70px] max-md:ml-0'}`}>
+      <div
+        className={`main-content transition-all duration-300 ${
+          expanded ? 'min-[700px]:ml-[234px]' : 'min-[700px]:ml-[70px]'
+        } max-[699px]:ml-0`}
+      >
         <Topbar onMenuToggle={() => setMobileOpen((o) => !o)} menuOpen={mobileOpen} />
-        <div className="px-4 md:px-7 pb-24 md:pb-20 pt-7">
+        <div className="app-scroll-pad px-4 md:px-7 pt-7">
           <DemoBanner />
           <CapRouteTransition>
             <Outlet />

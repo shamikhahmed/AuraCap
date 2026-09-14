@@ -11,6 +11,7 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: false,
       includeAssets: [
         'favicon.svg',
         'mark.svg',
@@ -23,17 +24,17 @@ export default defineConfig({
         'icon-maskable-512.png',
       ],
       manifest: {
-        name: 'AuraCap v5 — Apple Ecosystem Studio',
-        short_name: 'AuraCap v5',
-        description: 'Offline-first PWA for organizing iPhone/iPad/Mac app setups',
+        name: 'AuraCap',
+        short_name: 'AuraCap',
+        description: 'Organize your iPhone, iPad and Mac setup.',
         theme_color: '#050507',
         background_color: '#050507',
         display: 'standalone',
-        orientation: 'portrait',
+        orientation: 'any',
         start_url: '/AuraCap/',
         categories: ['productivity', 'utilities'],
         shortcuts: [
-          { name: 'Dashboard', short_name: 'Dashboard', url: '/AuraCap/dashboard', icons: [{ src: 'icon-192.png', sizes: '192x192' }] },
+          { name: 'Overview', short_name: 'Overview', url: '/AuraCap/dashboard', icons: [{ src: 'icon-192.png', sizes: '192x192' }] },
           { name: 'App Library', short_name: 'Apps', url: '/AuraCap/apps', icons: [{ src: 'icon-192.png', sizes: '192x192' }] },
         ],
         icons: [

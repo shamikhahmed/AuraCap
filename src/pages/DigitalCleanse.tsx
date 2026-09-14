@@ -42,7 +42,7 @@ export function DigitalCleanse() {
       return;
     }
     if (!dna) {
-      toast('Run DNA analysis first from Digital DNA');
+      toast('Run setup report first from Setup report');
       return;
     }
     const items: RemovalSuggestion[] = [];

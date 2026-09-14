@@ -41,7 +41,7 @@ export const HOME_LOADING_MESSAGES = [
 ];
 
 export const DEMO_LOADING_MESSAGES = [
-  'Loading demo wardrobe…',
+  'Loading sample data…',
   'Seeding wear history…',
   'Almost ready…',
 ];

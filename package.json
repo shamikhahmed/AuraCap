@@ -1,7 +1,7 @@
 {
   "name": "auracap",
   "private": true,
-  "version": "5.3.3",
+  "version": "5.4.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,23 +10,22 @@
     "preview": "vite preview",
     "extract-data": "node scripts/extract-from-html.mjs",
     "generate-icons": "node scripts/generate-icons.mjs",
+    "test:unit": "node scripts/test-device-name.mjs",
     "test:e2e": "npm run build && playwright test",
     "gallery": "npm run build && CAPTURE_GALLERY=1 playwright test e2e/gallery.spec.ts",
     "gallery:view": "python3 -m http.server 8772",
-    "verify": "npm run lint && npm run test:e2e"
+    "verify": "npm run lint && npm run test:unit && npm run test:e2e"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
-    "gsap": "^3.15.0",
     "idb": "^8.0.3",
     "lucide-react": "^1.17.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.17.0",
-    "tailwind-merge": "^3.6.0",
-    "three": "^0.175.0"
+    "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -35,7 +34,6 @@
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@types/three": "^0.184.1",
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",

@@ -41,7 +41,7 @@ export function MobileTabBar() {
   if (location.pathname === '/') return null;
 
   return (
-    <div className="floating-tab-shell md:hidden">
+    <div className="floating-tab-shell min-[700px]:hidden">
       <nav className="floating-tab-bar" aria-label="Main">
         {TABS.map((tab) => (
           <MobileTab key={tab.to} {...tab} />
