@@ -33,3 +33,5 @@ npm-debug.log*
 # TypeScript
 *.tsbuildinfo
 test-results/
+
+qa/finish-loop/shots/

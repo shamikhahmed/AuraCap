@@ -14,7 +14,8 @@
     "test:e2e": "npm run build && playwright test",
     "gallery": "npm run build && CAPTURE_GALLERY=1 playwright test e2e/gallery.spec.ts",
     "gallery:view": "python3 -m http.server 8772",
-    "verify": "npm run lint && npm run test:unit && npm run test:e2e"
+    "verify": "npm run lint && npm run test:unit && npm run test:e2e",
+    "test:matrix": "FINISH_MATRIX=1 playwright test e2e/finish-matrix.spec.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
