@@ -1,3 +1,6 @@
+## 5.4.2 — 2026-09-15
+- Tier 1 automated gate: ACBrand palette, tooling brandOk for Aura CSS/palettes, finish-loop SINKS + Lighthouse stub, suppressions/`any` CI fix. VO ⛔ BLOCKED-EXTERNAL.
+
 ## 5.4.1 — 2026-09-15
 - C-16: Self-host Inter on pitch.html; remove Google Fonts.
 

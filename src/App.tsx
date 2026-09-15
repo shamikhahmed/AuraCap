@@ -47,7 +47,7 @@ function AppRoutes() {
     if (new URLSearchParams(location.search).get('demo') === '1' && !state.entered) {
       loadDemo();
     }
-  }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [ready, state.entered, loadDemo]);
 
   if (!ready) {
     return <div className="min-h-dvh flex items-center justify-center text-[var(--mu)]">Loading AuraCap…</div>;

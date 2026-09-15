@@ -3,6 +3,8 @@ import { DEFAULT_STATE, exportJson, exportTxt, factoryReset, loadState, saveStat
 import { computeDna } from '@/engines/dna';
 import { calcScores } from '@/engines/scores';
 import { SAMPLE_LIST } from '@/data';
+import { ACBrand, AC_VERSION_COLORS } from '@/brand/colors';
+import versionManifest from '../../VERSION.json';
 import type { AuraState, DeviceType, LayoutType, Profile, VersionSnapshot, Widget } from '@/types';
 
 interface Toast { id: number; message: string }
@@ -68,7 +70,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       try {
         const w = window as Window & { __APP_READY__?: boolean; APP_VERSION?: string };
         w.__APP_READY__ = true;
-        w.APP_VERSION = '5.4.0';
+        w.APP_VERSION = versionManifest.version;
       } catch { /* ignore */ }
     });
     // Theme vars applied once on load; persist() reapplies when theme/accent change.
@@ -165,7 +167,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       const emojis = ['🎯', '🌍', '📱', '🔮', '⚡', '🌟', '🎨', '🏆'];
       const pf: Profile = {
         id: `pf_${Date.now()}`, name, emoji: emojis[Math.floor(Math.random() * emojis.length)],
-        color: '#4f6ef7', apps: [], device: 'iphone', model: 'iphone16promax', aesthetic: 'minimal', desc: 'Custom profile',
+        color: ACBrand.indigo, apps: [], device: 'iphone', model: 'iphone16promax', aesthetic: 'minimal', desc: 'Custom profile',
       };
       await persist({ profiles: [...state.profiles, pf] });
       toast(`Profile created: ${name}`);
@@ -180,7 +182,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         id: `v${Date.now()}`, name, date: new Date().toLocaleDateString(),
         appCount: state.apps.length, device: state.device, model: state.model,
         aesthetic: aesthetic ?? 'minimal', layout: state.layout,
-        color: ['#4f6ef7', '#1de9b6', '#f59e0b', '#a855f7'][Math.floor(Math.random() * 4)],
+        color: AC_VERSION_COLORS[Math.floor(Math.random() * AC_VERSION_COLORS.length)],
       };
       const versions = [v, ...state.versions].slice(0, 10);
       await persist({ versions });

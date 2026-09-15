@@ -2,7 +2,7 @@
 
 Organize your iPhone, iPad and Mac setup.
 
-**Version:** 5.4.0 · SW `auracap-v540`  
+**Version:** 5.4.2 · SW `auracap-v542`  
 **Live:** [https://shamikhahmed.github.io/AuraCap/](https://shamikhahmed.github.io/AuraCap/)
 
 Offline-first React + Vite PWA. Import your apps, see an Aura Score with Focus / Clarity / Organization, and organize layouts — all on this device.
