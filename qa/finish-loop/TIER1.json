@@ -2,8 +2,8 @@
   "app": "AuraCap",
   "version": "5.4.2",
   "swCache": "auracap-v542",
-  "generatedAt": "2026-09-15T12:45:58.039Z",
-  "status": "FAIL",
+  "generatedAt": "2026-09-15T12:51:34.855Z",
+  "status": "PASS",
   "pass": [
     {
       "id": "version:field",
@@ -11,7 +11,7 @@
     },
     {
       "id": "version:sw-cache-match",
-      "detail": "vite.config.ts workbox/VitePWA cacheId ↔ auracap-v542"
+      "detail": "dist/sw.js contains auracap-v542"
     },
     {
       "id": "records:BASELINE.md",
@@ -35,7 +35,7 @@
     },
     {
       "id": "records:APP-REPORT-size",
-      "detail": "3169 bytes (need ≥1024)"
+      "detail": "1921 bytes (need ≥1024)"
     },
     {
       "id": "suppressions",
@@ -44,6 +44,14 @@
     {
       "id": "app-ready",
       "detail": "window.__APP_READY__ referenced"
+    },
+    {
+      "id": "ci:main",
+      "detail": "Merge finish/auracap-tier1 — Tier 1 ACBrand 5.4.2 → success https://github.com/shamikhahmed/AuraCap/actions/runs/34971080491"
+    },
+    {
+      "id": "tag",
+      "detail": "found v5.4.2"
     },
     {
       "id": "matrix:spec",
@@ -90,16 +98,7 @@
       "detail": "1 sinks; SINKS.md ok"
     }
   ],
-  "fail": [
-    {
-      "id": "ci:main",
-      "detail": "Merge finish/sync-versions — landing sync → failure https://github.com/shamikhahmed/AuraCap/actions/runs/34970031340"
-    },
-    {
-      "id": "tag",
-      "detail": "missing tag v5.4.2 (have: v5.2.0, v5.2.1, v5.4.0, v5.4.1)"
-    }
-  ],
+  "fail": [],
   "warn": [
     {
       "id": "matrix:shots",
