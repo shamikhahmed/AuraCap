@@ -1,3 +1,6 @@
+## 5.4.1 — 2026-09-15
+- C-16: Self-host Inter on pitch.html; remove Google Fonts.
+
 ## 5.4.0 — 2026-09-15
 
 Tier 1 finish (Cap Fleet Finish Program):
