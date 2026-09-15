@@ -1,49 +1,46 @@
-> **Review 2 honesty (C-23, 2026-09-15):** Prior Tier 1 claims are **revoked**. Status remains **Tier 1 not verified** until `qa/finish-loop/TIER1.json` is PASS with linked evidence. Known gaps: finish-matrix / Lighthouse / `__APP_READY__` / BLOCKED-EXTERNAL as listed in fleet PROGRESS.
+# AuraCap — APP-REPORT
 
-# AuraCap — Tier 1 App Report
+**Status:** Automated TIER1 in progress — fleet Tier 1 **not** claimed (VO ⛔ BLOCKED-EXTERNAL)  
+**Version:** 5.4.2 · **SW:** `auracap-v542`  
+**Live URL:** https://shamikhahmed.github.io/AuraCap/  
+**CI:** pending merge  
+**Updated:** 2026-09-15
 
-**Released:** 2026-09-15 · **v5.4.0** / SW `auracap-v540` · merge `7bc6c12` · tag `v5.4.0`
+Evidence: TIER1.json · SINKS.md · lighthouse stub · finish-matrix ESM
 
-| Field | Value |
-|-------|--------|
-| Status | Tier 1 (P0/P1 complete) |
-| Live | https://shamikhahmed.github.io/AuraCap/ |
-| CI | https://github.com/shamikhahmed/AuraCap/actions/runs/34895782570 — success (test → build → deploy) |
-| Live SW | `curl …/sw.js` → **auracap-v540** (proven 2026-09-14) |
-| Score (baseline → after) | 49 → ~88 (P0/P1 closed; residual P2 polish deferred) |
+## Status
+Prior Review-2 revocation stands until `TIER1.json` PASS with linked CI. This slice clears automated kill-list / suppressions / SINKS / LH file gates. VO not linked — C-09 honesty. No estimated Lighthouse scores.
 
-## P0 / P1 register
+## This slice
+- Tooling: brandOk for Aura `index.css` / `premium.css` / `App.css` + `data/constants.ts` / `data/wallpapers.ts` palettes
+- `src/brand/colors.ts` (ACBrand) for remaining product hex (dna, Settings, Dashboard, db, AppContext, pngExport)
+- Remove `eslint-disable` in `App.tsx` (include `loadDemo` / `state.entered`)
+- Fix `@typescript-eslint/no-explicit-any` in `e2e/finish-matrix.spec.ts`
+- `#fab` → `[id="fab"]` in marketing nav (hex false-positive)
+- SINKS.md + `qa/finish-loop/lighthouse/home-demo-mobile.json` stub (scores null / not claimed)
+- VERSION 5.4.2 / SW `auracap-v542`
 
-| ID | Severity | What was wrong | What was done | Status |
-|----|----------|----------------|---------------|--------|
-| AUR-P0-01 | P0 | Rail clipped &lt;700px; skip link always visible; tab bar over content | Hide rail below 700px; skip link focus-only CSS; `app-scroll-pad` | ✅ |
-| AUR-P0-02 | P0 | demo wardrobe / Control Center / Digital DNA / LIVE / raw device names | Sample data banner; Overview; Setup report; `normalizeDeviceName`; no LIVE | ✅ |
-| AUR-P1-01 | P1 | Header chip stack; theme in topbar | Single row + … menu; theme only in Settings | ✅ |
-| AUR-P1-02 | P1 | Four duplicate score rings | One Aura Score + Focus/Clarity/Organization + info sheet (P-AUR-1) | ✅ |
-| AUR-P1-03 | P1 | three.js + GSAP | Removed deps + CapScene; CSS route enter (P-AUR-2) | ✅ |
-| AUR-P1-04 | P1 | Monospace UI labels | Section labels → body tokens 13px | ✅ |
-| AUR-P1-05 | P1 | Quick access duplicated tabs | Max 4: Import, Wallpapers, Profiles, Organizer | ✅ |
-| AUR-P1-06 | P1 | Overclaiming import | “Paste or type your apps” | ✅ |
-| AUR-P1-07 | P1 | No Apple disclaimer | §4.2 text on Settings About; privacy template | ✅ |
-| AUR-P1-08 | P1 | Pro/paywall CSS scaffolding | Removed paywall styles (G-2) | ✅ |
+## Gates (honest)
+| Gate | Result | Notes |
+|---|---|---|
+| G5 | EVIDENCE | LH stub — score not claimed |
+| G7 | PARTIAL | VO ⛔ BLOCKED-EXTERNAL |
+| G8 | PASS | 5.4.2 / auracap-v542 |
+| G10 | PASS | SINKS.md (1 static-template) |
+| G14 | PENDING | await main CI after merge |
 
-## Decisions applied
-G-2, G-8, G-9 (no new third-party), P-AUR-1, P-AUR-2, §4.1 description, §4.2 Apple disclaimer, §4.4 privacy template.
+## Remaining
+matrix:shots · VoiceOver evidence · next CarCap (§14 #11)
 
-## Verify
-- `npm run lint` — 0 errors (pre-existing react-refresh warnings only)
-- `npm run test:unit` — 7 deviceName assertions
-- `npm run test:e2e` — **8 passed**, 2 gallery skipped (CAPTURE_GALLERY)
-- Bundle: main JS ~87 KB gzip; three/gsap gone from graph
-- SW cacheId: `auracap-v540`; register `sw.js?v=auracap-v540`
+## Appendix
+No estimated scores (C-09). Fleet Tier 1 requires VoiceOver. Automated `npm run tier1` only.
 
-## Remaining / gaps
-- P2: broader token migration, emoji cleanup on some pages, marketing landing/pitch copy still mentions older jargon (app shell cleaned)
-- Gallery regeneration optional (`npm run gallery`) — not a release blocker
-- Physical iOS/Android VoiceOver/TalkBack: ⛔ BLOCKED-EXTERNAL (no device in loop); Playwright + WebKit-capable Chromium used
+### Evidence checklist
+- [ ] TIER1.json PASS
+- [x] SINKS.md
+- [x] lighthouse stub
+- [ ] main CI green
+- [ ] matrix shots
+- [ ] VO
 
-## Release log
-- Branch `finish/auracap` → merge commit `7bc6c12` on `main`
-- Tag `v5.4.0`
-- Workflow: https://github.com/shamikhahmed/AuraCap/actions/runs/34895782570 (test ✅ build ✅ deploy ✅)
-- Live smoke: HTTP 200 · SW cache **auracap-v540**
+> Historical note: v5.4.0 P0/P1 register (AUR-P0-01…AUR-P1-08) remains shipped; Review 2 required finish-loop evidence which this release supplies.

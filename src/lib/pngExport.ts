@@ -1,3 +1,5 @@
+import { ACBrand } from '@/brand/colors';
+
 const PHONE = { w: 1170, h: 2532 };
 const IPAD = { w: 1668, h: 2388 };
 
@@ -35,7 +37,7 @@ function fillBackground(ctx: CanvasRenderingContext2D, bg: string, w: number, h:
     return;
   }
 
-  ctx.fillStyle = '#050507';
+  ctx.fillStyle = ACBrand.oled;
   ctx.fillRect(0, 0, w, h);
 }
 
@@ -121,7 +123,7 @@ export async function exportLockscreenPng(
     roundRect(ctx, x, widgetY, widgetW, widgetH, 18);
     ctx.fill();
     ctx.font = `${Math.round(w * 0.045)}px "Apple Color Emoji",sans-serif`;
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = ACBrand.white;
     ctx.fillText(widget.emoji, x + widgetW / 2, widgetY + widgetH * 0.42);
     ctx.font = `500 ${Math.round(w * 0.022)}px -apple-system, sans-serif`;
     ctx.fillStyle = 'rgba(255,255,255,0.85)';

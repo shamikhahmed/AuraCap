@@ -1,5 +1,6 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import { DEFAULT_PROFILES } from '@/data';
+import { ACBrand, AC_LOCKSCREEN_MINIMAL_BG } from '@/brand/colors';
 import type { AuraState, LockscreenConfig, RoutineData } from '@/types';
 
 export interface AuraDB extends DBSchema {
@@ -31,7 +32,7 @@ const DEFAULT_ROUTINE: RoutineData = {
 const DEFAULT_LOCKSCREEN: LockscreenConfig = {
   device: 'iphone',
   preset: 'Minimal',
-  background: 'linear-gradient(160deg,#050507,#0d0d20)',
+  background: AC_LOCKSCREEN_MINIMAL_BG,
   clockWeight: '200',
   clockStyle: 'letter-spacing:-2px',
   widget1: { emoji: '🏃', label: 'Activity' },
@@ -46,8 +47,8 @@ export const DEFAULT_STATE: AuraState = {
   device: 'iphone',
   model: 'iphone16promax',
   theme: 'dark',
-  accent1: '#4f6ef7',
-  accent2: '#7b5ea7',
+  accent1: ACBrand.indigo,
+  accent2: ACBrand.indigoSoft,
   profiles: [...DEFAULT_PROFILES.map((p) => ({ ...p, apps: [...p.apps] }))],
   activeProfile: 'personal',
   versions: [],

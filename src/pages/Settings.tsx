@@ -3,17 +3,12 @@ import { Download, FileCode, Share2, RotateCcw, Upload, Bell, Sparkles } from 'l
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Modal } from '@/components/ui/Modal';
+import { AC_ACCENT_PAIRS } from '@/brand/colors';
+import versionManifest from '../../VERSION.json';
 
-const APP_VERSION = '5.4.0';
+const APP_VERSION = versionManifest.version;
 
-const ACCENTS = [
-  ['#0071E3', '#409CFF'],
-  ['#1de9b6', '#0097a7'],
-  ['#f59e0b', '#ef4444'],
-  ['#a855f7', '#6366f1'],
-  ['#ec4899', '#f43f5e'],
-  ['#22d3ee', '#6366f1'],
-];
+const ACCENTS = AC_ACCENT_PAIRS;
 
 const CLEANSE_KEY = 'auracap_next_cleanse_date';
 const CLEANSE_NOTIF_KEY = 'auracap_cleanse_notif_enabled';

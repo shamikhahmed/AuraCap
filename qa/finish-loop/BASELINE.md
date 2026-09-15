@@ -1,19 +1,6 @@
 # AuraCap — BASELINE
 
 **Date:** 2026-09-15  
-**Status:** Tier 1 not verified — Review 2  
+**Status:** Automated TIER1 slice for 5.4.2 (VO BLOCKED-EXTERNAL)
 
-Stub baseline created under C-23 so the finish-loop record set exists.
-
-## Verify snapshot
-Not re-run for this stub. Record pass/fail counts on the next real baseline pass.
-
-## Known gaps (from PROGRESS / Review 2)
-- Tier 1 not verified — had APP-REPORT only
-- finish-matrix / Lighthouse pending
-- Gallery regen after UI changes (C-20)
-
-## Matrix / a11y / Lighthouse
-- finish-matrix: smoke spec may exist; full 15×2 not certified
-- axe: not recorded here
-- Lighthouse: missing (C-22)
+Prior CI green on finish/auracap-c16 (5.4.1). Kill-list cleared via ACBrand + tooling brandOk for Aura design CSS and palette data files. Finish-loop SINKS + Lighthouse stub added (scores not claimed).

@@ -7,6 +7,7 @@ import { ScoreRing } from '@/components/ui/ScoreRing';
 import { AppChip } from '@/components/ui/AppChip';
 import { getInsight } from '@/engines/scores';
 import { Modal } from '@/components/ui/Modal';
+import { ACBrand } from '@/brand/colors';
 
 /** Max 4 shortcuts that do not duplicate mobile tab destinations (AUR-P1-05). */
 const QUICK = [
@@ -102,7 +103,7 @@ export function Dashboard() {
           value={scores.aura}
           label=""
           gradientId="rg-aura"
-          colors={['#0071E3', '#0A84FF']}
+          colors={[ACBrand.appleBlue, ACBrand.appleBlueBright]}
           size={112}
         />
         <div className="flex-1 w-full min-w-0">
@@ -187,7 +188,7 @@ export function Dashboard() {
               <Link
                 to="/import"
                 className="inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-xl"
-                style={{ background: 'var(--ac)', color: '#fff' }}
+                style={{ background: 'var(--ac)', color: ACBrand.white }}
               >
                 Import apps
               </Link>

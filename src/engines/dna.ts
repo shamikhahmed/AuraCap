@@ -2,14 +2,10 @@ import { APPS, CATS, DNA_DIMS, DNA_PROFILES, LOC_SIGNALS, REDUNDANCY_GROUPS, DIS
 import { countCat } from './scores';
 import type { DnaResult } from '@/types';
 
+import { ACBrand, AC_CATEGORY_COLORS } from '@/brand/colors';
+
 export function categoryColor(cat: string): string {
-  const m: Record<string, string> = {
-    social: '#ec4899', messaging: '#4f6ef7', productivity: '#1de9b6', notes: '#22c55e',
-    entertainment: '#ef4444', music: '#a855f7', finance: '#22d3ee', crypto: '#f59e0b',
-    games: '#f97316', health: '#22c55e', fitness: '#84cc16', travel: '#1de9b6',
-    photo: '#ec4899', design: '#a855f7', pakistan: '#00a550', uk: '#012169', uae: '#009000', ai: '#6366f1',
-  };
-  return m[cat] ?? '#4f6ef7';
+  return AC_CATEGORY_COLORS[cat] ?? ACBrand.indigo;
 }
 
 export function computeDna(apps: string[]): DnaResult {

@@ -7,7 +7,7 @@
 Organize your iPhone, iPad and Mac setup — offline PWA.
 
 ## Facts
-**Version:** 5.4.0 · SW `auracap-v540`
+**Version:** 5.4.2 · SW `auracap-v542`
 **Live:** https://shamikhahmed.github.io/AuraCap/
 **Repo:** https://github.com/shamikhahmed/AuraCap
 **Stack:** React 19 + TypeScript + Vite + framer-motion. three.js and GSAP removed (AUR-P1-03). vite-plugin-pwa.
@@ -27,4 +27,4 @@ npm run verify   # lint + deviceName unit + build + Playwright e2e
 - `.github/workflows/deploy.yml` — Pages deploy gated on verify (`needs: test`)
 
 ## Cap Standard
-Docs · gallery · version discipline · e2e · CI gate · PWA · demo mode — Tier 1 release 5.4.0.
+Docs · gallery · version discipline · e2e · CI gate · PWA · demo mode — Tier 1 release 5.4.2.
