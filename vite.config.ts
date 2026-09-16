@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 import versionManifest from './VERSION.json';
+import { ACBrand } from './src/brand/brand-palette';
 
 export default defineConfig({
   plugins: [
@@ -27,8 +28,8 @@ export default defineConfig({
         name: 'AuraCap',
         short_name: 'AuraCap',
         description: 'Organize your iPhone, iPad and Mac setup.',
-        theme_color: '#050507',
-        background_color: '#050507',
+        theme_color: ACBrand.oled,
+        background_color: ACBrand.oled,
         display: 'standalone',
         orientation: 'any',
         start_url: '/AuraCap/',

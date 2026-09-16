@@ -1,6 +1,6 @@
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import { DEFAULT_PROFILES } from '@/data';
-import { ACBrand, AC_LOCKSCREEN_MINIMAL_BG } from '@/brand/colors';
+import { ACBrand, AC_LOCKSCREEN_MINIMAL_BG } from '@/brand/brand-palette';
 import type { AuraState, LockscreenConfig, RoutineData } from '@/types';
 
 export interface AuraDB extends DBSchema {

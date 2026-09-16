@@ -7,7 +7,7 @@ import { ScoreRing } from '@/components/ui/ScoreRing';
 import { AppChip } from '@/components/ui/AppChip';
 import { getInsight } from '@/engines/scores';
 import { Modal } from '@/components/ui/Modal';
-import { ACBrand } from '@/brand/colors';
+import { ACBrand } from '@/brand/brand-palette';
 
 /** Max 4 shortcuts that do not duplicate mobile tab destinations (AUR-P1-05). */
 const QUICK = [

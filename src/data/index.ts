@@ -1,4 +1,4 @@
 export { APPS } from './apps';
-export { WPS } from './wallpapers';
+export { WPS } from './brand-palette.wallpapers';
 export { WGTS } from './widgets';
-export * from './constants';
+export * from './brand-palette.constants';

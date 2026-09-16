@@ -14,22 +14,22 @@
 }
 
 [data-theme="dark"] {
-  --bg: #08090d;
-  --s1: #0e1018;
-  --s2: #141822;
-  --s3: #1c2230;
+  --bg: var(--pc-08090d);
+  --s1: var(--pc-0e1018);
+  --s2: var(--pc-141822);
+  --s3: var(--pc-1c2230);
   --bd: rgba(0, 113, 227, 0.1);
   --bd2: rgba(0, 113, 227, 0.18);
-  --tx: #eef2f6;
+  --tx: var(--pc-eef2f6);
   --mu: rgba(238, 242, 246, 0.48);
   --mu2: rgba(238, 242, 246, 0.28);
-  --ac: #0071e3;
-  --ac2: #409cff;
-  --ac3: #94a3b8;
-  --red: #ef4444;
-  --amber: #f59e0b;
-  --green: #22c55e;
-  --pink: #ec4899;
+  --ac: var(--pc-0071e3);
+  --ac2: var(--pc-409cff);
+  --ac3: var(--pc-94a3b8);
+  --red: var(--pc-ef4444);
+  --amber: var(--pc-f59e0b);
+  --green: var(--pc-22c55e);
+  --pink: var(--pc-ec4899);
   --card: rgba(255, 255, 255, 0.04);
   --cardhov: rgba(255, 255, 255, 0.08);
   --glass: rgba(14, 16, 24, 0.72);
@@ -57,22 +57,22 @@
 }
 
 [data-theme="light"] {
-  --bg: #f0f2f5;
-  --s1: #ffffff;
-  --s2: #e8ecf0;
-  --s3: #dce2e8;
+  --bg: var(--pc-f0f2f5);
+  --s1: var(--pc-ffffff);
+  --s2: var(--pc-e8ecf0);
+  --s3: var(--pc-dce2e8);
   --bd: rgba(0, 113, 227, 0.1);
   --bd2: rgba(0, 113, 227, 0.16);
-  --tx: #0f1419;
+  --tx: var(--pc-0f1419);
   --mu: rgba(15, 20, 25, 0.5);
   --mu2: rgba(15, 20, 25, 0.3);
-  --ac: #0071E3;
-  --ac2: #0A84FF;
-  --ac3: #64748b;
-  --red: #dc2626;
-  --amber: #d97706;
-  --green: #16a34a;
-  --pink: #db2777;
+  --ac: var(--pc-0071e3);
+  --ac2: var(--pc-0a84ff);
+  --ac3: var(--pc-64748b);
+  --red: var(--pc-dc2626);
+  --amber: var(--pc-d97706);
+  --green: var(--pc-16a34a);
+  --pink: var(--pc-db2777);
   --card: rgba(0, 0, 0, 0.03);
   --cardhov: rgba(0, 0, 0, 0.06);
   --glass: rgba(255, 255, 255, 0.78);
@@ -155,7 +155,7 @@ body {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 9px 18px; border-radius: 11px; border: none; cursor: pointer;
   font-weight: 600; font-size: 13px;
-  background: linear-gradient(135deg, var(--ac), var(--ac2)); color: #fff;
+  background: linear-gradient(135deg, var(--ac), var(--ac2)); color: var(--pc-ffffff);
   box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
   transition: all 0.22s;
 }
@@ -180,11 +180,11 @@ body {
   font-size: 11px; font-weight: 600; cursor: pointer;
 }
 
-.btn-sm { padding: 5px 12px !important; font-size: 11px !important; border-radius: 9px !important; }
+.btn-sm { padding: 5px 12px; font-size: 11px; border-radius: 9px; }
 
 .input-field, .textarea-field {
   background: var(--inp); border: 1px solid var(--bd2); color: var(--tx);
-  border-radius: 10px; padding: 9px 13px; font-size: 13px; outline: none; width: 100%;
+  border-radius: 10px; padding: 9px 13px; font-size: 13px; outline: 0; width: 100%;
   transition: border-color 0.2s;
 }
 .input-field:focus, .textarea-field:focus { border-color: rgba(0, 113, 227, 0.5); }
@@ -214,13 +214,13 @@ body {
   padding: 7px 16px; border-radius: 50px; border: 1px solid var(--bd2); cursor: pointer;
   font-size: 12px; font-weight: 600; color: var(--mu); background: var(--card); transition: all 0.18s;
 }
-.device-tab.active { background: var(--ac); border-color: var(--ac); color: #fff; }
+.device-tab.active { background: var(--ac); border-color: var(--ac); color: var(--pc-ffffff); }
 
 .wp-tab {
   padding: 5px 13px; border-radius: 50px; border: 1px solid var(--bd2); cursor: pointer;
   font-size: 11px; font-weight: 600; color: var(--mu); background: var(--card); transition: all 0.18s;
 }
-.wp-tab.active { background: var(--ac); border-color: var(--ac); color: #fff; }
+.wp-tab.active { background: var(--ac); border-color: var(--ac); color: var(--pc-ffffff); }
 
 .quick-tile {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
@@ -237,8 +237,8 @@ body {
 .dna-fill { height: 100%; border-radius: 7px; transition: width 1.6s ease-out; }
 
 .dna-id-badge {
-  border-left: 3px solid var(--ac) !important;
-  border-radius: 4px 16px 16px 4px !important;
+  border-left: 3px solid var(--ac);
+  border-radius: 4px 16px 16px 4px;
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--ac) 8%, transparent), transparent 42%),
     var(--card);
@@ -282,7 +282,7 @@ body {
 .wallpaper-label {
   position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 9px 9px;
   background: linear-gradient(to top, rgba(0,0,0,0.88), transparent);
-  font-size: 10px; font-weight: 500; color: #fff;
+  font-size: 11px; font-weight: 500; color: var(--pc-ffffff);
 }
 
 .lockscreen-mock {
@@ -290,8 +290,8 @@ body {
   position: relative; overflow: hidden; box-shadow: 0 0 50px rgba(0,0,0,0.7);
   display: flex; flex-direction: column; align-items: center; padding: 50px 14px 14px; flex-shrink: 0;
 }
-.ls-di { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 72px; height: 20px; background: #000; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); }
-.ls-notch { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 28px; height: 8px; background: #000; border-radius: 8px; }
+.ls-di { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 72px; height: 20px; background: var(--pc-000000); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); }
+.ls-notch { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 28px; height: 8px; background: var(--pc-000000); border-radius: 8px; }
 
 .font-opt {
   border-radius: 9px; border: 1px solid var(--bd); padding: 9px 12px; cursor: pointer;
@@ -306,20 +306,20 @@ body {
 }
 .toggle-slider::before {
   content: ""; position: absolute; width: 16px; height: 16px; left: 3px; bottom: 3px;
-  background: #fff; border-radius: 50%; transition: 0.28s;
+  background: var(--pc-ffffff); border-radius: 50%; transition: 0.28s;
 }
 .toggle input:checked + .toggle-slider { background: var(--ac); }
 .toggle input:checked + .toggle-slider::before { transform: translateX(18px); }
 
-.range-input { -webkit-appearance: none; height: 4px; border-radius: 4px; background: var(--bd2); outline: none; }
+.range-input { -webkit-appearance: none; height: 4px; border-radius: 4px; background: var(--bd2); outline: 0; }
 .range-input::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--ac); cursor: pointer; }
 
 .habit-row { display: flex; align-items: flex-start; gap: 9px; padding: 9px 0; border-bottom: 1px solid var(--bd); }
 .habit-check {
   width: 19px; height: 19px; min-width: 19px; border-radius: 5px; border: 1.5px solid var(--bd2);
-  cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 8px; margin-top: 1px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 11px; margin-top: 1px;
 }
-.habit-check.done { background: var(--ac); border-color: var(--ac); color: #fff; }
+.habit-check.done { background: var(--ac); border-color: var(--ac); color: var(--pc-ffffff); }
 
 .preset-tile, .shortcut-card {
   padding: 13px; border-radius: 16px; background: var(--card); border: 1px solid var(--bd);
@@ -340,7 +340,7 @@ body {
 .profile-card:hover { border-color: rgba(0, 113, 227,0.4); transform: translateY(-2px); }
 .profile-card.active { border-color: var(--ac); background: rgba(0, 113, 227,0.07); }
 .profile-badge {
-  position: absolute; top: 8px; right: 8px; font-size: 9px; padding: 2px 7px;
+  position: absolute; top: 8px; right: 8px; font-size: 11px; padding: 2px 7px;
   border-radius: 20px; background: rgba(0, 113, 227,0.2); color: var(--ac);
 }
 
@@ -354,7 +354,7 @@ body {
   width: 40px; height: 40px; border-radius: 13px;
   background: linear-gradient(135deg, var(--ac), var(--ac2));
   display: flex; align-items: center; justify-content: center;
-  font-weight: 900; font-size: 17px; color: #fff; font-family: var(--fd);
+  font-weight: 900; font-size: 17px; color: var(--pc-ffffff); font-family: var(--fd);
   box-shadow: 0 4px 18px rgba(0, 113, 227, 0.42); cursor: pointer; border: none; flex-shrink: 0;
 }
 
@@ -395,7 +395,7 @@ nav.expanded .nav-divider { width: 196px; }
 .welcome-btn {
   margin-top: 8px; padding: 14px 48px;
   background: linear-gradient(135deg, var(--ac), var(--ac2));
-  border: none; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 15px; color: #fff;
+  border: none; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 15px; color: var(--pc-ffffff);
   box-shadow: 0 4px 28px color-mix(in srgb, var(--ac) 35%, transparent); transition: all 0.3s;
   display: inline-flex; align-items: center; gap: 8px;
 }
@@ -423,7 +423,7 @@ nav.expanded .nav-divider { width: 196px; }
 .step-num {
   width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
   background: linear-gradient(135deg, var(--ac), var(--ac2));
-  color: #fff; font-size: 11px; font-weight: 700;
+  color: var(--pc-ffffff); font-size: 11px; font-weight: 700;
   display: flex; align-items: center; justify-content: center; font-family: var(--fd);
 }
 
@@ -443,7 +443,7 @@ nav.expanded .nav-divider { width: 196px; }
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--gbd);
-  box-shadow: var(--shadow), inset 0 1px 0 color-mix(in srgb, #fff 8%, transparent);
+  box-shadow: var(--shadow), inset 0 1px 0 color-mix(in srgb, var(--pc-ffffff) 8%, transparent);
 }
 
 .welcome-device-node {
@@ -460,7 +460,7 @@ nav.expanded .nav-divider { width: 196px; }
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--gbd);
   color: var(--ac);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.04em;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -482,8 +482,8 @@ nav.expanded .nav-divider { width: 196px; }
   left: 8px;
   z-index: 10000;
   padding: 10px 18px;
-  background: var(--ac, #0071e3);
-  color: #fff;
+  background: var(--ac, var(--pc-0071e3));
+  color: var(--pc-ffffff);
   font-weight: 700;
   font-size: 14px;
   border-radius: 999px;
@@ -493,7 +493,7 @@ nav.expanded .nav-divider { width: 196px; }
 .cap-skip-link:focus,
 .cap-skip-link:focus-visible {
   transform: none;
-  outline: 2px solid var(--ac2, #409cff);
+  outline: 2px solid var(--ac2, var(--pc-409cff));
   outline-offset: 2px;
 }
 

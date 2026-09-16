@@ -3,7 +3,7 @@ import { Download, FileCode, Share2, RotateCcw, Upload, Bell, Sparkles } from 'l
 import { useApp } from '@/context/AppContext';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Modal } from '@/components/ui/Modal';
-import { AC_ACCENT_PAIRS } from '@/brand/colors';
+import { AC_ACCENT_PAIRS } from '@/brand/brand-palette';
 import versionManifest from '../../VERSION.json';
 
 const APP_VERSION = versionManifest.version;
