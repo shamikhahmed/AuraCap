@@ -34,3 +34,12 @@
 
 ## 2026-09-16 — axe evidence
 - Committed: qa/finish-loop/axe/home-demo-{light,dark}.json (0 serious/critical); honest TIER1 refresh.
+
+## 2026-09-16 — Step R evidence (LH + gallery + VERSION)
+- Matrix re-run: `FINISH_MATRIX=1` → 6/6 shots, 0 failures (`matrix-results.json`).
+- Real Lighthouse 13.4.1 vs live `/?demo=1` → `qa/finish-loop/lighthouse/home-demo-{mobile,desktop}.json` (no stubs).
+  - Mobile: perf 81 · a11y 98 · bp 100 · LCP ~2379 · TBT 374 · CLS ~0 — thresholds FAIL (need perf≥90, TBT≤200).
+  - Desktop: perf 69 · a11y 94 · bp 100 · LCP ~798 · TBT 463 · CLS ~0 — thresholds FAIL (perf/a11y/TBT).
+- Gallery regenerated (mobile+desktop, 32 shots); `e2e/gallery.spec.ts` timeout 180s for desktop.
+- C-57 Pages VERSION: `public/VERSION.json` + `docs/VERSION.json` (Vite copies public → dist; deploy path `dist`). Live 404 until merge+deploy to main.
+- Not claiming Tier 1 PASS.

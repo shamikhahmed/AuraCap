@@ -1,7 +1,7 @@
 {
   "app": "AuraCap",
-  "version": "5.3.3",
-  "generated": "2026-07-20T10:31:58.993Z",
+  "version": "5.4.2",
+  "generated": "2026-09-16T11:09:12.590Z",
   "shots": [
     {
       "file": "desktop-00-welcome.png",
@@ -11,13 +11,13 @@
     },
     {
       "file": "desktop-01-dashboard.png",
-      "label": "Dashboard",
+      "label": "Overview",
       "route": "/dashboard",
       "viewport": "desktop"
     },
     {
       "file": "desktop-02-dna.png",
-      "label": "Digital DNA",
+      "label": "Setup report",
       "route": "/dna",
       "viewport": "desktop"
     },
@@ -107,13 +107,13 @@
     },
     {
       "file": "mobile-01-dashboard.png",
-      "label": "Dashboard",
+      "label": "Overview",
       "route": "/dashboard",
       "viewport": "mobile"
     },
     {
       "file": "mobile-02-dna.png",
-      "label": "Digital DNA",
+      "label": "Setup report",
       "route": "/dna",
       "viewport": "mobile"
     },
