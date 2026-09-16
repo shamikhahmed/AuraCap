@@ -2,7 +2,7 @@
   "app": "AuraCap",
   "version": "5.4.2",
   "swCache": "auracap-v542",
-  "generatedAt": "2026-09-16T10:48:32.797Z",
+  "generatedAt": "2026-09-16T10:53:48.584Z",
   "status": "FAIL",
   "pass": [
     {
@@ -74,6 +74,10 @@
       "detail": "2026-09-16T10:47:29.493Z"
     },
     {
+      "id": "axe:serious-critical",
+      "detail": "2 JSON clean"
+    },
+    {
       "id": "sinks:SINKS.md",
       "detail": "present"
     },
@@ -113,10 +117,6 @@
   "fail": [
     {
       "id": "lighthouse:files",
-      "detail": "empty"
-    },
-    {
-      "id": "axe:files",
       "detail": "empty"
     },
     {

@@ -31,3 +31,6 @@
 
 ## 2026-09-16 — residual matrix evidence
 - Committed: qa/finish-loop/matrix-results.json (6/6 shots, 0 failures) + refreshed honest TIER1 FAIL (still empty LH/axe + gallery freshness).
+
+## 2026-09-16 — axe evidence
+- Committed: qa/finish-loop/axe/home-demo-{light,dark}.json (0 serious/critical); honest TIER1 refresh.
