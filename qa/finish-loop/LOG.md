@@ -43,3 +43,12 @@
 - Gallery regenerated (mobile+desktop, 32 shots); `e2e/gallery.spec.ts` timeout 180s for desktop.
 - C-57 Pages VERSION: `public/VERSION.json` + `docs/VERSION.json` (Vite copies public → dist; deploy path `dist`). Live 404 until merge+deploy to main.
 - Not claiming Tier 1 PASS.
+
+## 2026-09-16 — Review 3 product loop (hardened tier1)
+### §15 mini-plan
+- Problem: hardened tier1 fails on kill-list, missing matrix-results, CI-WORKFLOW, axe dir.
+- Root cause: C-29 removed brandOk CSS exemptions; evidence files never committed; CI workflow name unset.
+- Change: hex→`tokens.css`/`brand-palette*`; PulseCap `capricorn-core`; `CI-WORKFLOW.txt`; skip-allowlist; `writeMatrixResults` + FINISH_MATRIX CI job; real axe JSON.
+- Risks: LH/gallery freshness still open; DeePony dark theme toggle flaky under axe.
+- Verification: `npm run tier1` recorded FAIL honestly (no PASS claim).
+

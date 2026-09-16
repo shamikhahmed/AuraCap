@@ -2,7 +2,7 @@
   "app": "AuraCap",
   "version": "5.4.2",
   "swCache": "auracap-v542",
-  "generatedAt": "2026-09-16T10:53:48.584Z",
+  "generatedAt": "2026-09-16T11:22:55.357Z",
   "status": "FAIL",
   "pass": [
     {
@@ -71,11 +71,15 @@
     },
     {
       "id": "matrix:freshness",
-      "detail": "2026-09-16T10:47:29.493Z"
+      "detail": "2026-09-16T11:15:55.984Z"
     },
     {
       "id": "axe:serious-critical",
       "detail": "2 JSON clean"
+    },
+    {
+      "id": "gallery:freshness",
+      "detail": "docs/screenshots/gallery/gallery-manifest.json @ 2026-09-16T16:13:08+05:00"
     },
     {
       "id": "sinks:SINKS.md",
@@ -116,12 +120,16 @@
   ],
   "fail": [
     {
-      "id": "lighthouse:files",
-      "detail": "empty"
+      "id": "lighthouse:home-demo-desktop.json",
+      "detail": "fetchTime 2026-09-16T11:06:04.300Z before last UI commit 2026-09-16T16:13:08+05:00"
     },
     {
-      "id": "gallery:freshness",
-      "detail": "gallery 2026-07-20T15:32:05+05:00 before last UI commit 2026-09-16T15:45:04+05:00"
+      "id": "lighthouse:home-demo-mobile.json",
+      "detail": "perf 87 a11y 98 bp 100 LCP 2084.0635 TBT 343.5000000000002 CLS 0.00002287125257670811"
+    },
+    {
+      "id": "lighthouse:passing",
+      "detail": "0/2 files meet thresholds"
     }
   ],
   "warn": [
