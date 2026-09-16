@@ -28,3 +28,6 @@
 - Committed: C-29 tokens.css + brand-palette renames; C-31 finish-matrix CI job; capture-axe.mjs; CI-WORKFLOW; skip-allowlist; honest TIER1 FAIL (was stale PASS).
 - Left uncommitted: none.
 - Not merging (Tier1 FAIL: matrix-results / empty LH / axe / gallery freshness; live VERSION 404 warn).
+
+## 2026-09-16 — residual matrix evidence
+- Committed: qa/finish-loop/matrix-results.json (6/6 shots, 0 failures) + refreshed honest TIER1 FAIL (still empty LH/axe + gallery freshness).
