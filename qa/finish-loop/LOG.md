@@ -14,3 +14,12 @@
 ## 2026-09-15 — C-23 stub
 - Tier 1 not verified — Review 2
 - Created/updated finish-loop records (BASELINE, LOG, STATES, APP-REPORT, DOCS-INVENTORY)
+
+## 2026-09-16 — C-38
+### §15 mini-plan
+- Problem: toast "Demo wardrobe loaded!"; toast overlaps tab bar.
+- Root cause: copy + bottom-6 placement.
+- Files: AppContext.tsx, Toast.tsx
+- Change: "Sample data loaded"; bottom offset above floating tab bar.
+- Risks: low.
+- Verification: load sample → toast copy + sits above tabs.

@@ -125,7 +125,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const loadDemo = useCallback(async () => {
     const apps = SAMPLE_LIST.split('\n').map((l) => l.trim()).filter(Boolean);
     await persist({ apps, demoMode: true, entered: true, onboardingDone: true });
-    toast('Demo wardrobe loaded!');
+    toast('Sample data loaded');
   }, [persist, toast]);
 
   const exitDemo = useCallback(async () => {
