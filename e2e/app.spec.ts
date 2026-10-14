@@ -67,7 +67,7 @@ test.describe('AuraCap PWA', () => {
     await page.getByRole('button', { name: /Import & Analyze/i }).click();
 
     await expect(page.getByText(/Imported from/i)).toBeVisible({ timeout: 10_000 });
-    await expect(page.getByRole('button', { name: /Instagram/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Instagram', exact: true })).toBeVisible();
     await expect(page.getByText('4', { exact: true }).first()).toBeVisible();
   });
 
