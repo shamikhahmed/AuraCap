@@ -1,7 +1,7 @@
 # AuraCap — Perfection Loop v3 · STATE
 
 Updated: 2026-10-14T11:22:00Z  
-Phase: **I** (release 5.5.0)  
+Phase: **I done** (5.5.0 live; hand Conductor)  
 Branch: `perfection/auracap-v3`  
 App version: 5.5.0 (Phase I release)  
 Base: `main` @ `cca19e4` (finish/auracap-stepR merged — AUR-V3-3)
@@ -18,6 +18,7 @@ Production build served at `http://127.0.0.1:8780/AuraCap/?demo=1` (`python3 -m 
 |---|---|---|
 | Baseline (fleet live) | `qa/perfection/baseline/device-qa.json` | 7/7 hard-clean; soft: tap&lt;32=5 on 5 touch runs |
 | Post-fix (local prod) | `qa/perfection/post-fix/device-qa.json` | **7/7 hard-clean; tap&lt;32=0; text&lt;11=0; errors=[]** |
+| Live 5.5.0 | `qa/perfection/live-v5.5.0/device-qa.json` | **7/7 hard-clean; tap=0 text=0** |
 
 ## Next 3 actions (Auditor)
 1. Clean checkout of `perfection/auracap-v3` @ tip SHA; `npm ci && npm run build`; serve under `/AuraCap/`; re-run device-qa with `PW_CORE` + `PLAYWRIGHT_BROWSERS_PATH`.
