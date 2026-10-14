@@ -7,7 +7,7 @@
 Organize your iPhone, iPad and Mac setup — offline PWA.
 
 ## Facts
-**Version:** 5.4.2 · SW `auracap-v542`
+**Version:** 5.5.0 · SW `auracap-v550`
 **Live:** https://shamikhahmed.github.io/AuraCap/ · `VERSION.json` on Pages (AUR-V3-2)
 **Repo:** https://github.com/shamikhahmed/AuraCap
 **Branch (v3):** `perfection/auracap-v3`
@@ -34,4 +34,4 @@ npm run tier1
 - `.github/workflows/deploy.yml` — Pages deploy gated on verify (`needs: test`)
 
 ## Cap Standard
-Docs · gallery · version discipline · e2e · CI gate · PWA · demo mode — Tier 1 release 5.4.2.
+Docs · gallery · version discipline · e2e · CI gate · PWA · demo mode — Tier 1 release 5.5.0.

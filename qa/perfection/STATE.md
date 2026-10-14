@@ -1,9 +1,9 @@
 # AuraCap — Perfection Loop v3 · STATE
 
 Updated: 2026-10-14T11:22:00Z  
-Phase: **E → F** (P1 Wave C fixed; hand to Auditor)  
+Phase: **I** (release 5.5.0)  
 Branch: `perfection/auracap-v3`  
-App version: 5.4.2 (no release bump yet — Phase I)  
+App version: 5.5.0 (Phase I release)  
 Base: `main` @ `cca19e4` (finish/auracap-stepR merged — AUR-V3-3)
 
 ## Last commits
