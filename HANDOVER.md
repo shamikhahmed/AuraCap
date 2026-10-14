@@ -1,24 +1,31 @@
 # AuraCap — Handover
 
 > Read this + `ROADMAP.md` + `~/Capricorn-Brain/01 Projects/AuraCap.md` before working here.
-> Last updated: 2026-09-15 · Fleet: Cap Fleet Finish Program Tier 1
+> Last updated: 2026-10-14 · Fleet: Perfection Loop v3 Wave C
 
 ## What this is
 Organize your iPhone, iPad and Mac setup — offline PWA.
 
 ## Facts
 **Version:** 5.4.2 · SW `auracap-v542`
-**Live:** https://shamikhahmed.github.io/AuraCap/
+**Live:** https://shamikhahmed.github.io/AuraCap/ · `VERSION.json` on Pages (AUR-V3-2)
 **Repo:** https://github.com/shamikhahmed/AuraCap
-**Stack:** React 19 + TypeScript + Vite + framer-motion. three.js and GSAP removed (AUR-P1-03). vite-plugin-pwa.
+**Branch (v3):** `perfection/auracap-v3`
+**Stack:** React 19 + TypeScript + Vite. CSS motion only (framer/three/GSAP removed — P-AUR-2). vite-plugin-pwa.
 **Data:** IndexedDB via `idb`. No backend, no accounts.
 
 ## Run & verify
 ```bash
-npm install
-npm run dev
-npm run verify   # lint + deviceName unit + build + Playwright e2e
+npm ci
+npm run verify          # lint + deviceName unit + build + Playwright e2e
+npm run ensure:version  # dist/VERSION.json must exist after build
+npm run tier1
 ```
+
+## Perfection v3 (Wave C)
+- Items: `qa/perfection/ITEMS.md` — AUR-V3-1/2/3 ✅ FIXED → Auditor; AUR-V3-4 gallery L
+- Evidence: `qa/perfection/{baseline,post-fix}/device-qa.json`
+- Hand-off: `qa/perfection/STATE.md`
 
 ## Architecture
 - `src/pages/` — Overview (Dashboard), Setup report (DNA), Import, App Library, Organizer, Smart Assistant, Wallpaper, Lock Screen, Widget Lab, Shortcuts, Cleanse, Routine, Profiles, Settings

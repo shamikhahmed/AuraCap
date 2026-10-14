@@ -111,7 +111,7 @@ export function Dashboard() {
             <h2 className="text-lg font-bold" style={{ fontFamily: 'var(--fd)' }}>Aura Score</h2>
             <button
               type="button"
-              className="text-xs font-semibold text-[var(--ac)] underline-offset-2 hover:underline"
+              className="inline-flex items-center justify-center min-h-11 min-w-11 px-3 text-sm font-semibold text-[var(--ac)] underline-offset-2 hover:underline touch-manipulation"
               onClick={() => setScoreInfo(true)}
               aria-label="What is Aura Score?"
             >

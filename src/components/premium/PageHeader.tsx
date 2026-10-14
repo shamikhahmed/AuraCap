@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 export function PageHeader({
   eyebrow,
   title,
@@ -14,12 +12,7 @@ export function PageHeader({
   large?: boolean;
 }) {
   return (
-    <motion.header
-      className="flex items-start justify-between gap-4"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
+    <header className="flex items-start justify-between gap-4 glass-card-enter">
       <div className="min-w-0 flex-1">
         {eyebrow && (
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-tertiary)] mb-1.5">
@@ -34,6 +27,6 @@ export function PageHeader({
         )}
       </div>
       {trailing && <div className="shrink-0">{trailing}</div>}
-    </motion.header>
+    </header>
   );
 }

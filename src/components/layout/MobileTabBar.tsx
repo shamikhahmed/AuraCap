@@ -1,5 +1,4 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Brush, Gauge, LayoutGrid, Settings, Wand2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { hapticLight } from '@/lib/premium/haptics';
@@ -21,13 +20,7 @@ function MobileTab({ to, icon: Icon, label }: { to: string; icon: typeof Gauge; 
     >
       {({ isActive }) => (
         <>
-          {isActive && (
-            <motion.span
-              layoutId="auracap-tab-pill"
-              className="floating-tab-indicator"
-              transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-            />
-          )}
+          {isActive && <span className="floating-tab-indicator" aria-hidden />}
           <Icon size={20} strokeWidth={isActive ? 2.25 : 1.75} className="floating-tab-icon" />
           <span className="floating-tab-label">{label}</span>
         </>
