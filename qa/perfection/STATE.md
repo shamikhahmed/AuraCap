@@ -7,7 +7,7 @@ App version: 5.4.2 (no release bump yet — Phase I)
 Base: `main` @ `cca19e4` (finish/auracap-stepR merged — AUR-V3-3)
 
 ## Last commits
-- Tip: `87cd3c226fb0fdeafcc2845c3b79ff96ecfdc6ec` on `perfection/auracap-v3`
+- Tip: `e5022ef8bea931c203c46f094c7853400a2731ea` on `perfection/auracap-v3` (fix `91bc4c7689e88657f668f25a73219a36b96bee5e`)
 - Fix: AUR-V3-1 tap ≥ 44px; AUR-V3-2 VERSION.json CI gate + matrix build; AUR-V3-3 WIP cherry-picks (CSS motion, no cold-load notification prompt)
 
 ## What's running
