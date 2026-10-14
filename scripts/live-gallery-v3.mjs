@@ -24,9 +24,22 @@ const VIEWPORTS = {
 };
 
 const SCREENS = [
-  { path: '/dashboard', group: 'Overview', screen: 'Dashboard', caption: 'Aura Score and constellation overview (demo).' },
-  { path: '/apps', group: 'Library', screen: 'App Library', caption: 'On-device app library and search.' },
-  { path: '/settings', group: 'System', screen: 'Settings', caption: 'Theme, profiles, and support.' },
+  { path: '/dashboard', group: 'Overview', screen: 'Overview', caption: 'Your Aura Score — Focus, Clarity and Organization.' },
+  { path: '/dna', group: 'Overview', screen: 'Setup report', caption: 'A full report on your setup, from your app list.' },
+  { path: '/apps', group: 'Library', screen: 'App library', caption: 'Every app you imported, searchable.' },
+  { path: '/import', group: 'Library', screen: 'Import', caption: 'Paste or upload your app list — nothing is uploaded.' },
+  { path: '/import-guide', group: 'Library', screen: 'Import guide', caption: 'How to export your app list from each device.' },
+  { path: '/organizer', group: 'Organize', screen: 'Organizer', caption: 'Smart folders and home screen layout ideas.' },
+  { path: '/designer', group: 'Organize', screen: 'Smart Assistant', caption: 'Rule-based suggestions for a calmer setup.' },
+  { path: '/wallpaper', group: 'Design', screen: 'Wallpapers', caption: 'Wallpapers matched to your setup.' },
+  { path: '/lockscreen', group: 'Design', screen: 'Lock Screen', caption: 'Lock Screen layout ideas.' },
+  { path: '/widgets', group: 'Design', screen: 'Widgets', caption: 'Widget layouts worth trying.' },
+  { path: '/shortcuts', group: 'Habits', screen: 'Shortcuts', caption: 'Useful shortcuts for your devices.' },
+  { path: '/routine', group: 'Habits', screen: 'Daily routine', caption: 'A daily device routine.' },
+  { path: '/cleanse', group: 'Habits', screen: 'Digital cleanse', caption: 'Clear out what you don’t use.' },
+  { path: '/history', group: 'Habits', screen: 'History', caption: 'How your score changed over time.' },
+  { path: '/profiles', group: 'You', screen: 'Profiles', caption: 'Separate profiles for iPhone, iPad and Mac.' },
+  { path: '/settings', group: 'You', screen: 'Settings', caption: 'Region, appearance and data.' },
 ];
 
 function slug(s) {
@@ -142,7 +155,12 @@ async function main() {
         await setTheme(page, theme);
 
         for (const scr of SCREENS) {
-          await goRoute(page, scr.path);
+          try {
+            await goRoute(page, scr.path);
+          } catch (err) {
+            process.stdout.write(`skip ${theme}/${device} ${scr.nav || scr.path}: unreachable — skipped\n`);
+            continue;
+          }
           await setTheme(page, theme);
           const rel = shotPath(theme, device, scr.group, scr.screen);
           const webpPath = join(GALLERY_DIR, rel);
