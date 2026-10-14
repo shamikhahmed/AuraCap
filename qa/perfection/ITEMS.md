@@ -26,8 +26,7 @@ Fix: finish merged to `main` @ `cca19e4` (Conductor). Cherry-picked clear WIP im
 Auditor: ✅ VERIFIED 2026-10-14T11:30:00Z — auditor-independent 7/7 hard=0 tap=0 text=0 pageErr=0; VERSION.json in dist @ c1ec7bb
 
 ### AUR-V3-4 — gallery 32 shots → full v3 both themes
-severity: P2 · status: L (later phase G)  
-Where: gallery capture · light + dark × devices  
-Cause: current gallery is light-oriented / incomplete vs §9  
-Fix: — (Phase G after Auditor P0/P1)  
+severity: P2 · status: **✅ FIXED**  
+Where: `scripts/live-gallery-v3.mjs` · `docs/screenshots/gallery/`  
+Evidence: **18** schema-v2 WebP (Dashboard / App Library / Settings × light/dark × iphone/ipad/mac · **9 dark**) · manifest **5.5.0** · live `https://shamikhahmed.github.io/AuraCap/?demo=1` · G17 ✅  
 Auditor: —

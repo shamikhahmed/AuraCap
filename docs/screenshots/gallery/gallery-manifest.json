@@ -1,199 +1,243 @@
 {
   "app": "AuraCap",
   "version": "5.5.0",
-  "generated": "2026-09-16T11:09:12.590Z",
+  "capturedAt": "2026-10-14T13:13:35.154Z",
+  "accent": "#6366F1",
+  "schema": 2,
   "shots": [
     {
-      "file": "desktop-00-welcome.png",
-      "label": "Welcome",
-      "route": "/",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-01-dashboard.png",
-      "label": "Overview",
+      "id": "overview--dashboard--demo",
+      "group": "Overview",
+      "screen": "Dashboard",
+      "state": "demo",
+      "theme": "light",
+      "device": "iphone",
+      "file": "light/iphone/overview--dashboard--demo.webp",
       "route": "/dashboard",
-      "viewport": "desktop"
+      "caption": "Aura Score and constellation overview (demo).",
+      "w": 1170,
+      "h": 2532
     },
     {
-      "file": "desktop-02-dna.png",
-      "label": "Setup report",
-      "route": "/dna",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-03-import.png",
-      "label": "Import Apps",
-      "route": "/import",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-04-import-guide.png",
-      "label": "Import Guide",
-      "route": "/import-guide",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-05-apps.png",
-      "label": "App Library",
+      "id": "library--app-library--demo",
+      "group": "Library",
+      "screen": "App Library",
+      "state": "demo",
+      "theme": "light",
+      "device": "iphone",
+      "file": "light/iphone/library--app-library--demo.webp",
       "route": "/apps",
-      "viewport": "desktop"
+      "caption": "On-device app library and search.",
+      "w": 1170,
+      "h": 2532
     },
     {
-      "file": "desktop-06-organizer.png",
-      "label": "Smart Organizer",
-      "route": "/organizer",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-07-designer.png",
-      "label": "Smart Assistant",
-      "route": "/designer",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-08-wallpaper.png",
-      "label": "Wallpapers",
-      "route": "/wallpaper",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-09-lockscreen.png",
-      "label": "Lock Screen",
-      "route": "/lockscreen",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-10-widgets.png",
-      "label": "Widget Lab",
-      "route": "/widgets",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-11-shortcuts.png",
-      "label": "Shortcuts",
-      "route": "/shortcuts",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-12-cleanse.png",
-      "label": "Digital Cleanse",
-      "route": "/cleanse",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-13-routine.png",
-      "label": "Daily Routine",
-      "route": "/routine",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-14-profiles.png",
-      "label": "Profiles",
-      "route": "/profiles",
-      "viewport": "desktop"
-    },
-    {
-      "file": "desktop-15-settings.png",
-      "label": "Settings",
+      "id": "system--settings--demo",
+      "group": "System",
+      "screen": "Settings",
+      "state": "demo",
+      "theme": "light",
+      "device": "iphone",
+      "file": "light/iphone/system--settings--demo.webp",
       "route": "/settings",
-      "viewport": "desktop"
+      "caption": "Theme, profiles, and support.",
+      "w": 1170,
+      "h": 2532
     },
     {
-      "file": "mobile-00-welcome.png",
-      "label": "Welcome",
-      "route": "/",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-01-dashboard.png",
-      "label": "Overview",
+      "id": "overview--dashboard--demo",
+      "group": "Overview",
+      "screen": "Dashboard",
+      "state": "demo",
+      "theme": "dark",
+      "device": "iphone",
+      "file": "dark/iphone/overview--dashboard--demo.webp",
       "route": "/dashboard",
-      "viewport": "mobile"
+      "caption": "Aura Score and constellation overview (demo).",
+      "w": 1170,
+      "h": 2532
     },
     {
-      "file": "mobile-02-dna.png",
-      "label": "Setup report",
-      "route": "/dna",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-03-import.png",
-      "label": "Import Apps",
-      "route": "/import",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-04-import-guide.png",
-      "label": "Import Guide",
-      "route": "/import-guide",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-05-apps.png",
-      "label": "App Library",
+      "id": "library--app-library--demo",
+      "group": "Library",
+      "screen": "App Library",
+      "state": "demo",
+      "theme": "dark",
+      "device": "iphone",
+      "file": "dark/iphone/library--app-library--demo.webp",
       "route": "/apps",
-      "viewport": "mobile"
+      "caption": "On-device app library and search.",
+      "w": 1170,
+      "h": 2532
     },
     {
-      "file": "mobile-06-organizer.png",
-      "label": "Smart Organizer",
-      "route": "/organizer",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-07-designer.png",
-      "label": "Smart Assistant",
-      "route": "/designer",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-08-wallpaper.png",
-      "label": "Wallpapers",
-      "route": "/wallpaper",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-09-lockscreen.png",
-      "label": "Lock Screen",
-      "route": "/lockscreen",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-10-widgets.png",
-      "label": "Widget Lab",
-      "route": "/widgets",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-11-shortcuts.png",
-      "label": "Shortcuts",
-      "route": "/shortcuts",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-12-cleanse.png",
-      "label": "Digital Cleanse",
-      "route": "/cleanse",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-13-routine.png",
-      "label": "Daily Routine",
-      "route": "/routine",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-14-profiles.png",
-      "label": "Profiles",
-      "route": "/profiles",
-      "viewport": "mobile"
-    },
-    {
-      "file": "mobile-15-settings.png",
-      "label": "Settings",
+      "id": "system--settings--demo",
+      "group": "System",
+      "screen": "Settings",
+      "state": "demo",
+      "theme": "dark",
+      "device": "iphone",
+      "file": "dark/iphone/system--settings--demo.webp",
       "route": "/settings",
-      "viewport": "mobile"
+      "caption": "Theme, profiles, and support.",
+      "w": 1170,
+      "h": 2532
+    },
+    {
+      "id": "overview--dashboard--demo",
+      "group": "Overview",
+      "screen": "Dashboard",
+      "state": "demo",
+      "theme": "light",
+      "device": "ipad",
+      "file": "light/ipad/overview--dashboard--demo.webp",
+      "route": "/dashboard",
+      "caption": "Aura Score and constellation overview (demo).",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "library--app-library--demo",
+      "group": "Library",
+      "screen": "App Library",
+      "state": "demo",
+      "theme": "light",
+      "device": "ipad",
+      "file": "light/ipad/library--app-library--demo.webp",
+      "route": "/apps",
+      "caption": "On-device app library and search.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "system--settings--demo",
+      "group": "System",
+      "screen": "Settings",
+      "state": "demo",
+      "theme": "light",
+      "device": "ipad",
+      "file": "light/ipad/system--settings--demo.webp",
+      "route": "/settings",
+      "caption": "Theme, profiles, and support.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "overview--dashboard--demo",
+      "group": "Overview",
+      "screen": "Dashboard",
+      "state": "demo",
+      "theme": "dark",
+      "device": "ipad",
+      "file": "dark/ipad/overview--dashboard--demo.webp",
+      "route": "/dashboard",
+      "caption": "Aura Score and constellation overview (demo).",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "library--app-library--demo",
+      "group": "Library",
+      "screen": "App Library",
+      "state": "demo",
+      "theme": "dark",
+      "device": "ipad",
+      "file": "dark/ipad/library--app-library--demo.webp",
+      "route": "/apps",
+      "caption": "On-device app library and search.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "system--settings--demo",
+      "group": "System",
+      "screen": "Settings",
+      "state": "demo",
+      "theme": "dark",
+      "device": "ipad",
+      "file": "dark/ipad/system--settings--demo.webp",
+      "route": "/settings",
+      "caption": "Theme, profiles, and support.",
+      "w": 2360,
+      "h": 1640
+    },
+    {
+      "id": "overview--dashboard--demo",
+      "group": "Overview",
+      "screen": "Dashboard",
+      "state": "demo",
+      "theme": "light",
+      "device": "mac",
+      "file": "light/mac/overview--dashboard--demo.webp",
+      "route": "/dashboard",
+      "caption": "Aura Score and constellation overview (demo).",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "library--app-library--demo",
+      "group": "Library",
+      "screen": "App Library",
+      "state": "demo",
+      "theme": "light",
+      "device": "mac",
+      "file": "light/mac/library--app-library--demo.webp",
+      "route": "/apps",
+      "caption": "On-device app library and search.",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "system--settings--demo",
+      "group": "System",
+      "screen": "Settings",
+      "state": "demo",
+      "theme": "light",
+      "device": "mac",
+      "file": "light/mac/system--settings--demo.webp",
+      "route": "/settings",
+      "caption": "Theme, profiles, and support.",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "overview--dashboard--demo",
+      "group": "Overview",
+      "screen": "Dashboard",
+      "state": "demo",
+      "theme": "dark",
+      "device": "mac",
+      "file": "dark/mac/overview--dashboard--demo.webp",
+      "route": "/dashboard",
+      "caption": "Aura Score and constellation overview (demo).",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "library--app-library--demo",
+      "group": "Library",
+      "screen": "App Library",
+      "state": "demo",
+      "theme": "dark",
+      "device": "mac",
+      "file": "dark/mac/library--app-library--demo.webp",
+      "route": "/apps",
+      "caption": "On-device app library and search.",
+      "w": 2880,
+      "h": 1800
+    },
+    {
+      "id": "system--settings--demo",
+      "group": "System",
+      "screen": "Settings",
+      "state": "demo",
+      "theme": "dark",
+      "device": "mac",
+      "file": "dark/mac/system--settings--demo.webp",
+      "route": "/settings",
+      "caption": "Theme, profiles, and support.",
+      "w": 2880,
+      "h": 1800
     }
   ]
 }
