@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Laptop, Smartphone, Sparkles, Tablet } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { Modal } from '@/components/ui/Modal';
@@ -11,7 +10,7 @@ const DEVICES = [
   { id: 'mac', label: 'Mac', Icon: Laptop, x: 50, y: 8 },
 ] as const;
 
-/** Welcome — frosted setup card + device constellation (no WebGL) */
+/** Welcome — frosted setup card + device constellation (no WebGL / no framer) */
 export function WelcomeScreen() {
   const { state, enterApp, loadDemo, persist } = useApp();
   const [showName, setShowName] = useState(false);
@@ -38,11 +37,7 @@ export function WelcomeScreen() {
     <div className="fixed inset-0 z-[500] flex flex-col items-center justify-center bg-[var(--bg)] overflow-hidden px-6">
       <div className="welcome-grid absolute inset-0 opacity-[0.28] pointer-events-none" aria-hidden />
 
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="relative z-2 w-full max-w-md"
-      >
+      <div className="relative z-2 w-full max-w-md glass-card-enter">
         <div className="welcome-constellation relative mx-auto mb-8 w-full max-w-[360px] aspect-[1.15/1]" aria-hidden>
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 360 312" fill="none">
             {DEVICES.map((d) => (
@@ -61,18 +56,15 @@ export function WelcomeScreen() {
             <circle cx="180" cy="156" r="4" fill="var(--ac)" opacity="0.6" />
           </svg>
 
-          {DEVICES.map((d, i) => (
-            <motion.div
+          {DEVICES.map((d) => (
+            <div
               key={d.id}
               className="welcome-device-node"
               style={{ left: `${d.x}%`, top: `${d.y}%` }}
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.15 + i * 0.08 }}
             >
               <d.Icon size={16} strokeWidth={1.75} />
               <span>{d.label}</span>
-            </motion.div>
+            </div>
           ))}
 
           <div className="welcome-dna-card absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[62%] aspect-[1.6/1] rounded-xl overflow-hidden">
@@ -116,7 +108,7 @@ export function WelcomeScreen() {
             <BookOpen size={12} /> Import guide
           </button>
         </div>
-      </motion.div>
+      </div>
 
       <Modal open={showGuide} onClose={() => setShowGuide(false)} title="How to import your apps" wide>
         <div className="max-h-[70vh] overflow-y-auto pr-1">

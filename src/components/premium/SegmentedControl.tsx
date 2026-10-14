@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { hapticSelection } from '@/lib/premium/haptics';
 
@@ -29,13 +28,7 @@ export function SegmentedControl<T extends string>({
             }}
             className={cn('segment-premium-item', active && 'segment-premium-item--active')}
           >
-            {active && (
-              <motion.span
-                layoutId="segment-pill"
-                className="segment-premium-indicator"
-                transition={{ type: 'spring', stiffness: 420, damping: 32 }}
-              />
-            )}
+            {active && <span className="segment-premium-indicator" aria-hidden />}
             <span className="relative z-10 flex items-center justify-center gap-1.5">
               {opt.icon}
               {opt.label}

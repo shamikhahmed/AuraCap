@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
 import { PressableLink } from '@/components/ui/PressableScale';
 
@@ -18,6 +18,10 @@ export function StatPill({
   to?: string;
 }) {
   const className = cn('stat-pill', tone !== 'default' && `stat-pill--${tone}`);
+  const style =
+    delay > 0
+      ? ({ '--glass-enter-delay': `${delay}s` } as CSSProperties)
+      : undefined;
 
   const inner = (
     <>
@@ -31,26 +35,17 @@ export function StatPill({
 
   if (to) {
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay, duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
+      <div className="glass-card-enter" style={style}>
         <PressableLink to={to} className={className} aria-label={`${label}: ${value}`}>
           {inner}
         </PressableLink>
-      </motion.div>
+      </div>
     );
   }
 
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
+    <div className={cn(className, 'glass-card-enter')} style={style}>
       {inner}
-    </motion.div>
+    </div>
   );
 }

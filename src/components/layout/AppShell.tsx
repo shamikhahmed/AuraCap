@@ -24,23 +24,24 @@ export function AppShell() {
   const cleanseNotifiedRef = useRef(false);
 
   useEffect(() => {
+    // Only fire if already granted — never request permission on cold load (LH + UX).
     const date = localStorage.getItem(CLEANSE_KEY) || '';
     const notif = localStorage.getItem(CLEANSE_NOTIF_KEY) === '1';
     const due = date && (daysUntil(date) ?? 1) <= 0;
-    if (!notif || !due || cleanseNotifiedRef.current || !('Notification' in window)) return;
-    const fire = () => {
-      if (Notification.permission === 'granted') {
-        new Notification('AuraCap — Digital Cleanse due', {
-          body: 'Time for your scheduled app audit. Open Cleanse to review distractions.',
-          tag: 'auracap-cleanse',
-        });
-        cleanseNotifiedRef.current = true;
-      }
-    };
-    if (Notification.permission === 'granted') fire();
-    else if (Notification.permission !== 'denied') {
-      Notification.requestPermission().then((p) => { if (p === 'granted') fire(); });
+    if (
+      !notif ||
+      !due ||
+      cleanseNotifiedRef.current ||
+      !('Notification' in window) ||
+      Notification.permission !== 'granted'
+    ) {
+      return;
     }
+    new Notification('AuraCap — Digital Cleanse due', {
+      body: 'Time for your scheduled app audit. Open Cleanse to review distractions.',
+      tag: 'auracap-cleanse',
+    });
+    cleanseNotifiedRef.current = true;
   }, []);
 
   return (
@@ -59,12 +60,12 @@ export function AppShell() {
         } max-[699px]:ml-0`}
       >
         <Topbar onMenuToggle={() => setMobileOpen((o) => !o)} menuOpen={mobileOpen} />
-        <div className="app-scroll-pad px-4 md:px-7 pt-7">
+        <main id="main" className="app-scroll-pad px-4 md:px-7 pt-7">
           <DemoBanner />
           <CapRouteTransition>
             <Outlet />
           </CapRouteTransition>
-        </div>
+        </main>
       </div>
       <MobileTabBar />
       <CommandPalette />

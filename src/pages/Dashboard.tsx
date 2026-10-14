@@ -113,7 +113,6 @@ export function Dashboard() {
               type="button"
               className="text-xs font-semibold text-[var(--ac)] underline-offset-2 hover:underline"
               onClick={() => setScoreInfo(true)}
-              aria-label="What is Aura Score?"
             >
               What is this?
             </button>

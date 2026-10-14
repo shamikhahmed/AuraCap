@@ -48,7 +48,13 @@ export function Sidebar({ expanded, mobileOpen, onToggle, onMobileClose }: Sideb
       >
         <button type="button" onClick={onToggle} className="logo-btn mb-1" aria-label="Toggle sidebar">C</button>
         <div className="nav-divider" />
-        <NavLink to="/profiles" onClick={onMobileClose} className={cn('profile-btn', expanded && 'expanded')}>
+        <NavLink
+          to="/profiles"
+          onClick={onMobileClose}
+          className={cn('profile-btn', expanded && 'expanded')}
+          aria-label={`${activeProfile.name} profile`}
+          title={activeProfile.name}
+        >
           <span aria-hidden>{activeProfile.emoji}</span>
           {(expanded || mobileOpen) && <span className="text-xs font-semibold truncate">{activeProfile.name}</span>}
         </NavLink>

@@ -515,8 +515,19 @@ nav.expanded .nav-divider { width: 196px; }
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
 }
+
+/* Card / welcome enter — replaces framer-motion (TBT) */
+.glass-card-enter {
+  animation: glass-card-fade 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: var(--glass-enter-delay, 0s);
+}
+@keyframes glass-card-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .cap-route-enter { animation: none; }
+  .cap-route-enter,
+  .glass-card-enter { animation: none; }
 }
 
 /* Home Overview — constellation · score · tools */
