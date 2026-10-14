@@ -1,7 +1,7 @@
 {
   "name": "auracap",
   "private": true,
-  "version": "5.4.2",
+  "version": "5.5.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,14 +15,14 @@
     "gallery": "npm run build && CAPTURE_GALLERY=1 playwright test e2e/gallery.spec.ts",
     "gallery:view": "python3 -m http.server 8772",
     "verify": "npm run lint && npm run test:unit && npm run test:e2e",
-    "test:matrix": "FINISH_MATRIX=1 playwright test e2e/finish-matrix.spec.ts",
+    "test:matrix": "npm run build && FINISH_MATRIX=1 playwright test e2e/finish-matrix.spec.ts",
+    "ensure:version": "node -e \"const fs=require('fs'); const p='dist/VERSION.json'; if(!fs.existsSync(p)){console.error('AUR-V3-2: missing '+p); process.exit(1)} const v=JSON.parse(fs.readFileSync(p,'utf8')); if(!v.version||v.app!=='AuraCap'){console.error('AUR-V3-2: bad VERSION.json',v); process.exit(1)} console.log('VERSION.json ok', v.version);\"",
     "tier1": "node ../capricorn-tooling/shared/testing/tier1.mjs",
     "axe": "node scripts/capture-axe.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.40.0",
     "idb": "^8.0.3",
     "lucide-react": "^1.17.0",
     "react": "^19.2.6",

@@ -73,6 +73,8 @@ jobs:
       - run: npm ci
       - run: npm run generate-icons
       - run: npm run build
+      # AUR-V3-2: hub live catalog reads /AuraCap/VERSION.json from Pages
+      - run: npm run ensure:version
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

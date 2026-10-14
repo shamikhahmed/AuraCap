@@ -1,3 +1,7 @@
+## 5.5.0 — 2026-10-14
+- Perfection Loop v3 Wave C release: AUR-V3-1 tap targets ≥ 44px; AUR-V3-2 publish VERSION.json on Pages (CI ensure:version + matrix build); AUR-V3-3 WIP CSS motion / no cold-load notification prompt / `#main`.
+- SW cache `auracap-v550`. AUR-V3-4 gallery v3 remains L.
+
 ## 5.4.2 — 2026-09-15
 - Tier 1 automated gate: ACBrand palette, tooling brandOk for Aura CSS/palettes, finish-loop SINKS + Lighthouse stub, suppressions/`any` CI fix. VO ⛔ BLOCKED-EXTERNAL.
 

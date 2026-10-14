@@ -191,9 +191,11 @@ body {
 .textarea-field { font-family: var(--fm); font-size: 11.5px; line-height: 1.9; resize: vertical; }
 
 .pill {
-  display: inline-flex; align-items: center; gap: 5px; padding: 4px 11px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 44px; min-width: 44px; padding: 10px 14px;
   border-radius: 50px; background: var(--inp); border: 1px solid var(--bd);
-  font-size: 11px; color: var(--mu); cursor: pointer; transition: all 0.18s; white-space: nowrap;
+  font-size: 12px; color: var(--mu); cursor: pointer; transition: all 0.18s; white-space: nowrap;
+  touch-action: manipulation;
 }
 .pill:hover { border-color: var(--bd2); color: var(--tx); }
 
@@ -515,8 +517,19 @@ nav.expanded .nav-divider { width: 196px; }
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
 }
+
+/* Card / welcome enter — replaces framer-motion (TBT) */
+.glass-card-enter {
+  animation: glass-card-fade 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: var(--glass-enter-delay, 0s);
+}
+@keyframes glass-card-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .cap-route-enter { animation: none; }
+  .cap-route-enter,
+  .glass-card-enter { animation: none; }
 }
 
 /* Home Overview — constellation · score · tools */
@@ -524,11 +537,15 @@ nav.expanded .nav-divider { width: 196px; }
   display: block;
 }
 .dash-rail-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-top: 12px;
+  min-height: 44px;
+  padding: 10px 4px;
   font-size: 13px;
   font-weight: 700;
   color: var(--ac);
+  touch-action: manipulation;
 }
 .dash-tool-row {
   display: flex;
