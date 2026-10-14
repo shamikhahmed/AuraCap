@@ -2,8 +2,8 @@
   "app": "AuraCap",
   "version": "5.4.2",
   "swCache": "auracap-v542",
-  "generatedAt": "2026-09-15T12:51:34.855Z",
-  "status": "PASS",
+  "generatedAt": "2026-09-16T11:22:55.357Z",
+  "status": "FAIL",
   "pass": [
     {
       "id": "version:field",
@@ -35,19 +35,23 @@
     },
     {
       "id": "records:APP-REPORT-size",
-      "detail": "1921 bytes (need ≥1024)"
+      "detail": "1727 bytes (need ≥1024)"
     },
     {
       "id": "suppressions",
       "detail": "none"
     },
     {
+      "id": "test-skip",
+      "detail": "none"
+    },
+    {
       "id": "app-ready",
-      "detail": "window.__APP_READY__ referenced"
+      "detail": "window.__APP_READY__ assigned in product code"
     },
     {
       "id": "ci:main",
-      "detail": "Merge finish/auracap-tier1 — Tier 1 ACBrand 5.4.2 → success https://github.com/shamikhahmed/AuraCap/actions/runs/34971080491"
+      "detail": "Deploy to GitHub Pages @ eb474a6 → success https://github.com/shamikhahmed/AuraCap/actions/runs/35079740649"
     },
     {
       "id": "tag",
@@ -58,8 +62,24 @@
       "detail": "e2e/finish-matrix.spec.ts"
     },
     {
-      "id": "lighthouse:files",
-      "detail": "1 JSON"
+      "id": "matrix:failures",
+      "detail": "0"
+    },
+    {
+      "id": "matrix:shot-count",
+      "detail": "6 shots (need routes×viewports×themes = 6)"
+    },
+    {
+      "id": "matrix:freshness",
+      "detail": "2026-09-16T11:15:55.984Z"
+    },
+    {
+      "id": "axe:serious-critical",
+      "detail": "2 JSON clean"
+    },
+    {
+      "id": "gallery:freshness",
+      "detail": "docs/screenshots/gallery/gallery-manifest.json @ 2026-09-16T16:13:08+05:00"
     },
     {
       "id": "sinks:SINKS.md",
@@ -98,11 +118,24 @@
       "detail": "1 sinks; SINKS.md ok"
     }
   ],
-  "fail": [],
+  "fail": [
+    {
+      "id": "lighthouse:home-demo-desktop.json",
+      "detail": "fetchTime 2026-09-16T11:06:04.300Z before last UI commit 2026-09-16T16:13:08+05:00"
+    },
+    {
+      "id": "lighthouse:home-demo-mobile.json",
+      "detail": "perf 87 a11y 98 bp 100 LCP 2084.0635 TBT 343.5000000000002 CLS 0.00002287125257670811"
+    },
+    {
+      "id": "lighthouse:passing",
+      "detail": "0/2 files meet thresholds"
+    }
+  ],
   "warn": [
     {
-      "id": "matrix:shots",
-      "detail": "qa/finish-loop/shots missing (run matrix)"
+      "id": "live:VERSION.json",
+      "detail": "https://shamikhahmed.github.io/AuraCap/VERSION.json → 404"
     }
   ],
   "killList": {

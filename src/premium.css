@@ -150,7 +150,7 @@ body.light .ambient-grain { opacity: 0.02; }
     rgba(255, 255, 255, 0.1) 0%,
     rgba(255, 255, 255, 0.04) 45%,
     var(--color-bg-secondary) 100%
-  ) !important;
+  );
 }
 
 .catalog-bottle-thumb img {
@@ -181,7 +181,7 @@ body.light .ambient-grain { opacity: 0.02; }
 }
 
 .tag-premium {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -257,7 +257,7 @@ a.stat-pill:hover {
 }
 
 .stat-pill-label {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -276,17 +276,17 @@ a.stat-pill:hover {
 
 .stat-pill--hot .stat-pill-icon {
   background: rgba(255, 149, 0, 0.15);
-  color: #ff9f0a;
+  color: var(--pc-ff9f0a);
 }
 
 .stat-pill--warn .stat-pill-icon {
   background: rgba(255, 159, 10, 0.15);
-  color: #ff9f0a;
+  color: var(--pc-ff9f0a);
 }
 
 .stat-pill--good .stat-pill-icon {
   background: rgba(48, 209, 88, 0.15);
-  color: #30d158;
+  color: var(--pc-30d158);
 }
 
 /* Floating tab bar */
@@ -414,18 +414,18 @@ a.stat-pill:hover {
 
 /* Primary button glow */
 .btn-glow {
-  background: linear-gradient(180deg, #3a9bff 0%, #0a84ff 50%, #0071e3 100%) !important;
-  border: none !important;
+  background: linear-gradient(180deg, var(--pc-3a9bff) 0%, var(--pc-0a84ff) 50%, var(--pc-0071e3) 100%);
+  border: none;
   box-shadow:
     0 2px 12px rgba(10, 132, 255, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
-  font-weight: 600 !important;
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .btn-glow:disabled {
   opacity: 0.55;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 /* Premium skeleton */
@@ -597,7 +597,7 @@ a.stat-pill:hover {
 }
 
 .catalog-editorial-issue {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -605,7 +605,7 @@ a.stat-pill:hover {
 }
 
 .catalog-editorial-variants {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -686,7 +686,7 @@ a.stat-pill:hover {
 }
 
 .catalog-variant-badge {
-  font-size: 0.5625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -697,7 +697,7 @@ a.stat-pill:hover {
 }
 
 .catalog-confirm-card {
-  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent) !important;
+  border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
 }
 
 .catalog-confirm-hero {
@@ -756,7 +756,7 @@ a.stat-pill:hover {
   padding: 0.75rem 0.75rem 1rem;
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, #8b6914 8%, var(--color-bg-secondary)) 0%,
+    color-mix(in srgb, var(--pc-8b6914) 8%, var(--color-bg-secondary)) 0%,
     var(--color-bg-secondary) 8%,
     var(--color-bg) 100%
   );
@@ -769,7 +769,7 @@ a.stat-pill:hover {
 body.light .wardrobe-cabinet-frame {
   background: linear-gradient(
     180deg,
-    #f5efe6 0%,
+    var(--pc-f5efe6) 0%,
     var(--color-bg-secondary) 12%,
     var(--color-bg) 100%
   );
@@ -783,16 +783,16 @@ body.light .wardrobe-cabinet-frame {
 .wardrobe-cabinet-rail {
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #3d3428, #6b5344, #3d3428);
+  background: linear-gradient(90deg, var(--pc-3d3428), var(--pc-6b5344), var(--pc-3d3428));
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 body.light .wardrobe-cabinet-rail {
-  background: linear-gradient(90deg, #c4a882, #e8dcc8, #c4a882);
+  background: linear-gradient(90deg, var(--pc-c4a882), var(--pc-e8dcc8), var(--pc-c4a882));
 }
 
 .wardrobe-cabinet-label {
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -811,11 +811,11 @@ body.light .wardrobe-cabinet-rail {
   height: 10px;
   margin-top: 0.75rem;
   border-radius: 0 0 12px 12px;
-  background: linear-gradient(180deg, #2a241c, #1a1612);
+  background: linear-gradient(180deg, var(--pc-2a241c), var(--pc-1a1612));
 }
 
 body.light .wardrobe-cabinet-base {
-  background: linear-gradient(180deg, #d4c4ae, #b8a690);
+  background: linear-gradient(180deg, var(--pc-d4c4ae), var(--pc-b8a690));
 }
 
 .wardrobe-shelf {
@@ -845,9 +845,9 @@ body.light .wardrobe-cabinet-base {
   border-radius: 2px;
   background: linear-gradient(
     180deg,
-    #5c4a3a 0%,
-    #3d3228 40%,
-    #2a221a 100%
+    var(--pc-5c4a3a) 0%,
+    var(--pc-3d3228) 40%,
+    var(--pc-2a221a) 100%
   );
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.35),
@@ -855,7 +855,7 @@ body.light .wardrobe-cabinet-base {
 }
 
 body.light .wardrobe-shelf-board {
-  background: linear-gradient(180deg, #d9c9b0 0%, #c4b098 50%, #a89078 100%);
+  background: linear-gradient(180deg, var(--pc-d9c9b0) 0%, var(--pc-c4b098) 50%, var(--pc-a89078) 100%);
 }
 
 .wardrobe-shelf-bottle {
@@ -904,7 +904,7 @@ body.light .wardrobe-shelf-board {
   position: absolute;
   top: 4px;
   left: 4px;
-  font-size: 0.5rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -920,7 +920,7 @@ body.light .wardrobe-shelf-board {
 }
 
 .wardrobe-shelf-brand {
-  font-size: 0.5625rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -947,7 +947,7 @@ body.light .wardrobe-shelf-board {
   justify-content: space-between;
   gap: 0.35rem;
   margin-top: 0.35rem;
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1042,7 +1042,7 @@ body[data-cap-app="1"] #cap-scene,
 body[data-cap-app="1"] #mist-canvas,
 body[data-cap-app="1"] .cap-ambient,
 body[data-cap-app="1"] .cap-scroll-progress {
-  display: none !important;
+  display: none;
 }
 
 body[data-cap-app="1"] .cap-reveal,
@@ -1051,11 +1051,11 @@ body[data-cap-app="1"] .cap-reveal-lines,
 body[data-cap-app="1"] .cap-reveal-lines .cap-line > span,
 body[data-cap-app="1"] .cap-kinetic .cap-kinetic-line > span,
 body[data-cap-app="1"] .cap-stagger > * {
-  opacity: 1 !important;
-  transform: none !important;
-  filter: none !important;
-  transition: none !important;
-  animation: none !important;
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
+  animation: none;
 }
 
 body[data-cap-app="1"] .glass-premium,
@@ -1066,8 +1066,8 @@ body[data-cap-app="1"] .cap-glass-heavy,
 body[data-cap-app="1"] .cap-glass-light,
 body[data-cap-app="1"] [class*="glass"],
 body[data-cap-app="1"] .glass-topbar {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 body[data-cap-app="1"] .glass-topbar {
@@ -1078,14 +1078,14 @@ body[data-cap-app="1"] [data-cap-parallax],
 body[data-cap-app="1"] .cap-hero-3d-inner,
 body[data-cap-app="1"] .cap-float,
 body[data-cap-app="1"] .cap-magnetic {
-  will-change: auto !important;
-  transform: none !important;
+  will-change: auto;
+  transform: none;
 }
 
 body[data-cap-app="1"] .screen,
 body[data-cap-app="1"] .page,
 body[data-cap-app="1"] #view > .screen {
-  animation: none !important;
-  transition: none !important;
+  animation: none;
+  transition: none;
 }
 

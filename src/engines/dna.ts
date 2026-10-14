@@ -2,7 +2,7 @@ import { APPS, CATS, DNA_DIMS, DNA_PROFILES, LOC_SIGNALS, REDUNDANCY_GROUPS, DIS
 import { countCat } from './scores';
 import type { DnaResult } from '@/types';
 
-import { ACBrand, AC_CATEGORY_COLORS } from '@/brand/colors';
+import { ACBrand, AC_CATEGORY_COLORS } from '@/brand/brand-palette';
 
 export function categoryColor(cat: string): string {
   return AC_CATEGORY_COLORS[cat] ?? ACBrand.indigo;

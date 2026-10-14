@@ -3,7 +3,7 @@ import { DEFAULT_STATE, exportJson, exportTxt, factoryReset, loadState, saveStat
 import { computeDna } from '@/engines/dna';
 import { calcScores } from '@/engines/scores';
 import { SAMPLE_LIST } from '@/data';
-import { ACBrand, AC_VERSION_COLORS } from '@/brand/colors';
+import { ACBrand, AC_VERSION_COLORS } from '@/brand/brand-palette';
 import versionManifest from '../../VERSION.json';
 import type { AuraState, DeviceType, LayoutType, Profile, VersionSnapshot, Widget } from '@/types';
 
@@ -125,7 +125,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const loadDemo = useCallback(async () => {
     const apps = SAMPLE_LIST.split('\n').map((l) => l.trim()).filter(Boolean);
     await persist({ apps, demoMode: true, entered: true, onboardingDone: true });
-    toast('Demo wardrobe loaded!');
+    toast('Sample data loaded');
   }, [persist, toast]);
 
   const exitDemo = useCallback(async () => {

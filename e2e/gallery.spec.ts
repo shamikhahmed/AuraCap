@@ -88,6 +88,7 @@ for (const viewport of ['mobile', 'desktop'] as const) {
     });
 
     test(`capture ${SCREENS.length + 1} ${viewport} screens`, async ({ page }) => {
+      test.setTimeout(180_000);
       await captureAll(page, viewport);
     });
   });

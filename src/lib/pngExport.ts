@@ -1,4 +1,4 @@
-import { ACBrand } from '@/brand/colors';
+import { ACBrand } from '@/brand/brand-palette';
 
 const PHONE = { w: 1170, h: 2532 };
 const IPAD = { w: 1668, h: 2388 };
