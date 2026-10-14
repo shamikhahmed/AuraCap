@@ -1,18 +1,25 @@
-# AuraCap — Monetization Plan
+# AuraCap — Monetization (archived)
 
-## Model: One-time purchase ($14.99) + future Pro tier
+> **Status: historical — superseded by fleet decision G-2 (everything free).**  
+> AuraCap **5.5.0** ships with **no Pro tier, no paywalls, and no upgrade UI**. This file is kept
+> only as a record of early 2026 planning. Do not implement gates or pricing from the sections below.
 
-### Why someone pays
-AuraCap solves a specific, recurring pain for Apple power users: screen setup paralysis. Someone who just got a new iPhone or wants to overhaul their digital setup will pay $14.99 without thinking — it's less than one App Store game, and the value (DNA-based app organization + smart folders + wallpapers) is immediately tangible.
+---
 
-### Revenue logic
-- Target: 200 one-time purchases/mo × $14.99 = **$2,998/mo** (Apple takes 30% → ~$2,098 net)
-- No subscription fatigue — one-time purchase converts higher in Apple power-user niche
+## Archived plan (2026-06-28)
+
+### Model: One-time purchase ($14.99) + future Pro tier
+
+#### Why someone pays (historical)
+AuraCap was scoped for Apple power users: DNA-based app organization, smart folders, wallpapers.
+
+#### Revenue logic (historical)
+- Target: 200 one-time purchases/mo × $14.99
 - Future Pro tier: iCloud sync, multiple profiles, widget presets, coach exports
 
 ---
 
-## Model: One-time ($14.99) → Future Pro ($4.99/mo)
+## Archived feature matrix
 
 | Feature | Free | Paid ($14.99) | Future Pro |
 |---------|------|----------------|------------|
@@ -30,22 +37,10 @@ AuraCap solves a specific, recurring pain for Apple power users: screen setup pa
 
 ---
 
-## Implementation (current)
-- No hard gate yet — all features open (`?demo=1` auto-loads sample wardrobe as of 2026-06-28)
-- `window.AuraPro.isPro()` placeholder — reads `localStorage.getItem('ac_pro_active') === '1'`
-- Demo mode: always `isPro() = true`
-- `openProUpgrade()` global triggers pricing sheet
-- CSS scaffold already in `src/premium.css` (`.paywall-sheet`, `.paywall-plan`, `.paywall-plan--selected`)
-- Gate candidates: Smart Assistant, Widget Lab, 3+ profiles, unlimited organizer groups
+## Current product truth (G-2)
 
-## Fix applied 2026-06-28
-- `?demo=1` URL param now auto-triggers `loadDemo()` in `App.tsx` `AppRoutes` — no longer requires clicking button
-- Title fixed: removed "v5" from `<title>`
+- All features open in the shipped PWA; no `isPro()` gate in production paths.
+- Settings may mention App Store waitlist copy only — not a paywall.
+- Remove or avoid reintroducing `.paywall-*` UI without an explicit owner decision.
 
-## Payment path (current)
-- Waitlist / "coming to App Store" copy in Settings
-- Next: App Store IAP (Capacitor) or Stripe one-time checkout for web PWA
-
----
-
-*Last updated: 2026-06-28*
+*Last archived: 2026-10-14 · live v5.5.0*
