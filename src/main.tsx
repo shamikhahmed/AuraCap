@@ -11,6 +11,13 @@ createRoot(document.getElementById('root')!).render(
   </StrictMode>,
 );
 
+/* Keep ac-booting through first paint, then allow enter animations on later navigations. */
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove('ac-booting');
+  });
+});
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     const base = import.meta.env.BASE_URL;

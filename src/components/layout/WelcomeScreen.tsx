@@ -41,7 +41,7 @@ export function WelcomeScreen() {
     >
       <div className="welcome-grid absolute inset-0 opacity-[0.28] pointer-events-none" aria-hidden />
 
-      <div className="relative z-2 w-full max-w-md glass-card-enter">
+      <div className="relative z-2 w-full max-w-md">
         <div className="welcome-constellation relative mx-auto mb-8 w-full max-w-[360px] aspect-[1.15/1]" aria-hidden>
           <svg className="absolute inset-0 w-full h-full" viewBox="0 0 360 312" fill="none">
             {DEVICES.map((d) => (

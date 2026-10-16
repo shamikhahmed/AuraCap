@@ -1,3 +1,11 @@
+## 5.5.2 — 2026-10-16
+
+Perfection Loop v5 §3 Performance:
+
+- Fix NO_LCP: static contentful boot shell in `#root` + `ac-booting` (PulseCap pattern) so welcome paints at opacity 1
+- Drop `glass-card-enter` on WelcomeScreen first paint
+- SW → `auracap-v552`
+
 ## 5.5.1 — 2026-10-16
 
 Perfection Loop v5 §2 a11y:

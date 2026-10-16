@@ -527,6 +527,14 @@ nav.expanded .nav-divider { width: 196px; }
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
 }
+/* First paint must be contentful — disable enter fades until boot class clears (NO_LCP fix). */
+html.ac-booting .glass-card-enter,
+html.ac-booting .animate-fiu,
+html.ac-booting .cap-route-enter {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .cap-route-enter,
   .glass-card-enter { animation: none; }
