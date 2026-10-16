@@ -60,7 +60,7 @@ export function AppShell() {
         } max-[699px]:ml-0`}
       >
         <Topbar onMenuToggle={() => setMobileOpen((o) => !o)} menuOpen={mobileOpen} />
-        <main id="main" className="app-scroll-pad px-4 md:px-7 pt-7">
+        <main id="main" tabIndex={-1} className="app-scroll-pad px-4 md:px-7 pt-7 outline-none">
           <DemoBanner />
           <CapRouteTransition>
             <Outlet />

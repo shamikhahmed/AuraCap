@@ -34,7 +34,11 @@ export function WelcomeScreen() {
   if (state.entered) return null;
 
   return (
-    <div className="fixed inset-0 z-[500] flex flex-col items-center justify-center bg-[var(--bg)] overflow-hidden px-6">
+    <div
+      id="main"
+      tabIndex={-1}
+      className="fixed inset-0 z-[500] flex flex-col items-center justify-center bg-[var(--bg)] overflow-hidden px-6 outline-none"
+    >
       <div className="welcome-grid absolute inset-0 opacity-[0.28] pointer-events-none" aria-hidden />
 
       <div className="relative z-2 w-full max-w-md glass-card-enter">

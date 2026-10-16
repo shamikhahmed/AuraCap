@@ -1,6 +1,6 @@
 {
   "app": "AuraCap",
-  "version": "5.5.0",
+  "version": "5.5.1",
   "capturedAt": "2026-10-14T14:24:34.809Z",
   "accent": "#6366F1",
   "schema": 2,
@@ -14,7 +14,7 @@
       "device": "iphone",
       "file": "light/iphone/overview--overview--demo.webp",
       "route": "/dashboard",
-      "caption": "Your Aura Score — Focus, Clarity and Organization.",
+      "caption": "Your Aura Score \u2014 Focus, Clarity and Organization.",
       "w": 1170,
       "h": 2532
     },
@@ -53,7 +53,7 @@
       "device": "iphone",
       "file": "light/iphone/library--import--demo.webp",
       "route": "/import",
-      "caption": "Paste or upload your app list — nothing is uploaded.",
+      "caption": "Paste or upload your app list \u2014 nothing is uploaded.",
       "w": 1170,
       "h": 2532
     },
@@ -170,7 +170,7 @@
       "device": "iphone",
       "file": "light/iphone/habits--digital-cleanse--demo.webp",
       "route": "/cleanse",
-      "caption": "Clear out what you don’t use.",
+      "caption": "Clear out what you don\u2019t use.",
       "w": 1170,
       "h": 2532
     },
@@ -209,7 +209,7 @@
       "device": "iphone",
       "file": "dark/iphone/overview--overview--demo.webp",
       "route": "/dashboard",
-      "caption": "Your Aura Score — Focus, Clarity and Organization.",
+      "caption": "Your Aura Score \u2014 Focus, Clarity and Organization.",
       "w": 1170,
       "h": 2532
     },
@@ -248,7 +248,7 @@
       "device": "iphone",
       "file": "dark/iphone/library--import--demo.webp",
       "route": "/import",
-      "caption": "Paste or upload your app list — nothing is uploaded.",
+      "caption": "Paste or upload your app list \u2014 nothing is uploaded.",
       "w": 1170,
       "h": 2532
     },
@@ -365,7 +365,7 @@
       "device": "iphone",
       "file": "dark/iphone/habits--digital-cleanse--demo.webp",
       "route": "/cleanse",
-      "caption": "Clear out what you don’t use.",
+      "caption": "Clear out what you don\u2019t use.",
       "w": 1170,
       "h": 2532
     },
@@ -404,7 +404,7 @@
       "device": "ipad",
       "file": "light/ipad/overview--overview--demo.webp",
       "route": "/dashboard",
-      "caption": "Your Aura Score — Focus, Clarity and Organization.",
+      "caption": "Your Aura Score \u2014 Focus, Clarity and Organization.",
       "w": 2360,
       "h": 1640
     },
@@ -443,7 +443,7 @@
       "device": "ipad",
       "file": "light/ipad/library--import--demo.webp",
       "route": "/import",
-      "caption": "Paste or upload your app list — nothing is uploaded.",
+      "caption": "Paste or upload your app list \u2014 nothing is uploaded.",
       "w": 2360,
       "h": 1640
     },
@@ -560,7 +560,7 @@
       "device": "ipad",
       "file": "light/ipad/habits--digital-cleanse--demo.webp",
       "route": "/cleanse",
-      "caption": "Clear out what you don’t use.",
+      "caption": "Clear out what you don\u2019t use.",
       "w": 2360,
       "h": 1640
     },
@@ -599,7 +599,7 @@
       "device": "ipad",
       "file": "dark/ipad/overview--overview--demo.webp",
       "route": "/dashboard",
-      "caption": "Your Aura Score — Focus, Clarity and Organization.",
+      "caption": "Your Aura Score \u2014 Focus, Clarity and Organization.",
       "w": 2360,
       "h": 1640
     },
@@ -638,7 +638,7 @@
       "device": "ipad",
       "file": "dark/ipad/library--import--demo.webp",
       "route": "/import",
-      "caption": "Paste or upload your app list — nothing is uploaded.",
+      "caption": "Paste or upload your app list \u2014 nothing is uploaded.",
       "w": 2360,
       "h": 1640
     },
@@ -755,7 +755,7 @@
       "device": "ipad",
       "file": "dark/ipad/habits--digital-cleanse--demo.webp",
       "route": "/cleanse",
-      "caption": "Clear out what you don’t use.",
+      "caption": "Clear out what you don\u2019t use.",
       "w": 2360,
       "h": 1640
     },
@@ -794,7 +794,7 @@
       "device": "mac",
       "file": "light/mac/overview--overview--demo.webp",
       "route": "/dashboard",
-      "caption": "Your Aura Score — Focus, Clarity and Organization.",
+      "caption": "Your Aura Score \u2014 Focus, Clarity and Organization.",
       "w": 2880,
       "h": 1800
     },
@@ -833,7 +833,7 @@
       "device": "mac",
       "file": "light/mac/library--import--demo.webp",
       "route": "/import",
-      "caption": "Paste or upload your app list — nothing is uploaded.",
+      "caption": "Paste or upload your app list \u2014 nothing is uploaded.",
       "w": 2880,
       "h": 1800
     },
@@ -950,7 +950,7 @@
       "device": "mac",
       "file": "light/mac/habits--digital-cleanse--demo.webp",
       "route": "/cleanse",
-      "caption": "Clear out what you don’t use.",
+      "caption": "Clear out what you don\u2019t use.",
       "w": 2880,
       "h": 1800
     },
@@ -989,7 +989,7 @@
       "device": "mac",
       "file": "dark/mac/overview--overview--demo.webp",
       "route": "/dashboard",
-      "caption": "Your Aura Score — Focus, Clarity and Organization.",
+      "caption": "Your Aura Score \u2014 Focus, Clarity and Organization.",
       "w": 2880,
       "h": 1800
     },
@@ -1028,7 +1028,7 @@
       "device": "mac",
       "file": "dark/mac/library--import--demo.webp",
       "route": "/import",
-      "caption": "Paste or upload your app list — nothing is uploaded.",
+      "caption": "Paste or upload your app list \u2014 nothing is uploaded.",
       "w": 2880,
       "h": 1800
     },
@@ -1145,7 +1145,7 @@
       "device": "mac",
       "file": "dark/mac/habits--digital-cleanse--demo.webp",
       "route": "/cleanse",
-      "caption": "Clear out what you don’t use.",
+      "caption": "Clear out what you don\u2019t use.",
       "w": 2880,
       "h": 1800
     },

@@ -1,3 +1,11 @@
+## 5.5.1 — 2026-10-16
+
+Perfection Loop v5 §2 a11y:
+
+- Landing `WelcomeScreen` exposes focusable `#main` for `.cap-skip-link`
+- App shell `<main id="main">` is focusable (`tabIndex={-1}`)
+- SW → `auracap-v551`
+
 ## 5.5.0 — 2026-10-14
 - Perfection Loop v3 Wave C release: AUR-V3-1 tap targets ≥ 44px; AUR-V3-2 publish VERSION.json on Pages (CI ensure:version + matrix build); AUR-V3-3 WIP CSS motion / no cold-load notification prompt / `#main`.
 - SW cache `auracap-v550`. AUR-V3-4 gallery v3 remains L.
