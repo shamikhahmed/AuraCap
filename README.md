@@ -1,3 +1,9 @@
+# RETIRED 2026-10-21
+
+This Cap is retired. See RETIRED.md.
+
+---
+
 # AuraCap
 
 Organize your iPhone, iPad and Mac setup.
