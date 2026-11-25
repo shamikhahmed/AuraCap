@@ -1,7 +1,7 @@
 # AuraCap — Handover
 
 > Read this + `ROADMAP.md` + `~/Capricorn-Brain/01 Projects/AuraCap.md` before working here.
-> Last updated: 2026-10-14 · Fleet: Perfection Loop v3 Wave C
+> Last updated: 2026-11-26 · Fleet: Wave 2 gallery regen (post-motion)
 
 ## What this is
 Organize your iPhone, iPad and Mac setup — offline PWA.
@@ -35,6 +35,11 @@ npm run tier1
 
 ## Cap Standard
 Docs · gallery · version discipline · e2e · CI gate · PWA · demo mode — Tier 1 release 5.5.1.
+
+## Screen gallery (2026-11-26)
+
+- Real Playwright regen: `npm run gallery` → **32** PNGs (16 screens × mobile/desktop) under `docs/screenshots/gallery/`.
+- Manifest `generated` `2026-11-25T20:02:28.559Z` (UTC) / v5.5.2; viewer `screen-gallery.html`.
 
 ## Motion contract (2026-11-26)
 
