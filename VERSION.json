@@ -2,5 +2,6 @@
   "app": "AuraCap",
   "version": "5.5.2",
   "swCache": "auracap-v552",
-  "updated": "2026-10-16"
+  "updated": "2026-11-26",
+  "motionContract": "capricorn-tooling/shared/design-system/MOTION.md"
 }
